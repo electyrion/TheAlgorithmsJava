@@ -61,7 +61,7 @@ public class Deques<T> {
      */
     public void addFirst(T val) {
         // Create a new node with the given value
-        DequeNode<T> newNode = new DequeNode<T>(val);
+        DequeNode<T> newNode = new DequeNode<>(val);
 
         // Add the node
         if (head == null) {
@@ -85,7 +85,7 @@ public class Deques<T> {
      */
     public void addLast(T val) {
         // Create a new node with the given value
-        DequeNode<T> newNode = new DequeNode<T>(val);
+        DequeNode<T> newNode = new DequeNode<>(val);
 
         // Add the node
         if (tail == null) {
@@ -234,7 +234,7 @@ public class Deques<T> {
     }
 
     public static void main(String[] args) {
-        Deques<Integer> myDeque = new Deques<Integer>();
+        Deques<Integer> myDeque = new Deques<>();
         for (int i = 0; i < 42; i++) {
             if (i / 42.0 < 0.5) {
                 myDeque.addFirst(i);
@@ -256,7 +256,7 @@ public class Deques<T> {
 
         int dequeSize = myDeque.size();
         for (int i = 0; i < dequeSize; i++) {
-            int removing = -1;
+            int removing;
             if (i / 39.0 < 0.5) {
                 removing = myDeque.pollFirst();
             } else {
