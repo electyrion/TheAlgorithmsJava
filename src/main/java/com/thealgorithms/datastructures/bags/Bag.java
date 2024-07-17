@@ -45,10 +45,10 @@ public class Bag<Element> implements Iterable<Element> {
      * @param element - the element to add
      */
     public void add(Element element) {
-        Node<Element> oldfirst = firstElement;
+        Node<Element> oldFirst = firstElement;
         firstElement = new Node<>();
         firstElement.content = element;
-        firstElement.nextElement = oldfirst;
+        firstElement.nextElement = oldFirst;
         size++;
     }
 
@@ -71,6 +71,7 @@ public class Bag<Element> implements Iterable<Element> {
      * @return an iterator that iterates over the elements in this bag in
      * arbitrary order
      */
+    @Override
     public Iterator<Element> iterator() {
         return new ListIterator<>(firstElement);
     }
@@ -84,6 +85,7 @@ public class Bag<Element> implements Iterable<Element> {
             currentElement = firstElement;
         }
 
+        @Override
         public boolean hasNext() {
             return currentElement != null;
         }
@@ -96,6 +98,7 @@ public class Bag<Element> implements Iterable<Element> {
             throw new UnsupportedOperationException();
         }
 
+        @Override
         public Element next() {
             if (!hasNext()) {
                 throw new NoSuchElementException();

@@ -101,7 +101,7 @@ public class BufferedReader {
         pushRefreshData();
 
         if (n >= bufferSize) {
-            throw new IllegalAccessError("Cannot peek %s, maximum upto %s (Buffer Limit)".formatted(n, bufferSize));
+            throw new IllegalAccessError("Cannot peek %s, maximum up to %s (Buffer Limit)".formatted(n, bufferSize));
         }
         return buffer[n];
     }

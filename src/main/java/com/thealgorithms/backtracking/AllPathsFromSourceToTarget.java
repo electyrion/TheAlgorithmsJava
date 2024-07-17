@@ -22,14 +22,14 @@ public class AllPathsFromSourceToTarget {
     // Constructor
     public AllPathsFromSourceToTarget(int vertices) {
 
-        // initialise vertex count
+        // initialize vertex count
         this.v = vertices;
 
-        // initialise adjacency list
+        // initialize adjacency list
         initAdjList();
     }
 
-    // utility method to initialise adjacency list
+    // utility method to initialize adjacency list
     @SuppressWarnings("unchecked")
     private void initAdjList() {
         adjList = new ArrayList[v];
