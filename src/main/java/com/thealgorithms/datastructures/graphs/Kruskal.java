@@ -34,6 +34,7 @@ public class Kruskal {
         graph[from].add(new Edge(from, to, weight));
     }
 
+    @SuppressWarnings("unchecked")
     public static void main(String[] args) {
         HashSet<Edge>[] graph = new HashSet[7];
         for (int i = 0; i < graph.length; i++) {
@@ -68,6 +69,7 @@ public class Kruskal {
         }
     }
 
+    @SuppressWarnings("unchecked")
     public HashSet<Edge>[] kruskal(HashSet<Edge>[] graph) {
         int nodes = graph.length;
         int[] captain = new int[nodes];

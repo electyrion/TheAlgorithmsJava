@@ -8,6 +8,7 @@ public class BloomFilter<T> {
     private BitSet bitArray;
     private Hash<T>[] hashFunctions;
 
+    @SuppressWarnings("unchecked")
     public BloomFilter(int numberOfHashFunctions, int n) {
         this.numberOfHashFunctions = numberOfHashFunctions;
         hashFunctions = new Hash[numberOfHashFunctions];
@@ -17,7 +18,7 @@ public class BloomFilter<T> {
 
     private void insertHash() {
         for (int i = 0; i < numberOfHashFunctions; i++) {
-            hashFunctions[i] = new Hash(i);
+            hashFunctions[i] = new Hash<>(i);
         }
     }
 
@@ -38,6 +39,7 @@ public class BloomFilter<T> {
         return true;
     }
 
+    @SuppressWarnings("hiding")
     private class Hash<T> {
 
         int index;

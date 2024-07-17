@@ -215,6 +215,7 @@ public class SinglyLinkedList implements Iterable<Integer> {
      *
      * @return count of the list
      */
+    @SuppressWarnings("unused")
     public int count() {
         int count = 0;
         for (final var element : this) {

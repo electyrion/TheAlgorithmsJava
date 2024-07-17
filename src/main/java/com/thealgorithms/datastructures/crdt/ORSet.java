@@ -166,6 +166,7 @@ public class ORSet<T> {
      */
     public static class Pair<T> {
         private final T element;
+        @SuppressWarnings("unused")
         private final String uniqueTag;
 
         /**

@@ -9,6 +9,7 @@ public class PigeonholeSort {
         but we can also implement this for string arrays too.
         See https://www.geeksforgeeks.org/pigeonhole-sort/
     */
+    @SuppressWarnings("unchecked")
     void sort(Integer[] array) {
         int maxElement = array[0];
         for (int element : array) {

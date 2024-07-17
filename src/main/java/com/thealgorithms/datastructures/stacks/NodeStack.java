@@ -82,6 +82,7 @@ public class NodeStack<Item> {
      *
      * @return item : value that is returned.
      */
+    @SuppressWarnings("unchecked")
     public Item pop() {
         Item item = (Item) NodeStack.head.getData();
 
@@ -98,6 +99,7 @@ public class NodeStack<Item> {
      *
      * @return item : the next value that would be popped off the stack.
      */
+    @SuppressWarnings("unchecked")
     public Item peek() {
         return (Item) NodeStack.head.getData();
     }

@@ -66,6 +66,7 @@ public class SkipList<E extends Comparable<E>> {
         this.size = 0;
     }
 
+    @SuppressWarnings("unchecked")
     public void add(E e) {
         Objects.requireNonNull(e);
         Node<E> current = head;

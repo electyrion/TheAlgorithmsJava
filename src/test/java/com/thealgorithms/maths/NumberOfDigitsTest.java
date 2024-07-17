@@ -17,6 +17,7 @@ public class NumberOfDigitsTest {
         assertEquals(expected, methodUnderTest.apply(-number));
     }
 
+    @SuppressWarnings("unchecked")
     private static Stream<Arguments> testCases() {
         final Integer[][] inputs = new Integer[][] {
             {3, 100},
