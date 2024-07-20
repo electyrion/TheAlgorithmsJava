@@ -1,8 +1,28 @@
 package com.thealgorithms.leetcode.matrix;
 
 public class FindValidMatrixGivenRowAndColumnSums {
-    // 7ms
+    // 1ms
     public int[][] restoreMatrix(int[] rowSum, int[] colSum) {
+        int m = rowSum.length;
+        int n = colSum.length;
+
+        int[][] matrix = new int[m][n];
+        int i = 0, j = 0;
+
+        while (i < m && j < n) {
+            matrix[i][j] = Math.min(rowSum[i], colSum[j]);
+            
+            rowSum[i] -= matrix[i][j];
+            colSum[j] -= matrix[i][j];
+
+            if (rowSum[i] == 0) i++;
+            else j++;
+        }
+
+        return matrix;
+    }
+
+    public int[][] restoreMatrix_7ms(int[] rowSum, int[] colSum) {
         int[][] matrix = new int[rowSum.length][colSum.length];
         for (int i = 0; i < rowSum.length; i++) {
             for (int j = 0; j < colSum.length; j++) {
