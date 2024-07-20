@@ -3,6 +3,7 @@ package com.thealgorithms.ciphers;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
+
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
 import javax.crypto.IllegalBlockSizeException;
@@ -38,7 +39,7 @@ public final class AESEncryption {
         System.out.println("Original Text:" + plainText);
         System.out.println("AES Key (Hex Form):" + bytesToHex(secKey.getEncoded()));
         System.out.println("Encrypted Text (Hex Form):" + bytesToHex(cipherText));
-        System.out.println("Descrypted Text:" + decryptedText);
+        System.out.println("Decrypted Text:" + decryptedText);
     }
 
     /**
@@ -46,7 +47,7 @@ public final class AESEncryption {
      * safely stored.
      *
      * @return secKey (Secret key that we encrypt using it)
-     * @throws NoSuchAlgorithmException (from KeyGenrator)
+     * @throws NoSuchAlgorithmException (from KeyGenerator)
      */
     public static SecretKey getSecretEncryptionKey() throws NoSuchAlgorithmException {
         KeyGenerator aesKeyGenerator = KeyGenerator.getInstance("AES");

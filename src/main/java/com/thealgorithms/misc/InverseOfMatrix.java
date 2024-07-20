@@ -16,27 +16,27 @@ public final class InverseOfMatrix {
     }
 
     public static void main(String[] argv) {
-        Scanner input = new Scanner(System.in);
-        System.out.println("Enter the matrix size (Square matrix only): ");
-        int n = input.nextInt();
-        double[][] a = new double[n][n];
-        System.out.println("Enter the elements of matrix: ");
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                a[i][j] = input.nextDouble();
+        try (Scanner input = new Scanner(System.in)) {
+            System.out.println("Enter the matrix size (Square matrix only): ");
+            int n = input.nextInt();
+            double[][] a = new double[n][n];
+            System.out.println("Enter the elements of matrix: ");
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < n; j++) {
+                    a[i][j] = input.nextDouble();
+                }
             }
-        }
-
-        double[][] d = invert(a);
-        System.out.println();
-        System.out.println("The inverse is: ");
-        for (int i = 0; i < n; ++i) {
-            for (int j = 0; j < n; ++j) {
-                System.out.print(d[i][j] + "  ");
-            }
+            
+            double[][] d = invert(a);
             System.out.println();
+            System.out.println("The inverse is: ");
+            for (int i = 0; i < n; ++i) {
+                for (int j = 0; j < n; ++j) {
+                    System.out.print(d[i][j] + "  ");
+                }
+                System.out.println();
+            }
         }
-        input.close();
     }
 
     public static double[][] invert(double[][] a) {

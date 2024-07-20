@@ -174,16 +174,16 @@ final class BoruvkaAlgorithm {
      * @param y          index of the second subset
      */
     static void union(Component[] components, final int x, final int y) {
-        final int xroot = find(components, x);
-        final int yroot = find(components, y);
+        final int xRoot = find(components, x);
+        final int yRoot = find(components, y);
 
-        if (components[xroot].rank < components[yroot].rank) {
-            components[xroot].parent = yroot;
-        } else if (components[xroot].rank > components[yroot].rank) {
-            components[yroot].parent = xroot;
+        if (components[xRoot].rank < components[yRoot].rank) {
+            components[xRoot].parent = yRoot;
+        } else if (components[xRoot].rank > components[yRoot].rank) {
+            components[yRoot].parent = xRoot;
         } else {
-            components[yroot].parent = xroot;
-            components[xroot].rank++;
+            components[yRoot].parent = xRoot;
+            components[xRoot].rank++;
         }
     }
 

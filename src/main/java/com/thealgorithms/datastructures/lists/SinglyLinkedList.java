@@ -33,7 +33,7 @@ public class SinglyLinkedList implements Iterable<Integer> {
      * @param head the head node of list
      * @param size the size of list
      */
-    public SinglyLinkedList(Node head, int size) {
+    SinglyLinkedList(Node head, int size) {
         this.head = head;
         this.size = size;
     }
@@ -61,7 +61,7 @@ public class SinglyLinkedList implements Iterable<Integer> {
      * If the length of the list is even then return item number length/2
      * @return middle node of the list
      */
-    public Node middle() {
+    Node middle() {
         if (head == null) {
             return null;
         }
@@ -126,7 +126,7 @@ public class SinglyLinkedList implements Iterable<Integer> {
      * Reverse a singly linked list[Iterative] from a given node till the end
      *
      */
-    public Node reverseListIter(Node node) {
+    Node reverseListIter(Node node) {
         Node prev = null;
         Node curr = node;
 
@@ -149,7 +149,7 @@ public class SinglyLinkedList implements Iterable<Integer> {
      * Reverse a singly linked list[Recursive] from a given node till the end
      *
      */
-    public Node reverseListRec(Node head) {
+    Node reverseListRec(Node head) {
         if (head == null || head.next == null) {
             return head;
         }
@@ -198,7 +198,7 @@ public class SinglyLinkedList implements Iterable<Integer> {
      *
      * @return head of the list.
      */
-    public Node getHead() {
+    Node getHead() {
         return head;
     }
 
@@ -206,7 +206,7 @@ public class SinglyLinkedList implements Iterable<Integer> {
      * Set head of the list.
      *
      */
-    public void setHead(Node head) {
+    void setHead(Node head) {
         this.head = head;
     }
 
@@ -215,10 +215,12 @@ public class SinglyLinkedList implements Iterable<Integer> {
      *
      * @return count of the list
      */
-    @SuppressWarnings("unused")
     public int count() {
         int count = 0;
-        for (final var element : this) {
+        // for (final var element : this) {
+        //     ++count;
+        // }
+        for (int i = 0; i < size; i++) {
             ++count;
         }
         return count;
@@ -264,7 +266,7 @@ public class SinglyLinkedList implements Iterable<Integer> {
                 }
                 // skip all duplicates
                 pred.next = newHead.next;
-                newHead = null;
+                // newHead = null;
                 // otherwise, move predecessor
             }
             // move forward

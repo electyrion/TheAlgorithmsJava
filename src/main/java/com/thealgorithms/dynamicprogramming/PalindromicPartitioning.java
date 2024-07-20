@@ -21,7 +21,7 @@ public final class PalindromicPartitioning {
     private PalindromicPartitioning() {
     }
 
-    public static int minimalpartitions(String word) {
+    public static int minimalPartitions(String word) {
         int len = word.length();
         /* We Make two arrays to create a bottom-up solution.
            minCuts[i] = Minimum number of cuts needed for palindrome partitioning of substring
@@ -78,13 +78,13 @@ public final class PalindromicPartitioning {
     }
 
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        String word;
-        System.out.println("Enter the First String");
-        word = input.nextLine();
-        // ans stores the final minimal cut count needed for partitioning
-        int ans = minimalpartitions(word);
-        System.out.println("The minimum cuts needed to partition \"" + word + "\" into palindromes is " + ans);
-        input.close();
+        try (Scanner input = new Scanner(System.in)) {
+            String word;
+            System.out.println("Enter the First String");
+            word = input.nextLine();
+            // ans stores the final minimal cut count needed for partitioning
+            int ans = minimalPartitions(word);
+            System.out.println("The minimum cuts needed to partition \"" + word + "\" into palindromes is " + ans);
+        }
     }
 }

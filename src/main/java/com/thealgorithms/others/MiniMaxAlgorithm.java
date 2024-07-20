@@ -30,18 +30,18 @@ public class MiniMaxAlgorithm {
     }
 
     public static void main(String[] args) {
-        MiniMaxAlgorithm miniMaxAlgorith = new MiniMaxAlgorithm();
+        MiniMaxAlgorithm miniMaxAlgorithm = new MiniMaxAlgorithm();
         boolean isMaximizer = true; // Specifies the player that goes first.
         boolean verbose = true; // True to show each players choices.
         int bestScore;
 
-        bestScore = miniMaxAlgorith.miniMax(0, isMaximizer, 0, verbose);
+        bestScore = miniMaxAlgorithm.miniMax(0, isMaximizer, 0, verbose);
 
         if (verbose) {
             System.out.println();
         }
 
-        System.out.println(Arrays.toString(miniMaxAlgorith.getScores()));
+        System.out.println(Arrays.toString(miniMaxAlgorithm.getScores()));
         System.out.println("The best score for " + (isMaximizer ? "Maximizer" : "Minimizer") + " is " + bestScore);
     }
 
@@ -75,7 +75,7 @@ public class MiniMaxAlgorithm {
         }
 
         // Leaf nodes can be sequentially inspected by
-        // recurssively multiplying (0 * 2) and ((0 * 2) + 1):
+        // recursively multiplying (0 * 2) and ((0 * 2) + 1):
         // (0 x 2) = 0; ((0 x 2) + 1) = 1
         // (1 x 2) = 2; ((1 x 2) + 1) = 3
         // (2 x 2) = 4; ((2 x 2) + 1) = 5 ...
@@ -87,9 +87,9 @@ public class MiniMaxAlgorithm {
     }
 
     /**
-     * Returns an array of random numbers which lenght is a power of 2.
+     * Returns an array of random numbers which length is a power of 2.
      *
-     * @param size The power of 2 that will determine the lenght of the array.
+     * @param size The power of 2 that will determine the length of the array.
      * @param maxScore The maximum possible score.
      * @return An array of random numbers.
      */

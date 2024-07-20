@@ -56,13 +56,13 @@ We can observe that this graph has the same SCC as that of original graph.
 public class Kosaraju {
 
     // Sort edges according to lowest finish time
-    Stack<Integer> stack = new Stack<Integer>();
+    Stack<Integer> stack = new Stack<>();
 
     // Store each component
     private List<Integer> scc = new ArrayList<>();
 
     // All the strongly connected components
-    private List<List<Integer>> sccsList = new ArrayList<>();
+    private final List<List<Integer>> sccsList = new ArrayList<>();
 
     /**
      *
@@ -123,9 +123,9 @@ public class Kosaraju {
     // Dfs to store the nodes in order of lowest finish time
     private void dfs(int node, int[] vis, List<List<Integer>> list) {
         vis[node] = 1;
-        for (Integer neighbour : list.get(node)) {
-            if (vis[neighbour] == 0) {
-                dfs(neighbour, vis, list);
+        for (Integer neighbor : list.get(node)) {
+            if (vis[neighbor] == 0) {
+                dfs(neighbor, vis, list);
             }
         }
         stack.push(node);
@@ -134,9 +134,9 @@ public class Kosaraju {
     // Dfs to find all the nodes of each strongly connected component
     private void dfs2(int node, int[] vis, List<List<Integer>> list) {
         vis[node] = 1;
-        for (Integer neighbour : list.get(node)) {
-            if (vis[neighbour] == 0) {
-                dfs2(neighbour, vis, list);
+        for (Integer neighbor : list.get(node)) {
+            if (vis[neighbor] == 0) {
+                dfs2(neighbor, vis, list);
             }
         }
         scc.add(node);

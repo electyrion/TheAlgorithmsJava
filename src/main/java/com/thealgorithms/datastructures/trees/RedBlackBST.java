@@ -26,7 +26,7 @@ public class RedBlackBST {
     private final Node nil = new Node(-1);
     private Node root = nil;
 
-    public void printTree(Node node) {
+    void printTree(Node node) {
         if (node == nil) {
             return;
         }
@@ -35,7 +35,7 @@ public class RedBlackBST {
         printTree(node.right);
     }
 
-    public void printTreepre(Node node) {
+    void printTreepre(Node node) {
         if (node == nil) {
             return;
         }
@@ -95,7 +95,7 @@ public class RedBlackBST {
 
     private void fixTree(Node node) {
         while (node.p.color == RED) {
-            Node y = nil;
+            Node y;
             if (node.p == node.p.p.left) {
                 y = node.p.p.right;
 
@@ -298,42 +298,42 @@ public class RedBlackBST {
     }
 
     public void insertDemo() {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Add items");
-
-        int item;
-        Node node;
-
-        item = scan.nextInt();
-        while (item != -999) {
-            node = new Node(item);
-            insert(node);
+        try (Scanner scan = new Scanner(System.in)) {
+            System.out.println("Add items");
+            
+            int item;
+            Node node;
+            
             item = scan.nextInt();
+            while (item != -999) {
+                node = new Node(item);
+                insert(node);
+                item = scan.nextInt();
+            }
+            printTree(root);
+            System.out.println("Pre order");
+            printTreepre(root);
         }
-        printTree(root);
-        System.out.println("Pre order");
-        printTreepre(root);
-        scan.close();
     }
 
     public void deleteDemo() {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Delete items");
-        int item;
-        Node node;
-        item = scan.nextInt();
-        node = new Node(item);
-        System.out.print("Deleting item " + item);
-        if (delete(node)) {
-            System.out.print(": deleted!");
-        } else {
-            System.out.print(": does not exist!");
+        try (Scanner scan = new Scanner(System.in)) {
+            System.out.println("Delete items");
+            int item;
+            Node node;
+            item = scan.nextInt();
+            node = new Node(item);
+            System.out.print("Deleting item " + item);
+            if (delete(node)) {
+                System.out.print(": deleted!");
+            } else {
+                System.out.print(": does not exist!");
+            }
+            
+            System.out.println();
+            printTree(root);
+            System.out.println("Pre order");
+            printTreepre(root);
         }
-
-        System.out.println();
-        printTree(root);
-        System.out.println("Pre order");
-        printTreepre(root);
-        scan.close();
     }
 }

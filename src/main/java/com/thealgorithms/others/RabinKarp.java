@@ -31,9 +31,9 @@ public final class RabinKarp {
         int n = text.length();
         int t = 0;
         int p = 0;
-        int h = 1;
-        int j = 0;
-        int i = 0;
+        int h;
+        int j;
+        int i;
 
         h = (int) Math.pow(ALPHABET_SIZE, m - 1) % q;
 

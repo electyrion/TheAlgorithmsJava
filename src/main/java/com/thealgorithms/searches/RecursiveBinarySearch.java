@@ -18,11 +18,11 @@ public class RecursiveBinarySearch<T extends Comparable<T>> extends SearchAlgori
     @Override
     public int find(T[] arr, T target) {
         // Call the recursive binary search function
-        return binsear(arr, 0, arr.length - 1, target);
+        return binsearch(arr, 0, arr.length - 1, target);
     }
 
     // Recursive binary search function
-    public int binsear(T[] arr, int left, int right, T target) {
+    public int binsearch(T[] arr, int left, int right, T target) {
         if (right >= left) {
             int mid = left + (right - left) / 2;
 
@@ -36,11 +36,11 @@ public class RecursiveBinarySearch<T extends Comparable<T>> extends SearchAlgori
 
             // If the element is greater than the target, search in the left subarray
             if (comparison > 0) {
-                return binsear(arr, left, mid - 1, target);
+                return binsearch(arr, left, mid - 1, target);
             }
 
             // Otherwise, search in the right subarray
-            return binsear(arr, mid + 1, right, target);
+            return binsearch(arr, mid + 1, right, target);
         }
 
         // Element is not present in the array

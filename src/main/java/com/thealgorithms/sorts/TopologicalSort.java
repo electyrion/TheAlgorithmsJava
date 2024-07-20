@@ -89,7 +89,7 @@ public final class TopologicalSort {
      *
      * Performed in Θ(V + E) time
      * */
-    public static LinkedList<String> sort(Graph graph) {
+    protected static LinkedList<String> sort(Graph graph) {
         LinkedList<String> list = new LinkedList<>();
         graph.adj.forEach((name, vertex) -> {
             if (vertex.color == Color.WHITE) {

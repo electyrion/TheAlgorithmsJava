@@ -8,7 +8,8 @@ public final class Gaussian {
 
     public static ArrayList<Double> gaussian(int matSize, ArrayList<Double> matrix) {
         int i;
-        int j = 0;
+        // int j = 0;
+        int j;
 
         double[][] mat = new double[matSize + 1][matSize + 1];
         double[][] x = new double[matSize][matSize + 1];
@@ -26,7 +27,7 @@ public final class Gaussian {
 
     // Perform Gaussian elimination
     public static double[][] gaussianElimination(int matSize, int i, double[][] mat) {
-        int step = 0;
+        int step;
         for (step = 0; step < matSize - 1; step++) {
             for (i = step; i < matSize - 1; i++) {
                 double a = (mat[i + 1][step] / mat[step][step]);
@@ -41,7 +42,7 @@ public final class Gaussian {
 
     // calculate the x_1, x_2, ... values of the gaussian and save it in an arraylist.
     public static ArrayList<Double> valueOfGaussian(int matSize, double[][] x, double[][] mat) {
-        ArrayList<Double> answerArray = new ArrayList<Double>();
+        ArrayList<Double> answerArray = new ArrayList<>();
         int i;
         int j;
 

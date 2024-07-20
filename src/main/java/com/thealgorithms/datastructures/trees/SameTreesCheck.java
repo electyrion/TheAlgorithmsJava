@@ -35,7 +35,7 @@ import java.util.Deque;
 public final class SameTreesCheck {
     private SameTreesCheck() {
     }
-    public static boolean check(BinaryTree.Node p, BinaryTree.Node q) {
+    protected static boolean check(BinaryTree.Node p, BinaryTree.Node q) {
         if (p == null && q == null) {
             return true;
         }

@@ -47,7 +47,7 @@ public final class Fibonacci {
     }
 
     /**
-     * Calculates the fibonacci number using matrix exponentiaition technique
+     * Calculates the fibonacci number using matrix exponentiation technique
      *
      * @param n The input n for which we have to determine the fibonacci number
      * Outputs the nth * fibonacci number
@@ -68,11 +68,11 @@ public final class Fibonacci {
     }
 
     public static void main(String[] args) {
-        // Returns [0, 1, 1, 2, 3, 5 ..] for n = [0, 1, 2, 3, 4, 5.. ]
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int[][] result = matrixMultiplication(fib(n), BASE_FIB_NUMBERS);
-        System.out.println("Fib(" + n + ") = " + result[1][0]);
-        sc.close();
+        try ( // Returns [0, 1, 1, 2, 3, 5 ..] for n = [0, 1, 2, 3, 4, 5.. ]
+                Scanner sc = new Scanner(System.in)) {
+            int n = sc.nextInt();
+            int[][] result = matrixMultiplication(fib(n), BASE_FIB_NUMBERS);
+            System.out.println("Fib(" + n + ") = " + result[1][0]);
+        }
     }
 }

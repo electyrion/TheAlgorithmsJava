@@ -30,7 +30,7 @@ public class BSTIterative {
         root = null;
     }
 
-    public Node getRoot() {
+    Node getRoot() {
         return root;
     }
 

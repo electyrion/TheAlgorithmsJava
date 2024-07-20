@@ -11,7 +11,7 @@ public class LFUCache<K, V> {
 
     private class Node {
 
-        private K key;
+        private final K key;
         private V value;
         private int frequency;
         private Node previous;
@@ -27,7 +27,7 @@ public class LFUCache<K, V> {
     private Node head;
     private Node tail;
     private Map<K, Node> map = null;
-    private Integer capacity;
+    private final Integer capacity;
     private static final int DEFAULT_CAPACITY = 100;
 
     public LFUCache() {

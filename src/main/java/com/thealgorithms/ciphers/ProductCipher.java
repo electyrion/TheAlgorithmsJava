@@ -51,7 +51,7 @@ final class ProductCipher {
 
             // Transposition decryption
             n = transpositionOutput.length() / n;
-            StringBuffer transpositionPlaintext = new StringBuffer();
+            StringBuilder transpositionPlaintext = new StringBuilder();
             for (int i = 0; i < n; i++) {
                 for (int j = 0; j < transpositionOutput.length() / n; j++) {
                     char c = transpositionOutput.charAt(i + (j * n));

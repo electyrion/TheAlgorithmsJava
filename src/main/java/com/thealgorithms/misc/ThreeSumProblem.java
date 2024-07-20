@@ -13,25 +13,25 @@ import java.util.Set;
 public class ThreeSumProblem {
 
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        System.out.print("Enter the target sum ");
-        int ts = scan.nextInt();
-        System.out.print("Enter the number of elements in the array ");
-        int n = scan.nextInt();
-        System.out.println("Enter all your array elements:");
-        int[] arr = new int[n];
-        for (int i = 0; i < n; i++) {
-            arr[i] = scan.nextInt();
+        try (Scanner scan = new Scanner(System.in)) {
+            System.out.print("Enter the target sum ");
+            int ts = scan.nextInt();
+            System.out.print("Enter the number of elements in the array ");
+            int n = scan.nextInt();
+            System.out.println("Enter all your array elements:");
+            int[] arr = new int[n];
+            for (int i = 0; i < n; i++) {
+                arr[i] = scan.nextInt();
+            }
+            ThreeSumProblem th = new ThreeSumProblem();
+            System.out.println("Brute Force Approach\n" + (th.bruteForce(arr, ts)) + "\n");
+            System.out.println("Two Pointer Approach\n" + (th.twoPointer(arr, ts)) + "\n");
+            System.out.println("Hashmap Approach\n" + (th.hashMap(arr, ts)));
         }
-        ThreeSumProblem th = new ThreeSumProblem();
-        System.out.println("Brute Force Approach\n" + (th.bruteForce(arr, ts)) + "\n");
-        System.out.println("Two Pointer Approach\n" + (th.twoPointer(arr, ts)) + "\n");
-        System.out.println("Hashmap Approach\n" + (th.hashMap(arr, ts)));
-        scan.close();
     }
 
     public List<List<Integer>> bruteForce(int[] nums, int target) {
-        List<List<Integer>> arr = new ArrayList<List<Integer>>();
+        List<List<Integer>> arr = new ArrayList<>();
 
         for (int i = 0; i < nums.length; i++) {
             for (int j = i + 1; j < nums.length; j++) {
@@ -47,15 +47,17 @@ public class ThreeSumProblem {
                 }
             }
         }
-        arr = new ArrayList<List<Integer>>(new LinkedHashSet<List<Integer>>(arr));
+        arr = new ArrayList<>(new LinkedHashSet<>(arr));
         return arr;
     }
 
     public List<List<Integer>> twoPointer(int[] nums, int target) {
         Arrays.sort(nums);
-        List<List<Integer>> arr = new ArrayList<List<Integer>>();
-        int start = 0;
-        int end = 0;
+        List<List<Integer>> arr = new ArrayList<>();
+        // int start = 0;
+        // int end = 0;
+        int start;
+        int end;
         int i = 0;
         while (i < nums.length - 1) {
             start = i + 1;
@@ -77,8 +79,8 @@ public class ThreeSumProblem {
             }
             i++;
         }
-        Set<List<Integer>> set = new LinkedHashSet<List<Integer>>(arr);
-        return new ArrayList<List<Integer>>(set);
+        Set<List<Integer>> set = new LinkedHashSet<>(arr);
+        return new ArrayList<>(set);
     }
 
     public List<List<Integer>> hashMap(int[] nums, int target) {

@@ -20,7 +20,7 @@ public final class Damm {
 
     /**
      * Weakly totally anti-symmetric quasigroup of order 10. This table is not
-     * the only possible realisation of weak totally anti-symmetric quasigroup
+     * the only possible realization of weak totally anti-symmetric quasigroup
      * but the most common one (taken from Damm doctoral dissertation). All
      * zeros lay on the diagonal because it simplifies the check digit
      * calculation.

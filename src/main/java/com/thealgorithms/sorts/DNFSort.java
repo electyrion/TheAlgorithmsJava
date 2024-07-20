@@ -13,26 +13,23 @@ public final class DNFSort {
         int temp;
         while (mid <= high) {
             switch (a[mid]) {
-            case 0:
+            case 0 -> {
                 temp = a[low];
                 a[low] = a[mid];
                 a[mid] = temp;
                 low++;
                 mid++;
-                break;
+                }
 
-            case 1:
-                mid++;
-                break;
-            case 2:
+            case 1 -> mid++;
+            case 2 -> {
                 temp = a[mid];
                 a[mid] = a[high];
                 a[high] = temp;
                 high--;
-                break;
+                }
 
-            default:
-                throw new IllegalArgumentException("Unexpected value: " + a[mid]);
+            default -> throw new IllegalArgumentException("Unexpected value: " + a[mid]);
             }
         }
     }
@@ -50,7 +47,7 @@ public final class DNFSort {
         int[] arr = {0, 1, 1, 0, 1, 2, 1, 2, 0, 0, 0, 1};
         int arrSize = arr.length;
         sort012(arr, arrSize);
-        System.out.println("Array after seggregation ");
+        System.out.println("Array after segregation ");
         printArray(arr, arrSize);
     }
 }

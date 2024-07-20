@@ -102,7 +102,7 @@ public class MaxHeap implements Heap {
             try {
                 throw new EmptyHeapException("Attempt to delete an element from an empty heap");
             } catch (EmptyHeapException e) {
-                e.printStackTrace();
+                System.out.println(e.getMessage());
             }
         }
         if ((elementIndex > maxHeap.size()) || (elementIndex <= 0)) {

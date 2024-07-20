@@ -26,7 +26,7 @@ public final class LongestPalindromicSubsequence {
     }
 
     private static String recursiveLPS(String original, String reverse) {
-        String bestResult = "";
+        String bestResult;
 
         // no more chars, then return empty
         if (original.length() == 0 || reverse.length() == 0) {

@@ -11,7 +11,7 @@ public class NodeStack<Item> {
      * Entry point for the program.
      */
     public static void main(String[] args) {
-        NodeStack<Integer> stack = new NodeStack<Integer>();
+        NodeStack<Integer> stack = new NodeStack<>();
 
         stack.push(3);
         stack.push(4);
@@ -62,7 +62,7 @@ public class NodeStack<Item> {
      * @param item : value to be put on the stack.
      */
     public void push(Item item) {
-        NodeStack<Item> newNs = new NodeStack<Item>(item);
+        NodeStack<Item> newNs = new NodeStack<>(item);
 
         if (this.isEmpty()) {
             NodeStack.setHead(new NodeStack<>(item));
@@ -139,6 +139,7 @@ public class NodeStack<Item> {
     }
 
     private void setNext(NodeStack<?> next) {
+        this.previous = next;
     }
 
     private NodeStack<?> getPrevious() {

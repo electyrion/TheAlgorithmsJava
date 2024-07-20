@@ -28,13 +28,13 @@ import java.util.List;
 public final class PreOrderTraversal {
     private PreOrderTraversal() {
     }
-    public static List<Integer> recursivePreOrder(BinaryTree.Node root) {
+    protected static List<Integer> recursivePreOrder(BinaryTree.Node root) {
         List<Integer> result = new ArrayList<>();
         recursivePreOrder(root, result);
         return result;
     }
 
-    public static List<Integer> iterativePreOrder(BinaryTree.Node root) {
+    protected static List<Integer> iterativePreOrder(BinaryTree.Node root) {
         List<Integer> result = new ArrayList<>();
         if (root == null) {
             return result;

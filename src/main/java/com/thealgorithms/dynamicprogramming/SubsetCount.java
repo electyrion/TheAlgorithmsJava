@@ -34,12 +34,12 @@ public final class SubsetCount {
         }
         for (int t = 1; t <= target; t++) {
             for (int idx = 1; idx < n; idx++) {
-                int notpick = dp[idx - 1][t];
+                int notPick = dp[idx - 1][t];
                 int pick = 0;
                 if (arr[idx] <= t) {
                     pick += dp[idx - 1][target - t];
                 }
-                dp[idx][target] = pick + notpick;
+                dp[idx][target] = pick + notPick;
             }
         }
         return dp[n - 1][target];

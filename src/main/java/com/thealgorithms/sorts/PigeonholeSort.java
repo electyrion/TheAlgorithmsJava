@@ -1,6 +1,7 @@
 package com.thealgorithms.sorts;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class PigeonholeSort {
 
@@ -25,9 +26,10 @@ public class PigeonholeSort {
             pigeonHole[k] = new ArrayList<>();
         }
 
-        for (int t : array) {
-            pigeonHole[t].add(t);
-        }
+        // for (int t : array) {
+        //     pigeonHole[t].add(t);
+        // }
+        pigeonHole[numOfPigeonholes].addAll(Arrays.asList(array));
 
         int k = 0;
         for (ArrayList<Integer> ph : pigeonHole) {

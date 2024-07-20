@@ -55,7 +55,7 @@ public class TarjansAlgorithm {
     // Timer for tracking lowtime and insertion time
     private int time;
 
-    private final List<List<Integer>> sccList = new ArrayList<List<Integer>>();
+    private final List<List<Integer>> sccList = new ArrayList<>();
 
     public List<List<Integer>> stronglyConnectedComponents(int v, List<List<Integer>> graph) {
 
@@ -76,7 +76,7 @@ public class TarjansAlgorithm {
         boolean[] isInStack = new boolean[v];
 
         // Store nodes during DFS
-        Stack<Integer> st = new Stack<Integer>();
+        Stack<Integer> st = new Stack<>();
 
         for (int i = 0; i < v; i++) {
             if (insertionTime[i] == -1) {

@@ -8,8 +8,8 @@ import java.util.PriorityQueue;
  */
 public abstract class MedianOfRunningArray<T extends Number & Comparable<T>> {
 
-    private PriorityQueue<T> maxHeap;
-    private PriorityQueue<T> minHeap;
+    private final PriorityQueue<T> maxHeap;
+    private final PriorityQueue<T> minHeap;
 
     // Constructor
     public MedianOfRunningArray() {

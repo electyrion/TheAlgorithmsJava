@@ -49,6 +49,6 @@ public final class SubsequenceFinder {
         backtrack(sequence, currentSubsequence, index + 1, allSubSequences);
         currentSubsequence.add(sequence.get(index));
         backtrack(sequence, currentSubsequence, index + 1, allSubSequences);
-        currentSubsequence.removeLast();
+        currentSubsequence.remove(currentSubsequence.size() - 1);
     }
 }

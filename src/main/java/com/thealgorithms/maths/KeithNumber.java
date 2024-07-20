@@ -48,13 +48,13 @@ final class KeithNumber {
 
     // driver code
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int n = in.nextInt();
-        if (isKeith(n)) {
-            System.out.println("Yes, the given number is a Keith number.");
-        } else {
-            System.out.println("No, the given number is not a Keith number.");
+        try (Scanner in = new Scanner(System.in)) {
+            int n = in.nextInt();
+            if (isKeith(n)) {
+                System.out.println("Yes, the given number is a Keith number.");
+            } else {
+                System.out.println("No, the given number is not a Keith number.");
+            }
         }
-        in.close();
     }
 }

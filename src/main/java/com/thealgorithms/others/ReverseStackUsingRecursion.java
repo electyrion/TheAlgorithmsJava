@@ -8,7 +8,7 @@ public final class ReverseStackUsingRecursion {
     }
 
     // Stack
-    private static Stack<Integer> stack = new Stack<>();
+    private static final Stack<Integer> stack = new Stack<>();
 
     // Main function
     public static void main(String[] args) {
@@ -40,22 +40,22 @@ public final class ReverseStackUsingRecursion {
         }
         /* All items are stored in call stack until we reach the end*/
 
-        int temptop = stack.peek();
+        int tempTop = stack.peek();
         stack.pop();
         reverseUsingRecursion(stack); // Recursion call
-        insertAtEnd(temptop); // Insert items held in call stack one by one into stack
+        insertAtEnd(tempTop); // Insert items held in call stack one by one into stack
     }
 
     // Function used to insert element at the end of stack
-    private static void insertAtEnd(int temptop) {
+    private static void insertAtEnd(int tempTop) {
         if (stack.isEmpty()) {
-            stack.push(temptop); // If stack is empty push the element
+            stack.push(tempTop); // If stack is empty push the element
         } else {
             int temp = stack.peek();
             /* All the items are stored in call stack until we reach end*/
             stack.pop();
 
-            insertAtEnd(temptop); // Recursive call
+            insertAtEnd(tempTop); // Recursive call
 
             stack.push(temp);
         }

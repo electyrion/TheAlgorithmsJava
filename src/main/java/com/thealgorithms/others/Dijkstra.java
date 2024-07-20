@@ -23,19 +23,19 @@ public final class Dijkstra {
     private Dijkstra() {
     }
 
-    private static final Graph.Edge[] GRAPH = {
+    private static final neighboring.Edge[] GRAPH = {
         // Distance from node "a" to node "b" is 7.
-        // In the current Graph there is no way to move the other way (e,g, from "b" to "a"),
+        // In the current neighboring there is no way to move the other way (e,g, from "b" to "a"),
         // a new edge would be needed for that
-        new Graph.Edge("a", "b", 7),
-        new Graph.Edge("a", "c", 9),
-        new Graph.Edge("a", "f", 14),
-        new Graph.Edge("b", "c", 10),
-        new Graph.Edge("b", "d", 15),
-        new Graph.Edge("c", "d", 11),
-        new Graph.Edge("c", "f", 2),
-        new Graph.Edge("d", "e", 6),
-        new Graph.Edge("e", "f", 9),
+        new neighboring.Edge("a", "b", 7),
+        new neighboring.Edge("a", "c", 9),
+        new neighboring.Edge("a", "f", 14),
+        new neighboring.Edge("b", "c", 10),
+        new neighboring.Edge("b", "d", 15),
+        new neighboring.Edge("c", "d", 11),
+        new neighboring.Edge("c", "f", 2),
+        new neighboring.Edge("d", "e", 6),
+        new neighboring.Edge("e", "f", 9),
     };
     private static final String START = "a";
     private static final String END = "e";
@@ -44,21 +44,21 @@ public final class Dijkstra {
      * main function Will run the code with "GRAPH" that was defined above.
      */
     public static void main(String[] args) {
-        Graph g = new Graph(GRAPH);
+        neighboring g = new neighboring(GRAPH);
         g.dijkstra(START);
         g.printPath(END);
         // g.printAllPaths();
     }
 }
 
-class Graph {
+class neighboring {
 
     // mapping of vertex names to Vertex objects, built from a set of Edges
 
     private final Map<String, Vertex> graph;
 
     /**
-     * One edge of the graph (only used by Graph constructor)
+     * One edge of the graph (only used by neighboring constructor)
      */
     public static class Edge {
 
@@ -74,7 +74,7 @@ class Graph {
     }
 
     /**
-     * One vertex of the graph, complete with mappings to neighbouring vertices
+     * One vertex of the graph, complete with mappings to neighboring vertices
      */
     public static class Vertex implements Comparable<Vertex> {
 
@@ -82,7 +82,7 @@ class Graph {
         // MAX_VALUE assumed to be infinity
         public int dist = Integer.MAX_VALUE;
         public Vertex previous = null;
-        public final Map<Vertex, Integer> neighbours = new HashMap<>();
+        public final Map<Vertex, Integer> neighbors = new HashMap<>();
 
         Vertex(String name) {
             this.name = name;
@@ -99,6 +99,7 @@ class Graph {
             }
         }
 
+        @Override
         public int compareTo(Vertex other) {
             if (dist == other.dist) {
                 return name.compareTo(other.name);
@@ -130,7 +131,7 @@ class Graph {
             if (previous != null ? !previous.equals(vertex.previous) : vertex.previous != null) {
                 return false;
             }
-            return neighbours != null ? neighbours.equals(vertex.neighbours) : vertex.neighbours == null;
+            return neighbors != null ? neighbors.equals(vertex.neighbors) : vertex.neighbors == null;
         }
 
         @Override
@@ -139,7 +140,7 @@ class Graph {
             result = 31 * result + (name != null ? name.hashCode() : 0);
             result = 31 * result + dist;
             result = 31 * result + (previous != null ? previous.hashCode() : 0);
-            result = 31 * result + (neighbours != null ? neighbours.hashCode() : 0);
+            result = 31 * result + (neighbors != null ? neighbors.hashCode() : 0);
             return result;
         }
 
@@ -152,7 +153,7 @@ class Graph {
     /**
      * Builds a graph from a set of edges
      */
-    Graph(Edge[] edges) {
+    neighboring(Edge[] edges) {
         graph = new HashMap<>(edges.length);
 
         // one pass to find all vertices
@@ -165,9 +166,9 @@ class Graph {
             }
         }
 
-        // another pass to set neighbouring vertices
+        // another pass to set neighboring vertices
         for (Edge e : edges) {
-            graph.get(e.v1).neighbours.put(graph.get(e.v2), e.dist);
+            graph.get(e.v1).neighbors.put(graph.get(e.v2), e.dist);
             // graph.get(e.v2).neighbours.put(graph.get(e.v1), e.dist); // also do this for an
             // undirected graph
         }
@@ -207,12 +208,12 @@ class Graph {
                 break; // we can ignore u (and any other remaining vertices) since they are
                        // unreachable
             }
-            // look at distances to each neighbour
-            for (Map.Entry<Vertex, Integer> a : u.neighbours.entrySet()) {
-                v = a.getKey(); // the neighbour in this iteration
+            // look at distances to each neighbor
+            for (Map.Entry<Vertex, Integer> a : u.neighbors.entrySet()) {
+                v = a.getKey(); // the neighbor in this iteration
 
                 final int alternateDist = u.dist + a.getValue();
-                if (alternateDist < v.dist) { // shorter path to neighbour found
+                if (alternateDist < v.dist) { // shorter path to neighbor found
                     q.remove(v);
                     v.dist = alternateDist;
                     v.previous = u;

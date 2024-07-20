@@ -13,7 +13,7 @@ public final class ClosestPair {
     /**
      * Input data, maximum 10000.
      */
-    private Location[] array;
+    private final Location[] array;
     /**
      * Minimum point coordinate.
      */
@@ -182,7 +182,7 @@ public final class ClosestPair {
 
         double minLeftArea; // Minimum length of left array
         double minRightArea; // Minimum length of right array
-        double minValue; // Minimum lengt
+        double minValue; // Minimum length
 
         minLeftArea = closestPair(leftArray, divideX); // recursive closestPair
         minRightArea = closestPair(rightArray, indexNum - divideX);
@@ -323,8 +323,8 @@ public final class ClosestPair {
 
         System.out.println("Input data");
         System.out.println("Number of points: " + cp.array.length);
-        for (int i = 0; i < cp.array.length; i++) {
-            System.out.println("x: " + cp.array[i].x + ", y: " + cp.array[i].y);
+        for (Location array1 : cp.array) {
+            System.out.println("x: " + array1.x + ", y: " + array1.y);
         }
 
         cp.xQuickSort(cp.array, 0, cp.array.length - 1); // Sorting by x value

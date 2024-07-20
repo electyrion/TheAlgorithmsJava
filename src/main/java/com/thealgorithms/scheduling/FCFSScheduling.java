@@ -1,7 +1,8 @@
 package com.thealgorithms.scheduling;
 
-import com.thealgorithms.devutils.entities.ProcessDetails;
 import java.util.List;
+
+import com.thealgorithms.devutils.entities.ProcessDetails;
 
 /**
  * Non-pre-emptive First Come First Serve scheduling. This can be understood here -
@@ -9,7 +10,7 @@ import java.util.List;
  */
 public class FCFSScheduling {
 
-    private List<ProcessDetails> processes;
+    private final List<ProcessDetails> processes;
 
     FCFSScheduling(final List<ProcessDetails> processes) {
         this.processes = processes;

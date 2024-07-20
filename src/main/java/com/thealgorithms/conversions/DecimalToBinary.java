@@ -28,16 +28,16 @@ final class DecimalToBinary {
         int b = 0;
         int c = 0;
         int d;
-        Scanner input = new Scanner(System.in);
-        System.out.printf("Conventional conversion.%n Enter the decimal number: ");
-        n = input.nextInt();
-        while (n != 0) {
-            d = n % 2;
-            b = b + d * (int) Math.pow(10, c++);
-            n /= 2;
-        } // converting decimal to binary
-        System.out.println("\tBinary number: " + b);
-        input.close();
+        try (Scanner input = new Scanner(System.in)) {
+            System.out.printf("Conventional conversion.%n Enter the decimal number: ");
+            n = input.nextInt();
+            while (n != 0) {
+                d = n % 2;
+                b = b + d * (int) Math.pow(10, c++);
+                n /= 2;
+            } // converting decimal to binary
+            System.out.println("\tBinary number: " + b);
+        }
     }
 
     /**
@@ -49,15 +49,15 @@ final class DecimalToBinary {
         int b = 0;
         int c = 0;
         int d;
-        Scanner input = new Scanner(System.in);
-        System.out.printf("Bitwise conversion.%n Enter the decimal number: ");
-        n = input.nextInt();
-        while (n != 0) {
-            d = (n & 1);
-            b += d * (int) Math.pow(10, c++);
-            n >>= 1;
+        try (Scanner input = new Scanner(System.in)) {
+            System.out.printf("Bitwise conversion.%n Enter the decimal number: ");
+            n = input.nextInt();
+            while (n != 0) {
+                d = (n & 1);
+                b += d * (int) Math.pow(10, c++);
+                n >>= 1;
+            }
+            System.out.println("\tBinary number: " + b);
         }
-        System.out.println("\tBinary number: " + b);
-        input.close();
     }
 }

@@ -23,7 +23,7 @@ public final class DuplicateBrackets {
                 if (st.peek() == '(') {
                     return true;
                 } else {
-                    while (st.size() > 0 && st.peek() != '(') {
+                    while (!st.isEmpty() && st.peek() != '(') {
                         st.pop();
                     }
                     st.pop();

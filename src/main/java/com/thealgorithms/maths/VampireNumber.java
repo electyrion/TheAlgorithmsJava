@@ -25,38 +25,37 @@ public final class VampireNumber {
     }
 
     static void test(int startValue, int stopValue) {
-        int countofRes = 1;
+        int countOfRes = 1;
         StringBuilder res = new StringBuilder();
 
         for (int i = startValue; i <= stopValue; i++) {
             for (int j = i; j <= stopValue; j++) {
                 // System.out.println(i+ " "+ j);
                 if (isVampireNumber(i, j, true)) {
-                    countofRes++;
-                    res.append("" + countofRes + ": = ( " + i + "," + j + " = " + i * j + ")"
-                        + "\n");
+                    countOfRes++;
+                    res.append("").append(countOfRes).append(": = ( ").append(i).append(",").append(j).append(" = ").append(i * j).append(")\n");
                 }
             }
         }
         System.out.println(res);
     }
 
-    static boolean isVampireNumber(int a, int b, boolean noPseudoVamireNumbers) {
-        // this is for pseudoVampireNumbers  pseudovampire number need not be of length n/2 digits
+    static boolean isVampireNumber(int a, int b, boolean noPseudoVampireNumbers) {
+        // this is for pseudoVampireNumbers  pseudoVampire number need not be of length n/2 digits
         // for example 126 = 6 x 21
-        if (noPseudoVamireNumbers) {
+        if (noPseudoVampireNumbers) {
             if (a * 10 <= b || b * 10 <= a) {
                 return false;
             }
         }
 
         String mulDigits = splitIntoDigits(a * b, 0);
-        String faktorDigits = splitIntoDigits(a, b);
+        String factorDigits = splitIntoDigits(a, b);
 
-        return mulDigits.equals(faktorDigits);
+        return mulDigits.equals(factorDigits);
     }
 
-    // methode to Split the numbers to Digits
+    // method to Split the numbers to Digits
     static String splitIntoDigits(int num, int num2) {
         StringBuilder res = new StringBuilder();
 

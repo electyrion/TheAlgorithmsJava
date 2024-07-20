@@ -3,7 +3,7 @@ package com.thealgorithms.others;
 import java.util.Scanner;
 
 /**
- * This file contains an implementation of BANKER'S ALGORITM Wikipedia:
+ * This file contains an implementation of BANKER'S ALGORITHM Wikipedia:
  * https://en.wikipedia.org/wiki/Banker%27s_algorithm
  *
  * The algorithm for finding out whether or not a system is in a safe state can
@@ -113,52 +113,50 @@ public final class BankersAlgorithm {
         int numberOfProcesses;
         int numberOfResources;
 
-        Scanner sc = new Scanner(System.in);
-
-        System.out.println("Enter total number of processes");
-        numberOfProcesses = sc.nextInt();
-
-        System.out.println("Enter total number of resources");
-        numberOfResources = sc.nextInt();
-
-        int[] processes = new int[numberOfProcesses];
-        for (int i = 0; i < numberOfProcesses; i++) {
-            processes[i] = i;
-        }
-
-        System.out.println("--Enter the availability of--");
-
-        int[] availableArray = new int[numberOfResources];
-        for (int i = 0; i < numberOfResources; i++) {
-            System.out.println("resource " + i + ": ");
-            availableArray[i] = sc.nextInt();
-        }
-
-        System.out.println("--Enter the maximum matrix--");
-
-        int[][] maxArray = new int[numberOfProcesses][numberOfResources];
-        for (int i = 0; i < numberOfProcesses; i++) {
-            System.out.println("For process " + i + ": ");
-            for (int j = 0; j < numberOfResources; j++) {
-                System.out.println("Enter the maximum instances of resource " + j);
-                maxArray[i][j] = sc.nextInt();
+        try (Scanner sc = new Scanner(System.in)) {
+            System.out.println("Enter total number of processes");
+            numberOfProcesses = sc.nextInt();
+            
+            System.out.println("Enter total number of resources");
+            numberOfResources = sc.nextInt();
+            
+            int[] processes = new int[numberOfProcesses];
+            for (int i = 0; i < numberOfProcesses; i++) {
+                processes[i] = i;
             }
-        }
-
-        System.out.println("--Enter the allocation matrix--");
-
-        int[][] allocationArray = new int[numberOfProcesses][numberOfResources];
-        for (int i = 0; i < numberOfProcesses; i++) {
-            System.out.println("For process " + i + ": ");
-            for (int j = 0; j < numberOfResources; j++) {
-                System.out.println("Allocated instances of resource " + j);
-                allocationArray[i][j] = sc.nextInt();
+            
+            System.out.println("--Enter the availability of--");
+            
+            int[] availableArray = new int[numberOfResources];
+            for (int i = 0; i < numberOfResources; i++) {
+                System.out.println("resource " + i + ": ");
+                availableArray[i] = sc.nextInt();
             }
+            
+            System.out.println("--Enter the maximum matrix--");
+            
+            int[][] maxArray = new int[numberOfProcesses][numberOfResources];
+            for (int i = 0; i < numberOfProcesses; i++) {
+                System.out.println("For process " + i + ": ");
+                for (int j = 0; j < numberOfResources; j++) {
+                    System.out.println("Enter the maximum instances of resource " + j);
+                    maxArray[i][j] = sc.nextInt();
+                }
+            }
+            
+            System.out.println("--Enter the allocation matrix--");
+            
+            int[][] allocationArray = new int[numberOfProcesses][numberOfResources];
+            for (int i = 0; i < numberOfProcesses; i++) {
+                System.out.println("For process " + i + ": ");
+                for (int j = 0; j < numberOfResources; j++) {
+                    System.out.println("Allocated instances of resource " + j);
+                    allocationArray[i][j] = sc.nextInt();
+                }
+            }
+            
+            checkSafeSystem(processes, availableArray, maxArray, allocationArray, numberOfProcesses, numberOfResources);
         }
-
-        checkSafeSystem(processes, availableArray, maxArray, allocationArray, numberOfProcesses, numberOfResources);
-
-        sc.close();
     }
 }
 /*

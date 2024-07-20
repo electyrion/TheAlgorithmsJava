@@ -26,7 +26,7 @@ public final class VerticalOrderTraversal {
 
     /*Function that receives a root Node and prints the tree
         in Vertical Order.*/
-    public static ArrayList<Integer> verticalTraversal(BinaryTree.Node root) {
+    static ArrayList<Integer> verticalTraversal(BinaryTree.Node root) {
         if (root == null) {
             return new ArrayList<>();
         }

@@ -90,15 +90,15 @@ public class TrieImp {
             try {
                 int t = scan.nextInt();
                 switch (t) {
-                case 1:
+                case 1 -> {
                     word = scan.next();
                     if (isValid(word)) {
                         obj.insert(word);
                     } else {
                         sop("Invalid string: allowed only a-z");
                     }
-                    break;
-                case 2:
+                    }
+                case 2 -> {
                     word = scan.next();
                     boolean resS = false;
                     if (isValid(word)) {
@@ -111,8 +111,8 @@ public class TrieImp {
                     } else {
                         sop("word not found");
                     }
-                    break;
-                case 3:
+                    }
+                case 3 -> {
                     word = scan.next();
                     boolean resD = false;
                     if (isValid(word)) {
@@ -125,14 +125,12 @@ public class TrieImp {
                     } else {
                         sop("word not found");
                     }
-                    break;
-                case 4:
+                    }
+                case 4 -> {
                     sop("Quit successfully");
                     System.exit(1);
-                    break;
-                default:
-                    sop("Input int from 1-4");
-                    break;
+                    }
+                default -> sop("Input int from 1-4");
                 }
             } catch (Exception e) {
                 String badInput = scan.next();

@@ -96,7 +96,7 @@ public class MinHeap implements Heap {
             try {
                 throw new EmptyHeapException("Attempt to delete an element from an empty heap");
             } catch (EmptyHeapException e) {
-                e.printStackTrace();
+                System.out.println(e.getMessage());
             }
         }
         if ((elementIndex > minHeap.size()) || (elementIndex <= 0)) {

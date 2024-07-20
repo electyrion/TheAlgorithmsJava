@@ -17,7 +17,7 @@ import java.util.Scanner;
     from its initial sorted position.
     Eg. For [2,5,6,8,11,12,15,18], 1 rotation gives [5,6,8,11,12,15,18,2], 2 rotations
    [6,8,11,12,15,18,2,5] and so on. Finding the minimum element will take O(N) time but, we can  use
-   Binary Search to find the mimimum element, we can reduce the complexity to O(log N). If we look
+   Binary Search to find the minimum element, we can reduce the complexity to O(log N). If we look
    at the rotated array, to identify the minimum element (say a[i]), we observe that
    a[i-1]>a[i]<a[i+1].
 
@@ -30,15 +30,15 @@ final class HowManyTimesRotated {
     }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int[] a = new int[n];
-        for (int i = 0; i < n; i++) {
-            a[i] = sc.nextInt();
+        try (Scanner sc = new Scanner(System.in)) {
+            int n = sc.nextInt();
+            int[] a = new int[n];
+            for (int i = 0; i < n; i++) {
+                a[i] = sc.nextInt();
+            }
+            
+            System.out.println("The array has been rotated " + rotated(a) + " times");
         }
-
-        System.out.println("The array has been rotated " + rotated(a) + " times");
-        sc.close();
     }
 
     public static int rotated(int[] a) {

@@ -9,7 +9,7 @@ public final class BoundaryFill {
     }
 
     /**
-     * Get the color at the given co-odrinates of a 2D image
+     * Get the color at the given co-ordinates of a 2D image
      *
      * @param image The image to be filled
      * @param xCoordinate The x co-ordinate of which color is to be obtained
@@ -20,7 +20,7 @@ public final class BoundaryFill {
     }
 
     /**
-     * Put the color at the given co-odrinates of a 2D image
+     * Put the color at the given co-ordinates of a 2D image
      *
      * @param image The image to be filed
      * @param xCoordinate The x co-ordinate at which color is to be filled
@@ -59,11 +59,10 @@ public final class BoundaryFill {
      * @param image The image to be printed on the console
      */
     public static void printImageArray(int[][] image) {
-        for (int i = 0; i < image.length; i++) {
+        for (int[] image1 : image) {
             for (int j = 0; j < image[0].length; j++) {
-                System.out.print(image[i][j] + "  ");
+                System.out.print(image1[j] + "  ");
             }
-
             System.out.println();
         }
     }

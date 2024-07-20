@@ -18,15 +18,14 @@ public final class CoinChange {
         Arrays.sort(coins, Comparator.reverseOrder());
 
         ArrayList<Integer> ans = new ArrayList<>(); // List to store selected coins
-
         // Iterate through the coin denominations
-        for (int i = 0; i < coins.length; i++) {
+        for (Integer coin : coins) {
             // Check if the current coin denomination can be used to reduce the remaining amount
-            if (coins[i] <= amount) {
+            if (coin <= amount) {
                 // Repeatedly subtract the coin denomination from the remaining amount
-                while (coins[i] <= amount) {
-                    ans.add(coins[i]); // Add the coin to the list of selected coins
-                    amount -= coins[i]; // Update the remaining amount
+                while (coin <= amount) {
+                    ans.add(coin); // Add the coin to the list of selected coins
+                    amount -= coin; // Update the remaining amount
                 }
             }
         }

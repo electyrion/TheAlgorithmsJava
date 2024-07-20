@@ -48,7 +48,7 @@ public final class Means {
 
     private static void checkIfNotEmpty(final Iterable<Double> numbers) {
         if (!numbers.iterator().hasNext()) {
-            throw new IllegalArgumentException("Emtpy list given for Mean computation.");
+            throw new IllegalArgumentException("Empty list given for Mean computation.");
         }
     }
 }

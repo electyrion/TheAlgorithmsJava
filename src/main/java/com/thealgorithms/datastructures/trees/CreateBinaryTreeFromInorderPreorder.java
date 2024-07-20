@@ -1,8 +1,9 @@
 package com.thealgorithms.datastructures.trees;
 
-import com.thealgorithms.datastructures.trees.BinaryTree.Node;
 import java.util.HashMap;
 import java.util.Map;
+
+import com.thealgorithms.datastructures.trees.BinaryTree.Node;
 
 /**
  * Approach: Naive Solution: Create root node from first value present in
@@ -20,14 +21,14 @@ import java.util.Map;
 public final class CreateBinaryTreeFromInorderPreorder {
     private CreateBinaryTreeFromInorderPreorder() {
     }
-    public static Node createTree(final Integer[] preorder, final Integer[] inorder) {
+    static Node createTree(final Integer[] preorder, final Integer[] inorder) {
         if (preorder == null || inorder == null) {
             return null;
         }
         return createTree(preorder, inorder, 0, 0, inorder.length);
     }
 
-    public static Node createTreeOptimized(final Integer[] preorder, final Integer[] inorder) {
+    static Node createTreeOptimized(final Integer[] preorder, final Integer[] inorder) {
         if (preorder == null || inorder == null) {
             return null;
         }

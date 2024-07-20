@@ -5,7 +5,7 @@ package com.thealgorithms.datastructures.graphs;
 // group of edges with the minimum sum of their weights that connect the whole graph.
 // The graph needs to be connected, because if there are nodes impossible to reach, there are no
 // edges that could connect every node in the graph.
-// KA is a Greedy Algorithm, because edges are analysed based on their weights, that is why a
+// KA is a Greedy Algorithm, because edges are analyzed based on their weights, that is why a
 // Priority Queue is used, to take first those less weighted.
 // This implementations below has some changes compared to conventional ones, but they are explained
 // all along the code.
@@ -19,9 +19,9 @@ public class Kruskal {
     // of vertices
     private static class Edge {
 
-        private int from;
-        private int to;
-        private int weight;
+        private final int from;
+        private final int to;
+        private final int weight;
 
         Edge(int from, int to, int weight) {
             this.from = from;
@@ -70,7 +70,7 @@ public class Kruskal {
     }
 
     @SuppressWarnings("unchecked")
-    public HashSet<Edge>[] kruskal(HashSet<Edge>[] graph) {
+    private HashSet<Edge>[] kruskal(HashSet<Edge>[] graph) {
         int nodes = graph.length;
         int[] captain = new int[nodes];
         // captain of i, stores the set with all the connected nodes to i

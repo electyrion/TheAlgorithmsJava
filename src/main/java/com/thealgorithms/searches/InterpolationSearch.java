@@ -18,7 +18,7 @@ class InterpolationSearch {
 
     /**
      * @param array is a sorted array
-     * @param key is a value what shoulb be found in the array
+     * @param key is a value what should be found in the array
      * @return an index if the array contains the key unless -1
      */
     public int find(int[] array, int key) {

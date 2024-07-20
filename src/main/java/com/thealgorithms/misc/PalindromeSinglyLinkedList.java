@@ -1,6 +1,9 @@
 package com.thealgorithms.misc;
 
+import java.util.Objects;
+
 import com.thealgorithms.datastructures.lists.SinglyLinkedList;
+
 import java.util.Stack;
 
 /**
@@ -23,7 +26,7 @@ public final class PalindromeSinglyLinkedList {
         }
 
         for (final var x : linkedList) {
-            if (x != linkedListValues.pop()) {
+            if (!Objects.equals(x, linkedListValues.pop())) {
                 return false;
             }
         }

@@ -11,7 +11,7 @@ package com.thealgorithms.datastructures.trees;
 public final class CheckBinaryTreeIsValidBST {
     private CheckBinaryTreeIsValidBST() {
     }
-    public static boolean isBST(BinaryTree.Node root) {
+    static boolean isBST(BinaryTree.Node root) {
         return isBSTUtil(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
     }
 

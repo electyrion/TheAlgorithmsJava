@@ -9,18 +9,18 @@ package com.thealgorithms.datastructures.queues;
  * give numbers that are bigger, a higher priority. Queues in theory have no
  * fixed size but when using an array implementation it does.
  * <p>
- * Additional contibutions made by: PuneetTri(https://github.com/PuneetTri)
+ * Additional contributions made by: PuneetTri(https://github.com/PuneetTri)
  */
 class PriorityQueue {
 
     /**
      * The max size of the queue
      */
-    private int maxSize;
+    private final int maxSize;
     /**
      * The array for the queue
      */
-    private int[] queueArray;
+    private final int[] queueArray;
     /**
      * How many items are in the queue
      */
@@ -33,7 +33,7 @@ class PriorityQueue {
     PriorityQueue() {
         /* If capacity is not defined, default size of 11 would be used
          *  capacity=max+1 because we cant access 0th element of PQ, and to
-         *  accomodate (max)th elements we need capacity to be max+1.
+         *  accommodate (max)th elements we need capacity to be max+1.
          *  Parent is at position k, child at position (k*2,k*2+1), if we
          *  use position 0 in our queue, its child would be at:
          *  (0*2, 0*2+1) -> (0,0). This is why we start at position 1
@@ -85,7 +85,7 @@ class PriorityQueue {
     private void sink(int pos) {
         // Check if node's position is that of parent node
         while (2 * pos <= nItems) {
-            int current = 2 * pos; // Jump to the positon of child node
+            int current = 2 * pos; // Jump to the position of child node
             // Compare both the children for the greater one
             if (current < nItems && queueArray[current] < queueArray[current + 1]) {
                 current++;
@@ -127,7 +127,7 @@ class PriorityQueue {
         if (isEmpty()) {
             throw new RuntimeException("Queue is Empty");
         } else {
-            int max = queueArray[1]; // By defintion of our max-heap, value at queueArray[1] pos is
+            int max = queueArray[1]; // By definition of our max-heap, value at queueArray[1] pos is
                                      // the greatest
 
             // Swap max and last element
@@ -175,5 +175,19 @@ class PriorityQueue {
      */
     public int getSize() {
         return nItems;
+    }
+
+    // driver code
+    public static void main(String[] args) {
+        PriorityQueue pq = new PriorityQueue();
+        pq.insert(3);
+        pq.insert(2);
+        pq.insert(1);
+        pq.insert(5);
+        pq.insert(4);
+        System.out.println("Priority Queue: ");
+        while (!pq.isEmpty()) {
+            System.out.println(pq.remove());
+        }
     }
 }

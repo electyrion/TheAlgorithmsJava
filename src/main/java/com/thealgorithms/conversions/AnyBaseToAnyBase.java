@@ -25,38 +25,38 @@ public final class AnyBaseToAnyBase {
     static final int MAXIMUM_BASE = 36;
 
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        String n;
-        int b1;
-        int b2;
-        while (true) {
-            try {
-                System.out.print("Enter number: ");
-                n = in.next();
-                System.out.print("Enter beginning base (between " + MINIMUM_BASE + " and " + MAXIMUM_BASE + "): ");
-                b1 = in.nextInt();
-                if (b1 > MAXIMUM_BASE || b1 < MINIMUM_BASE) {
-                    System.out.println("Invalid base!");
-                    continue;
+        try (Scanner in = new Scanner(System.in)) {
+            String n;
+            int b1;
+            int b2;
+            while (true) {
+                try {
+                    System.out.print("Enter number: ");
+                    n = in.next();
+                    System.out.print("Enter beginning base (between " + MINIMUM_BASE + " and " + MAXIMUM_BASE + "): ");
+                    b1 = in.nextInt();
+                    if (b1 > MAXIMUM_BASE || b1 < MINIMUM_BASE) {
+                        System.out.println("Invalid base!");
+                        continue;
+                    }
+                    if (!validForBase(n, b1)) {
+                        System.out.println("The number is invalid for this base!");
+                        continue;
+                    }
+                    System.out.print("Enter end base (between " + MINIMUM_BASE + " and " + MAXIMUM_BASE + "): ");
+                    b2 = in.nextInt();
+                    if (b2 > MAXIMUM_BASE || b2 < MINIMUM_BASE) {
+                        System.out.println("Invalid base!");
+                        continue;
+                    }
+                    break;
+                } catch (InputMismatchException e) {
+                    System.out.println("Invalid input.");
+                    in.next();
                 }
-                if (!validForBase(n, b1)) {
-                    System.out.println("The number is invalid for this base!");
-                    continue;
-                }
-                System.out.print("Enter end base (between " + MINIMUM_BASE + " and " + MAXIMUM_BASE + "): ");
-                b2 = in.nextInt();
-                if (b2 > MAXIMUM_BASE || b2 < MINIMUM_BASE) {
-                    System.out.println("Invalid base!");
-                    continue;
-                }
-                break;
-            } catch (InputMismatchException e) {
-                System.out.println("Invalid input.");
-                in.next();
             }
+            System.out.println(base2base(n, b1, b2));
         }
-        System.out.println(base2base(n, b1, b2));
-        in.close();
     }
 
     /**

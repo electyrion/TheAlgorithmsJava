@@ -8,7 +8,7 @@ public class GenericHashMapUsingArray<K, V> {
 
     private int size; // n (total number of key-value pairs)
     private LinkedList<Node>[] buckets; // N = buckets.length
-    private float lf = 0.75f;
+    private final float lf = 0.75f;
 
     public GenericHashMapUsingArray() {
         initBuckets(16);

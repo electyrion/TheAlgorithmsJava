@@ -14,6 +14,7 @@ public class BinaryInsertionSort implements SortAlgorithm {
      * @param array the array to be sorted
      * @return the sorted array
      */
+    @Override
     public <T extends Comparable<T>> T[] sort(T[] array) {
         for (int i = 1; i < array.length; i++) {
             final T temp = array[i];

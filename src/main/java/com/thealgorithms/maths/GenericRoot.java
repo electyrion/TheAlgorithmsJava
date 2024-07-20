@@ -8,21 +8,21 @@ public final class GenericRoot {
     private GenericRoot() {
     }
 
-    private static int base = 10;
+    private static final int BASE = 10;
 
     private static int sumOfDigits(final int n) {
         assert n >= 0;
-        if (n < base) {
+        if (n < BASE) {
             return n;
         }
-        return n % base + sumOfDigits(n / base);
+        return n % BASE + sumOfDigits(n / BASE);
     }
 
     public static int genericRoot(final int n) {
         if (n < 0) {
             return genericRoot(-n);
         }
-        if (n > base) {
+        if (n > BASE) {
             return genericRoot(sumOfDigits(n));
         }
         return n;

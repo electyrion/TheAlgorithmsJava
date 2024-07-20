@@ -21,16 +21,10 @@ public final class PostfixToInfix {
     }
 
     public static boolean isOperator(char token) {
-        switch (token) {
-        case '+':
-        case '-':
-        case '/':
-        case '*':
-        case '^':
-            return true;
-        default:
-            return false;
-        }
+        return switch (token) {
+            case '+', '-', '/', '*', '^' -> true;
+            default -> false;
+        };
     }
 
     public static boolean isValidPostfixExpression(String postfix) {

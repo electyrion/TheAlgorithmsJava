@@ -23,7 +23,7 @@ public class CircleLinkedList<E> {
     // with reduced error catching as our list will never be empty;
     public CircleLinkedList() {
         // creation of the dummy node
-        head = new Node<E>(null, head);
+        head = new Node<>(null, head);
         tail = head;
         size = 0;
     }
@@ -33,7 +33,7 @@ public class CircleLinkedList<E> {
         return size;
     }
 
-    // for the sake of simplistiy this class will only contain the append function or addLast other
+    // for the sake of simplicity this class will only contain the append function or addLast other
     // add functions can be implemented however this is the basses of them all really.
     public void append(E value) {
         if (value == null) {
@@ -42,16 +42,17 @@ public class CircleLinkedList<E> {
         }
         // head.next points to the last element;
         if (tail == null) {
-            tail = new Node<E>(value, head);
+            tail = new Node<>(value, head);
             head.next = tail;
         } else {
-            tail.next = new Node<E>(value, head);
+            tail.next = new Node<>(value, head);
             tail = tail.next;
         }
         size++;
     }
 
     // utility function for traversing the list
+    @Override
     public String toString() {
         Node<E> p = head.next;
         String s = "[ ";
@@ -85,7 +86,6 @@ public class CircleLinkedList<E> {
         if (destroy == tail) {
             tail = before;
         }
-        destroy = null;
         size--;
         return saved;
     }

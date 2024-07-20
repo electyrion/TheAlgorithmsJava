@@ -48,4 +48,40 @@ public class MergeKSortedLinkedlist {
         private int data;
         private Node next;
     }
+
+    // driver code
+    public static void main(String[] args) {
+        MergeKSortedLinkedlist mergeKSortedLinkedlist = new MergeKSortedLinkedlist();
+        Node[] a = new Node[3];
+        a[0] = mergeKSortedLinkedlist.new Node();
+        a[0].data = 1;
+        a[0].next = mergeKSortedLinkedlist.new Node();
+        a[0].next.data = 3;
+        a[0].next.next = mergeKSortedLinkedlist.new Node();
+        a[0].next.next.data = 5;
+        a[0].next.next.next = null;
+
+        a[1] = mergeKSortedLinkedlist.new Node();
+        a[1].data = 2;
+        a[1].next = mergeKSortedLinkedlist.new Node();
+        a[1].next.data = 4;
+        a[1].next.next = mergeKSortedLinkedlist.new Node();
+        a[1].next.next.data = 6;
+        a[1].next.next.next = null;
+
+        a[2] = mergeKSortedLinkedlist.new Node();
+        a[2].data = 7;
+        a[2].next = mergeKSortedLinkedlist.new Node();
+        a[2].next.data = 8;
+        a[2].next.next = mergeKSortedLinkedlist.new Node();
+        a[2].next.next.data = 9;
+        a[2].next.next.next = null;
+
+        Node head = mergeKSortedLinkedlist.mergeKList(a, 3);
+
+        while (head != null) {
+            System.out.print(head.data + " ");
+            head = head.next;
+        }
+    }
 }

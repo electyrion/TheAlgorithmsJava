@@ -44,7 +44,7 @@ public final class CeilInBinarySearchTree {
     private CeilInBinarySearchTree() {
     }
 
-    public static Node getCeil(Node root, int key) {
+    static Node getCeil(Node root, int key) {
         if (root == null) {
             return null;
         }

@@ -17,7 +17,7 @@ public final class ReverseStack {
             System.out.println("Enter the number of elements you wish to insert in the stack");
             int n = sc.nextInt();
             int i;
-            Stack<Integer> stack = new Stack<Integer>();
+            Stack<Integer> stack = new Stack<>();
             System.out.println("Enter the stack elements");
             for (i = 0; i < n; i++) {
                 stack.push(sc.nextInt());

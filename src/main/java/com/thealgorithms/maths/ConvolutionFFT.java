@@ -44,7 +44,7 @@ public final class ConvolutionFFT {
      * @param b The other signal.
      * @return The convolved signal.
      */
-    public static ArrayList<FFT.Complex> convolutionFFT(ArrayList<FFT.Complex> a, ArrayList<FFT.Complex> b) {
+    protected static ArrayList<FFT.Complex> convolutionFFT(ArrayList<FFT.Complex> a, ArrayList<FFT.Complex> b) {
         int convolvedSize = a.size() + b.size() - 1; // The size of the convolved signal
         padding(a, convolvedSize); // Zero padding both signals
         padding(b, convolvedSize);

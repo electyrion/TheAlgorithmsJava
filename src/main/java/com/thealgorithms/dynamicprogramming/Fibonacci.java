@@ -14,15 +14,15 @@ public final class Fibonacci {
     private static final Map<Integer, Integer> CACHE = new HashMap<>();
 
     public static void main(String[] args) {
-        // Methods all returning [0, 1, 1, 2, 3, 5, ...] for n = [0, 1, 2, 3, 4, 5, ...]
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-
-        System.out.println(fibMemo(n));
-        System.out.println(fibBotUp(n));
-        System.out.println(fibOptimized(n));
-        System.out.println(fibBinet(n));
-        sc.close();
+        try ( // Methods all returning [0, 1, 1, 2, 3, 5, ...] for n = [0, 1, 2, 3, 4, 5, ...]
+                Scanner sc = new Scanner(System.in)) {
+            int n = sc.nextInt();
+            
+            System.out.println(fibMemo(n));
+            System.out.println(fibBotUp(n));
+            System.out.println(fibOptimized(n));
+            System.out.println(fibBinet(n));
+        }
     }
 
     /**

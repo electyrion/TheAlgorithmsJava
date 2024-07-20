@@ -70,7 +70,7 @@ public class BinaryTree {
     /**
      * Parameterized Constructor
      */
-    public BinaryTree(Node root) {
+    BinaryTree(Node root) {
         this.root = root;
     }
 
@@ -80,7 +80,7 @@ public class BinaryTree {
      * @param key Value being looked for
      * @return The node if it finds it, otherwise returns the parent
      */
-    public Node find(int key) {
+    Node find(int key) {
         Node current = root;
         while (current != null) {
             if (key < current.data) {
@@ -231,7 +231,7 @@ public class BinaryTree {
      * @param n Node that you want to find the Successor of
      * @return The Successor of the node
      */
-    public Node findSuccessor(Node n) {
+    Node findSuccessor(Node n) {
         if (n.right == null) {
             return n;
         }
@@ -249,7 +249,7 @@ public class BinaryTree {
      *
      * @return the root of the Binary Tree
      */
-    public Node getRoot() {
+    Node getRoot() {
         return root;
     }
 
@@ -259,7 +259,7 @@ public class BinaryTree {
      *
      * @param localRoot The local root of the binary tree
      */
-    public void inOrder(Node localRoot) {
+    void inOrder(Node localRoot) {
         if (localRoot != null) {
             inOrder(localRoot.left);
             System.out.print(localRoot.data + " ");
@@ -272,7 +272,7 @@ public class BinaryTree {
      *
      * @param localRoot The local root of the binary tree
      */
-    public void preOrder(Node localRoot) {
+    void preOrder(Node localRoot) {
         if (localRoot != null) {
             System.out.print(localRoot.data + " ");
             preOrder(localRoot.left);
@@ -285,7 +285,7 @@ public class BinaryTree {
      *
      * @param localRoot The local root of the binary tree
      */
-    public void postOrder(Node localRoot) {
+    void postOrder(Node localRoot) {
         if (localRoot != null) {
             postOrder(localRoot.left);
             postOrder(localRoot.right);
@@ -300,7 +300,7 @@ public class BinaryTree {
      *
      * @param localRoot The local root of the binary tree
      */
-    public void bfs(Node localRoot) {
+    void bfs(Node localRoot) {
         // Create a queue for the order of the nodes
         Queue<Node> queue = new LinkedList<>();
 
@@ -326,5 +326,26 @@ public class BinaryTree {
                 queue.add(localRoot.left);
             }
         }
+    }
+
+    // driver code
+    public static void main(String[] args) {
+        BinaryTree bt = new BinaryTree(new Node(0));
+        bt.put(6);
+        bt.put(4);
+        bt.put(8);
+        bt.put(3);
+        bt.put(5);
+        bt.put(7);
+        bt.put(9);
+
+        System.out.println("In Order");
+        bt.inOrder(bt.getRoot());
+        System.out.println("\nPre Order");
+        bt.preOrder(bt.getRoot());
+        System.out.println("\nPost Order");
+        bt.postOrder(bt.getRoot());
+        System.out.println("\nBFS");
+        bt.bfs(bt.getRoot());
     }
 }

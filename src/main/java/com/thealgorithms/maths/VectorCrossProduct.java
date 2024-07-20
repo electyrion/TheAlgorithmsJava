@@ -45,7 +45,7 @@ public class VectorCrossProduct {
     int y;
     int z;
 
-    // Default constructor, initialises all three Direction Ratios to 0
+    // Default constructor, initializes all three Direction Ratios to 0
     VectorCrossProduct() {
         x = 0;
         y = 0;
@@ -53,7 +53,7 @@ public class VectorCrossProduct {
     }
 
     /**
-     * constructor, initialises Vector with given Direction Ratios
+     * constructor, initializes Vector with given Direction Ratios
      *
      * @param vectorX set to x
      * @param vectorY set to y
@@ -70,7 +70,7 @@ public class VectorCrossProduct {
      *
      * @return double
      */
-    double magnitude() {
+    protected double magnitude() {
         return Math.sqrt(x * x + y * y + z * z);
     }
 

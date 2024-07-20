@@ -17,35 +17,18 @@ public class KDTree {
 
     private Node root;
 
-    private final int k; // Dimensions of the points
-
+    private final int k;
     /**
      * Constructor for empty KDTree
      *
      * @param k Number of dimensions
      */
-    KDTree(int k) {
-        this.k = k;
-    }
-
+    // Dimensions of the points
     /**
      * Builds the KDTree from the specified points
      *
      * @param points Array of initial points
      */
-    KDTree(Point[] points) {
-        if (points.length == 0) {
-            throw new IllegalArgumentException("Points array cannot be empty");
-        }
-        this.k = points[0].getDimension();
-        for (Point point : points) {
-            if (point.getDimension() != k) {
-                throw new IllegalArgumentException("Points must have the same dimension");
-            }
-        }
-        this.root = build(points, 0);
-    }
-
     /**
      * Builds the KDTree from the specified coordinates of the points
      *
@@ -142,7 +125,7 @@ public class KDTree {
     static class Node {
 
         private Point point;
-        private int axis; // 0 for x, 1 for y, 2 for z, etc.
+        private final int axis; // 0 for x, 1 for y, 2 for z, etc.
 
         private Node left = null; // Left child
         private Node right = null; // Right child
@@ -208,7 +191,7 @@ public class KDTree {
         }
     }
 
-    public Node getRoot() {
+    Node getRoot() {
         return root;
     }
 
@@ -235,19 +218,12 @@ public class KDTree {
         node.right = build(Arrays.copyOfRange(points, median + 1, points.length), depth + 1);
         return node;
     }
-
     /**
      * Insert a point into the KDTree
      *
      * @param point The point to insert
      *
      */
-    public void insert(Point point) {
-        if (point.getDimension() != k) {
-            throw new IllegalArgumentException("Point has wrong dimension");
-        }
-        root = insert(root, point, 0);
-    }
 
     /**
      * Insert a point into a subtree
@@ -258,7 +234,7 @@ public class KDTree {
      *
      * @return The root of the KDTree
      */
-    private Node insert(Node root, Point point, int depth) {
+    Node insert(Node root, Point point, int depth) {
         int axis = depth % k;
         if (root == null) {
             return new Node(point, axis);
@@ -279,7 +255,7 @@ public class KDTree {
      *
      * @return The Node corresponding to the specified point
      */
-    public Optional<Node> search(Point point) {
+    Optional<Node> search(Point point) {
         if (point.getDimension() != k) {
             throw new IllegalArgumentException("Point has wrong dimension");
         }
@@ -294,7 +270,7 @@ public class KDTree {
      *
      * @return The Node corresponding to the specified point
      */
-    public Optional<Node> search(Node root, Point point) {
+    Optional<Node> search(Node root, Point point) {
         if (root == null) {
             return Optional.empty();
         }
@@ -311,7 +287,7 @@ public class KDTree {
      *
      * @return The point with minimum value in the specified axis
      */
-    public Point findMin(int axis) {
+    Point findMin(int axis) {
         return findMin(root, axis).point;
     }
 
@@ -323,7 +299,7 @@ public class KDTree {
      *
      * @return The Node with minimum value in the specified axis of the point
      */
-    public Node findMin(Node root, int axis) {
+    Node findMin(Node root, int axis) {
         if (root == null) {
             return null;
         }
@@ -347,7 +323,7 @@ public class KDTree {
      *
      * @return The point with maximum value in the specified axis
      */
-    public Point findMax(int axis) {
+    Point findMax(int axis) {
         return findMax(root, axis).point;
     }
 
@@ -359,7 +335,7 @@ public class KDTree {
      *
      * @return The Node with maximum value in the specified axis of the point
      */
-    public Node findMax(Node root, int axis) {
+    Node findMax(Node root, int axis) {
         if (root == null) {
             return null;
         }
@@ -381,7 +357,7 @@ public class KDTree {
      *
      * @param point the point to delete
      * */
-    public void delete(Point point) {
+    void delete(Point point) {
         Node node = search(point).orElseThrow(() -> new IllegalArgumentException("Point not found"));
         root = delete(root, node);
     }
@@ -424,7 +400,7 @@ public class KDTree {
      *
      * @param point The point to find the nearest neighbor to.
      * */
-    public Point findNearest(Point point) {
+    Point findNearest(Point point) {
         return findNearest(root, point, root).point;
     }
 

@@ -95,8 +95,8 @@ public class DualPivotQuickSort implements SortAlgorithm {
         Integer[] array = {24, 8, -42, 75, -29, -77, 38, 57};
         DualPivotQuickSort dualPivotQuickSort = new DualPivotQuickSort();
         dualPivotQuickSort.sort(array);
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + " ");
+        for (Integer array1 : array) {
+            System.out.print(array1 + " ");
         }
     }
 

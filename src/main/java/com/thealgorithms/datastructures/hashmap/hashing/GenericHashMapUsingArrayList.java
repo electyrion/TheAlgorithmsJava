@@ -6,7 +6,7 @@ import java.util.LinkedList;
 public class GenericHashMapUsingArrayList<K, V> {
 
     ArrayList<LinkedList<Node>> buckets;
-    private float lf = 0.5f;
+    private final float lf = 0.5f;
     private int size;
 
     public GenericHashMapUsingArrayList() {

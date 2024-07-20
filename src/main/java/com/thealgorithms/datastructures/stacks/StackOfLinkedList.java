@@ -6,7 +6,7 @@ import java.util.NoSuchElementException;
  * @author Varun Upadhyay (https://github.com/varunu28)
  */
 // An implementation of a Stack using a Linked List
-final class StackOfLinkedList {
+public class StackOfLinkedList {
     private StackOfLinkedList() {
     }
 
@@ -22,8 +22,12 @@ final class StackOfLinkedList {
 
         System.out.println("Size of stack currently is: " + stack.getSize());
 
-        assert stack.pop() == 5;
-        assert stack.pop() == 4;
+        if (stack.pop() != 5) {
+            throw new AssertionError("Expected value is not equal to 5");
+        }
+        if (stack.pop() != 4) {
+            throw new AssertionError("Expected value is not equal to 4");
+        }
 
         System.out.println("Top element of stack currently is: " + stack.peek());
     }
@@ -94,7 +98,7 @@ class LinkedListStack {
         Node destroy = head;
         head = head.next;
         int retValue = destroy.data;
-        destroy = null; // clear to let GC do it's work
+        // destroy = null; // clear to let GC do it's work
         size--;
         return retValue;
     }

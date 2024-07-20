@@ -29,7 +29,7 @@ public final class JobSequencing {
     }
 
     // Function to print the job sequence
-    public static String findJobSequence(ArrayList<Job> jobs, int size) {
+    protected static String findJobSequence(ArrayList<Job> jobs, int size) {
         Boolean[] slots = new Boolean[size];
         Arrays.fill(slots, Boolean.FALSE);
 

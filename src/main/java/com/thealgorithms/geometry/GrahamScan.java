@@ -120,6 +120,7 @@ public class GrahamScan {
          * point is greater than the argument point and a negative integer if the point is
          * less than the argument point.
          */
+        @Override
         public int compareTo(Point p2) {
             int res = Integer.compare(this.y, p2.y);
             if (res == 0) {
@@ -139,6 +140,7 @@ public class GrahamScan {
         }
 
         private final class PolarOrder implements Comparator<Point> {
+            @Override
             public int compare(Point p1, Point p2) {
                 int dx1 = p1.x - x;
                 int dy1 = p1.y - y;

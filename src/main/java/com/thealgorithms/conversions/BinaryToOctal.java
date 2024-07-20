@@ -17,11 +17,11 @@ public final class BinaryToOctal {
      * @param args Command line arguments
      */
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Input the binary number: ");
-        int b = sc.nextInt();
-        System.out.println("Octal equivalent: " + convertBinaryToOctal(b));
-        sc.close();
+        try (Scanner sc = new Scanner(System.in)) {
+            System.out.println("Input the binary number: ");
+            int b = sc.nextInt();
+            System.out.println("Octal equivalent: " + convertBinaryToOctal(b));
+        }
     }
 
     /**
@@ -32,7 +32,7 @@ public final class BinaryToOctal {
      */
     public static String convertBinaryToOctal(int binary) {
         String octal = "";
-        int currBit = 0;
+        int currBit;
         int j = 1;
         while (binary != 0) {
             int code3 = 0;

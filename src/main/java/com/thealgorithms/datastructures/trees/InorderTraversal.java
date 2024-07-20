@@ -28,13 +28,13 @@ import java.util.List;
 public final class InorderTraversal {
     private InorderTraversal() {
     }
-    public static List<Integer> recursiveInorder(BinaryTree.Node root) {
+    static List<Integer> recursiveInOrder(BinaryTree.Node root) {
         List<Integer> result = new ArrayList<>();
         recursiveInorder(root, result);
         return result;
     }
 
-    public static List<Integer> iterativeInorder(BinaryTree.Node root) {
+    static List<Integer> iterativeInOrder(BinaryTree.Node root) {
         List<Integer> result = new ArrayList<>();
         if (root == null) {
             return result;

@@ -49,17 +49,17 @@ public final class OctalToHexadecimal {
     }
 
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        System.out.print("Enter the Octal number: ");
-        // Take octal number as input from user in a string
-        String oct = input.next();
-
-        // Pass the octal number to function and get converted decimal form
-        int decimal = octToDec(oct);
-
-        // Pass the decimal number to function and get converted Hex form of the number
-        String hex = decimalToHex(decimal);
-        System.out.println("The Hexadecimal equivalant is: " + hex);
-        input.close();
+        try (Scanner input = new Scanner(System.in)) {
+            System.out.print("Enter the Octal number: ");
+            // Take octal number as input from user in a string
+            String oct = input.next();
+            
+            // Pass the octal number to function and get converted decimal form
+            int decimal = octToDec(oct);
+            
+            // Pass the decimal number to function and get converted Hex form of the number
+            String hex = decimalToHex(decimal);
+            System.out.println("The Hexadecimal equivalent is: " + hex);
+        }
     }
 }

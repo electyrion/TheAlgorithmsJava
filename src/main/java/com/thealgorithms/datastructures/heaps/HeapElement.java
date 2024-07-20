@@ -106,6 +106,7 @@ public class HeapElement {
     }
 
     // Overridden object methods
+    @Override
     public String toString() {
         return "Key: " + key + " - " + additionalInfo.toString();
     }

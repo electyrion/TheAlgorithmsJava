@@ -37,7 +37,7 @@ import java.util.List;
 public final class ZigzagTraversal {
     private ZigzagTraversal() {
     }
-    public static List<List<Integer>> traverse(BinaryTree.Node root) {
+    protected static List<List<Integer>> traverse(BinaryTree.Node root) {
         if (root == null) {
             return List.of();
         }

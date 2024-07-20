@@ -6,12 +6,12 @@ public final class PalindromePrime {
     private PalindromePrime() {
     }
 
-    public static void main(String[] args) { // Main funtion
-        Scanner in = new Scanner(System.in);
+    public static void main(String[] args) { try ( // Main function
+            Scanner in = new Scanner(System.in)) {
         System.out.println("Enter the quantity of First Palindromic Primes you want");
         int n = in.nextInt(); // Input of how many first palindromic prime we want
         functioning(n); // calling function - functioning
-        in.close();
+        }
     }
 
     public static boolean prime(int num) { // checking if number is prime or not
@@ -45,7 +45,7 @@ public final class PalindromePrime {
                 count++; // counts check when to terminate while loop
                 System.out.print(num + "\n"); // print the Palindromic Prime
             }
-            num += 2; // inrease iterator value by two
+            num += 2; // increase iterator value by two
         }
     }
 }

@@ -68,7 +68,7 @@ public final class MatrixTranspose {
         }
 
         /*
-         * Print matrix after the tranpose in proper way Transpose means Interchanging
+         * Print matrix after the transpose in proper way Transpose means Interchanging
          * of rows wth column so we interchange the rows in next loop Thus at last
          * matrix of transpose is obtained through user input...
          */

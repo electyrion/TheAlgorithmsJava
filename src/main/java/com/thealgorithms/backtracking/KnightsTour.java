@@ -95,19 +95,19 @@ public final class KnightsTour {
         return false;
     }
 
-    // Returns List of neighbours
+    // Returns List of neighbors
     private static List<int[]> neighbors(int row, int column) {
-        List<int[]> neighbour = new ArrayList<>();
+        List<int[]> neighbor = new ArrayList<>();
 
         for (int[] m : MOVES) {
             int x = m[0];
             int y = m[1];
             if (grid[row + y][column + x] == 0) {
                 int num = countNeighbors(row + y, column + x);
-                neighbour.add(new int[] {row + y, column + x, num});
+                neighbor.add(new int[] {row + y, column + x, num});
             }
         }
-        return neighbour;
+        return neighbor;
     }
 
     // Returns the total count of neighbors

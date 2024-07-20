@@ -34,7 +34,7 @@ public class BSTRecursiveGeneric<T extends Comparable<T>> {
     public static void main(String[] args) {
         System.out.println("Testing for integer data...");
         // Integer
-        BSTRecursiveGeneric<Integer> integerTree = new BSTRecursiveGeneric<Integer>();
+        BSTRecursiveGeneric<Integer> integerTree = new BSTRecursiveGeneric<>();
 
         integerTree.add(5);
         integerTree.add(10);
@@ -61,7 +61,7 @@ public class BSTRecursiveGeneric<T extends Comparable<T>> {
         System.out.println();
         System.out.println("Testing for string data...");
         // String
-        BSTRecursiveGeneric<String> stringTree = new BSTRecursiveGeneric<String>();
+        BSTRecursiveGeneric<String> stringTree = new BSTRecursiveGeneric<>();
 
         stringTree.add("banana");
         stringTree.add("pineapple");
@@ -203,7 +203,7 @@ public class BSTRecursiveGeneric<T extends Comparable<T>> {
      * elements to argument list.
      *
      * @param node the root node
-     * @param sortedList the list to add the srted elements into
+     * @param sortedList the list to add the sorted elements into
      */
     private void inOrderSort(Node<T> node, List<T> sortedList) {
         if (node == null) {

@@ -82,7 +82,7 @@ public final class EulerMethod {
             throw new IllegalArgumentException("stepSize should be greater than zero");
         }
 
-        ArrayList<double[]> points = new ArrayList<double[]>();
+        ArrayList<double[]> points = new ArrayList<>();
         double[] firstPoint = {xStart, yStart};
         points.add(firstPoint);
         double yCurrent = yStart;

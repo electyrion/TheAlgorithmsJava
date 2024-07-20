@@ -16,7 +16,7 @@ public final class KrishnamurthyNumber {
     // returns True if the number is a Krishnamurthy number and False if it is not.
 
     public static boolean isKMurthy(int n) {
-        // initialising the variable s that will store the sum of the factorials of the digits to 0
+        // initializing the variable s that will store the sum of the factorials of the digits to 0
         int s = 0;
         // storing the number n in a temporary variable tmp
         int tmp = n;
@@ -27,7 +27,7 @@ public final class KrishnamurthyNumber {
         } // checking if the number is a Krishnamurthy number
         else {
             while (n != 0) {
-                // initialising the variable fact that will store the factorials of the digits
+                // initializing the variable fact that will store the factorials of the digits
                 int fact = 1;
                 // computing factorial of each digit
                 for (int i = 1; i <= n % 10; i++) {

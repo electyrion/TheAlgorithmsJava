@@ -55,7 +55,7 @@ public final class WelshPowell {
         }
     }
 
-    public static Graph makeGraph(int numberOfVertices, int[][] listOfEdges) {
+    static Graph makeGraph(int numberOfVertices, int[][] listOfEdges) {
         Graph graph = new Graph(numberOfVertices);
         for (int[] edge : listOfEdges) {
             if (edge.length != 2) {
@@ -66,7 +66,7 @@ public final class WelshPowell {
         return graph;
     }
 
-    public static int[] findColoring(Graph graph) {
+    static int[] findColoring(Graph graph) {
         int[] colors = initializeColors(graph.getNumVertices());
         Integer[] sortedVertices = getSortedNodes(graph);
         for (int vertex : sortedVertices) {

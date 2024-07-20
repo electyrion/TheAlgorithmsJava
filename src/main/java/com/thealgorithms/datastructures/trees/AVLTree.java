@@ -41,7 +41,7 @@ public class AVLTree {
                     } else {
                         parent.right = new Node(key, parent);
                     }
-                    rebalance(parent);
+                    rebalanced(parent);
                     break;
                 }
             }
@@ -60,7 +60,7 @@ public class AVLTree {
                 } else {
                     parent.right = null;
                 }
-                rebalance(parent);
+                rebalanced(parent);
             }
             return;
         }
@@ -84,7 +84,7 @@ public class AVLTree {
         if (root == null) {
             return;
         }
-        Node node = root;
+        Node node;
         Node child = root;
 
         while (child != null) {
@@ -97,7 +97,7 @@ public class AVLTree {
         }
     }
 
-    private void rebalance(Node n) {
+    private void rebalanced(Node n) {
         setBalance(n);
 
         if (n.balance == -2) {
@@ -115,7 +115,7 @@ public class AVLTree {
         }
 
         if (n.parent != null) {
-            rebalance(n.parent);
+            rebalanced(n.parent);
         } else {
             root = n;
         }

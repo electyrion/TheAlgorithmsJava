@@ -1138,7 +1138,7 @@ public class Blowfish {
      *     passed as parameters
      */
     private String addBin(String a, String b) {
-        String ans = "";
+        String ans;
         long n1 = Long.parseUnsignedLong(a, 16);
         long n2 = Long.parseUnsignedLong(b, 16);
         n1 = (n1 + n2) % modVal;
@@ -1154,7 +1154,7 @@ public class Blowfish {
         */
     private String f(String plainText) {
         String[] a = new String[4];
-        String ans = "";
+        String ans;
         for (int i = 0; i < 8; i += 2) {
             // column number for S-box is a 8-bit value
             long col = Long.parseUnsignedLong(hexToBin(plainText.substring(i, i + 2)), 2);

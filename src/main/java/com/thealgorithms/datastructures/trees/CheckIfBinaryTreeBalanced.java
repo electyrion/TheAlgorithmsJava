@@ -22,7 +22,7 @@ public final class CheckIfBinaryTreeBalanced {
      *
      * @param root The binary tree to check if balanced
      */
-    public static boolean isBalancedRecursive(BinaryTree.Node root) {
+    static boolean isBalancedRecursive(BinaryTree.Node root) {
         if (root == null) {
             return true;
         }
@@ -71,7 +71,7 @@ public final class CheckIfBinaryTreeBalanced {
     /**
      * Iterative is BT balanced implementation
      */
-    public static boolean isBalancedIterative(BinaryTree.Node root) {
+    static boolean isBalancedIterative(BinaryTree.Node root) {
         if (root == null) {
             return true;
         }

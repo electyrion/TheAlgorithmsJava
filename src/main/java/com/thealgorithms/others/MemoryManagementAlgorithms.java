@@ -94,6 +94,7 @@ class BestFitCPU extends MemoryManagementAlgorithms {
      * @return the ArrayList filled with Integers repressenting the memory
      * allocation that took place.
      */
+    @Override
     public ArrayList<Integer> fitProcess(int[] sizeOfBlocks, int[] sizeOfProcesses) {
         // The array list responsible for saving the memory allocations done by the best-fit
         // algorithm
@@ -152,6 +153,7 @@ class WorstFitCPU extends MemoryManagementAlgorithms {
      * @return the ArrayList filled with Integers repressenting the memory
      * allocation that took place.
      */
+    @Override
     public ArrayList<Integer> fitProcess(int[] sizeOfBlocks, int[] sizeOfProcesses) {
         // The array list responsible for saving the memory allocations done by the worst-fit
         // algorithm
@@ -204,6 +206,7 @@ class FirstFitCPU extends MemoryManagementAlgorithms {
      * @return the ArrayList filled with Integers repressenting the memory
      * allocation that took place.
      */
+    @Override
     public ArrayList<Integer> fitProcess(int[] sizeOfBlocks, int[] sizeOfProcesses) {
         // The array list responsible for saving the memory allocations done by the first-fit
         // algorithm
@@ -265,6 +268,7 @@ class NextFit extends MemoryManagementAlgorithms {
      * @return the ArrayList filled with Integers repressenting the memory
      * allocation that took place.
      */
+    @Override
     public ArrayList<Integer> fitProcess(int[] sizeOfBlocks, int[] sizeOfProcesses) {
         // The array list responsible for saving the memory allocations done by the first-fit
         // algorithm

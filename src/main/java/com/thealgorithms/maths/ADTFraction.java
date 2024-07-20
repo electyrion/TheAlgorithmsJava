@@ -21,9 +21,9 @@ public record ADTFraction(int numerator, int denominator) {
      * @return A new {@code ADTFraction} containing the result of the operation
      */
     public ADTFraction plus(ADTFraction fraction) {
-        var numerator = this.denominator * fraction.numerator + this.numerator * fraction.denominator;
-        var denominator = this.denominator * fraction.denominator;
-        return new ADTFraction(numerator, denominator);
+        int resultNumerator = this.denominator * fraction.numerator + this.numerator * fraction.denominator;
+        int resultDenominator = this.denominator * fraction.denominator;
+        return new ADTFraction(resultNumerator, resultDenominator);
     }
 
     /**
@@ -43,9 +43,9 @@ public record ADTFraction(int numerator, int denominator) {
      * @return A new {@code ADTFraction} containing the result of the operation
      */
     public ADTFraction times(ADTFraction fraction) {
-        var numerator = this.numerator * fraction.numerator;
-        var denominator = this.denominator * fraction.denominator;
-        return new ADTFraction(numerator, denominator);
+        int resultNumerator = this.numerator * fraction.numerator;
+        int resultDenominator = this.denominator * fraction.denominator;
+        return new ADTFraction(resultNumerator, resultDenominator);
     }
 
     /**

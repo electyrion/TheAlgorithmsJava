@@ -12,7 +12,7 @@ import com.thealgorithms.datastructures.trees.BinaryTree.Node;
 public final class BSTFromSortedArray {
     private BSTFromSortedArray() {
     }
-    public static Node createBST(int[] array) {
+    static Node createBST(int[] array) {
         if (array == null || array.length == 0) {
             return null;
         }

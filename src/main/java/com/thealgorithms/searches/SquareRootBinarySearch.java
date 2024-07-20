@@ -10,7 +10,7 @@ import java.util.Scanner;
  * <p>
  * The approach that will be used for solving the above problem is not going to
  * be a straight forward Math.sqrt(). Instead we will be using Binary Search to
- * find the square root of a number in the most optimised way.
+ * find the square root of a number in the most optimized way.
  *
  * @author sahil
  */
@@ -24,17 +24,17 @@ public final class SquareRootBinarySearch {
      * @param args Command line arguments
      */
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter a number you want to calculate square root of : ");
-        int num = sc.nextInt();
-        long ans = squareRoot(num);
-        System.out.println("The square root is : " + ans);
-        sc.close();
+        try (Scanner sc = new Scanner(System.in)) {
+            System.out.print("Enter a number you want to calculate square root of : ");
+            int num = sc.nextInt();
+            long ans = squareRoot(num);
+            System.out.println("The square root is : " + ans);
+        }
     }
 
     /**
      * This function calculates the floor of square root of a number. We use
-     * Binary Search algorithm to calculate the square root in a more optimised
+     * Binary Search algorithm to calculate the square root in a more optimized
      * way.
      *
      * @param num Number

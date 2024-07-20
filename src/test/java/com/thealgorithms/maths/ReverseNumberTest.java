@@ -1,6 +1,7 @@
 package com.thealgorithms.maths;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.util.HashMap;
@@ -24,6 +25,7 @@ public class ReverseNumberTest {
 
     @Test
     public void testReverseNumberThrowsExceptionForNegativeInput() {
-        assertThrows(IllegalArgumentException.class, () -> ReverseNumber.reverseNumber(-1));
+        Throwable exception = assertThrows(IllegalArgumentException.class, () -> ReverseNumber.reverseNumber(-1));
+        assertNotNull(exception);
     }
 }

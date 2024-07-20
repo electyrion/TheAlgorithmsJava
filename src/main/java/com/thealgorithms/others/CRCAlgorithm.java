@@ -1,6 +1,7 @@
 package com.thealgorithms.others;
 
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -17,9 +18,9 @@ public class CRCAlgorithm {
 
     private int wrongMessNotCaught;
 
-    private int messSize;
+    private final int messSize;
 
-    private double ber;
+    private final double ber;
 
     private boolean messageChanged;
 
@@ -27,9 +28,9 @@ public class CRCAlgorithm {
 
     private ArrayList<Integer> dividedMessage;
 
-    private ArrayList<Integer> p;
+    private final ArrayList<Integer> p;
 
-    private Random randomGenerator;
+    private final Random randomGenerator;
 
     /**
      * The algorithm's main constructor. The most significant variables, used in
@@ -70,7 +71,7 @@ public class CRCAlgorithm {
      * Returns the counter wrongMessCaught
      *
      * @return wrongMessCaught, the number of wrong messages, which are caught
-     * by the CRC algoriithm
+     * by the CRC algorithm
      */
     public int getWrongMessCaught() {
         return wrongMessCaught;
@@ -120,11 +121,11 @@ public class CRCAlgorithm {
     /**
      * The most significant part of the CRC algorithm. The message is divided by
      * P, so the dividedMessage ArrayList<Integer> is created. If check == true,
-     * the dividedMessaage is examined, in order to see if it contains any 1's.
+     * the dividedMessage is examined, in order to see if it contains any 1's.
      * If it does, the message is considered to be wrong by the receiver,so the
      * variable wrongMessCaught changes. If it does not, it is accepted, so one
      * of the variables correctMess, wrongMessNotCaught, changes. If check ==
-     * false, the diviided Message is added at the end of the ArrayList<integer>
+     * false, the divided Message is added at the end of the ArrayList<integer>
      * message.
      *
      * @param check the variable used to determine, if the message is going to
@@ -146,7 +147,7 @@ public class CRCAlgorithm {
             }
             if (x.size() == p.size()) {
                 for (int i = 0; i < p.size(); i++) {
-                    if (x.get(i) == p.get(i)) {
+                    if (Objects.equals(x.get(i), p.get(i))) {
                         x.set(i, 0);
                     } else {
                         x.set(i, 1);
@@ -175,7 +176,7 @@ public class CRCAlgorithm {
      * Once the message is transmitted, some of it's elements, is possible to
      * change from 1 to 0, or from 0 to 1, because of the Bit Error Rate (ber).
      * For every element of the message, a random double number is created. If
-     * that number is smaller than ber, then the spesific element changes. On
+     * that number is smaller than ber, then the specific element changes. On
      * the other hand, if it's bigger than ber, it does not. Based on these
      * changes. the boolean variable messageChanged, gets the value: true, or
      * false.

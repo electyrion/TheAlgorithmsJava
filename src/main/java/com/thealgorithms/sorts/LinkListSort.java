@@ -16,7 +16,7 @@ public class LinkListSort {
         // Choice is choosed as any number from 1 to 3 (So the linked list will be
         // sorted by Merge sort technique/Insertion sort technique/Heap sort technique)
         switch (ch) {
-        case 1:
+        case 1 -> {
             Task nm = new Task();
             Node start = null;
             Node prev = null;
@@ -28,7 +28,7 @@ public class LinkListSort {
                 fresh.val = a[i]; // Node val is stored
                 if (start == null) {
                     start = fresh;
-                } else {
+                } else if (prev != null) {
                     prev.next = fresh;
                 }
                 prev = fresh;
@@ -44,9 +44,8 @@ public class LinkListSort {
             // array b is sorted and it will return true when checked with sorted list
             LinkListSort uu = new LinkListSort();
             return uu.compare(a, b);
-            // The given array and the expected array is checked if both are same then true
-            // is displayed else false is displayed
-        case 2:
+            }
+        case 2 -> {
             Node start1 = null;
             Node prev1 = null;
             Node fresh1;
@@ -58,7 +57,9 @@ public class LinkListSort {
                 if (start1 == null) {
                     start1 = fresh1;
                 } else {
-                    prev1.next = fresh1;
+                    if (prev1 != null) {
+                        prev1.next = fresh1;
+                    }
                 }
                 prev1 = fresh1;
             }
@@ -73,9 +74,8 @@ public class LinkListSort {
             LinkListSort uu1 = new LinkListSort();
             // array b is not sorted and it will return false when checked with sorted list
             return uu1.compare(a, b);
-            // The given array and the expected array is checked if both are same then true
-            // is displayed else false is displayed
-        case 3:
+            }
+        case 3 -> {
             Task2 mm = new Task2();
             Node start2 = null;
             Node prev2 = null;
@@ -88,7 +88,9 @@ public class LinkListSort {
                 if (start2 == null) {
                     start2 = fresh2;
                 } else {
-                    prev2.next = fresh2;
+                    if (prev2 != null) {
+                        prev2.next = fresh2;
+                    }
                 }
                 prev2 = fresh2;
             }
@@ -103,12 +105,16 @@ public class LinkListSort {
             // array b is sorted and it will return true when checked with sorted list
             LinkListSort uu2 = new LinkListSort();
             return uu2.compare(a, b);
-            // The given array and the expected array is checked if both are same then true
-            // is displayed else false is displayed
-        default:
-            // default is used incase user puts a unauthorized value
+            }
+        default -> // default is used incase user puts a unauthorized value
             System.out.println("Wrong choice");
         }
+        // The given array and the expected array is checked if both are same then true
+        // is displayed else false is displayed
+        // The given array and the expected array is checked if both are same then true
+        // is displayed else false is displayed
+        // The given array and the expected array is checked if both are same then true
+        // is displayed else false is displayed
         // Switch case is used to call the classes as per the user requirement
         return false;
     }

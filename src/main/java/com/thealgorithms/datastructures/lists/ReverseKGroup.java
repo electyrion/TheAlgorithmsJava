@@ -6,7 +6,7 @@ package com.thealgorithms.datastructures.lists;
  */
 
 public class ReverseKGroup {
-    public int length(Node head) {
+    int length(Node head) {
         Node curr = head;
         int count = 0;
         while (curr != null) {
@@ -16,7 +16,7 @@ public class ReverseKGroup {
         return count;
     }
     // reverse function
-    public Node reverse(Node head, int count, int k) {
+    Node reverse(Node head, int count, int k) {
         if (count < k) {
             return head;
         }
@@ -37,7 +37,7 @@ public class ReverseKGroup {
         }
         return prev;
     }
-    public Node reverseKGroup(Node head, int k) {
+    Node reverseKGroup(Node head, int k) {
         int count = length(head);
         Node ans = reverse(head, count, k);
         return ans;

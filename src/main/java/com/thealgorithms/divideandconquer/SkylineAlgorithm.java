@@ -11,7 +11,7 @@ import java.util.Comparator;
  */
 public class SkylineAlgorithm {
 
-    private ArrayList<Point> points;
+    private final ArrayList<Point> points;
 
     /**
      * Main constructor of the application. ArrayList points gets created, which
@@ -161,7 +161,7 @@ public class SkylineAlgorithm {
          * function dominates the argument point.
          *
          * @param p1 the point that is compared
-         * @return true if the point wich calls the function dominates p1 false
+         * @return true if the point which calls the function dominates p1 false
          * otherwise.
          */
         public boolean dominates(Point p1) {
@@ -174,7 +174,7 @@ public class SkylineAlgorithm {
      * It is used to compare the 2 Dimension points, based on their x-values, in
      * order get sorted later.
      */
-    class XComparator implements Comparator<Point> {
+    protected class XComparator implements Comparator<Point> {
 
         @Override
         public int compare(Point a, Point b) {

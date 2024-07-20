@@ -4,11 +4,12 @@
 
 package com.thealgorithms.scheduling;
 
-import com.thealgorithms.devutils.entities.ProcessDetails;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+
+import com.thealgorithms.devutils.entities.ProcessDetails;
 
 /**
  * The Round-robin scheduling algorithm is a kind of preemptive First come, First Serve CPU
@@ -17,8 +18,8 @@ import java.util.Queue;
  */
 
 public class RRScheduling {
-    private List<ProcessDetails> processes;
-    private int quantumTime;
+    private final List<ProcessDetails> processes;
+    private final int quantumTime;
 
     RRScheduling(final List<ProcessDetails> processes, int quantumTime) {
         this.processes = processes;

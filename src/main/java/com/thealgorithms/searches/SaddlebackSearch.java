@@ -54,23 +54,23 @@ public final class SaddlebackSearch {
      * @param args Command line arguments
      */
     public static void main(String[] args) {
-        // TOD Auto-generated method stub
-        Scanner sc = new Scanner(System.in);
-        int[][] arr;
-        int i;
-        int j;
-        int rows = sc.nextInt();
-        int col = sc.nextInt();
-        arr = new int[rows][col];
-        for (i = 0; i < rows; i++) {
-            for (j = 0; j < col; j++) {
-                arr[i][j] = sc.nextInt();
+        try ( // TOD Auto-generated method stub
+                Scanner sc = new Scanner(System.in)) {
+            int[][] arr;
+            int i;
+            int j;
+            int rows = sc.nextInt();
+            int col = sc.nextInt();
+            arr = new int[rows][col];
+            for (i = 0; i < rows; i++) {
+                for (j = 0; j < col; j++) {
+                    arr[i][j] = sc.nextInt();
+                }
             }
+            int ele = sc.nextInt();
+            // we start from bottom left corner
+            int[] ans = find(arr, rows - 1, 0, ele);
+            System.out.println(ans[0] + " " + ans[1]);
         }
-        int ele = sc.nextInt();
-        // we start from bottom left corner
-        int[] ans = find(arr, rows - 1, 0, ele);
-        System.out.println(ans[0] + " " + ans[1]);
-        sc.close();
     }
 }

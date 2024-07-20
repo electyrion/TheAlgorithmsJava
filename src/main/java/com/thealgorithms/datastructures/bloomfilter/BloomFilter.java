@@ -4,9 +4,9 @@ import java.util.BitSet;
 
 public class BloomFilter<T> {
 
-    private int numberOfHashFunctions;
-    private BitSet bitArray;
-    private Hash<T>[] hashFunctions;
+    private final int numberOfHashFunctions;
+    private final BitSet bitArray;
+    private final Hash<T>[] hashFunctions;
 
     @SuppressWarnings("unchecked")
     public BloomFilter(int numberOfHashFunctions, int n) {

@@ -10,10 +10,10 @@ package com.thealgorithms.datastructures.disjointsetunion;
 public class DisjointSetUnion<T> {
 
     /**
-     * Creates a new node of DSU with parent initialised as same node
+     * Creates a new node of DSU with parent initialized as same node
      */
     public Node<T> makeSet(final T x) {
-        return new Node<T>(x);
+        return new Node<>(x);
     }
 
     /**

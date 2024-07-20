@@ -15,8 +15,10 @@ public final class DeterminantOfMatrix {
     static int determinant(int[][] a, int n) {
         int det = 0;
         int sign = 1;
-        int p = 0;
-        int q = 0;
+        // int p = 0;
+        // int q = 0;
+        int p;
+        int q;
         if (n == 1) {
             det = a[0][0];
         } else {
@@ -44,18 +46,19 @@ public final class DeterminantOfMatrix {
 
     // Driver Method
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
         // Input Matrix
-        System.out.println("Enter matrix size (Square matrix only)");
-        int n = in.nextInt();
-        System.out.println("Enter matrix");
-        int[][] a = new int[n][n];
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                a[i][j] = in.nextInt();
+        try (Scanner in = new Scanner(System.in)) {
+            // Input Matrix
+            System.out.println("Enter matrix size (Square matrix only)");
+            int n = in.nextInt();
+            System.out.println("Enter matrix");
+            int[][] a = new int[n][n];
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < n; j++) {
+                    a[i][j] = in.nextInt();
+                }
             }
+            System.out.println(determinant(a, n));
         }
-        System.out.println(determinant(a, n));
-        in.close();
     }
 }

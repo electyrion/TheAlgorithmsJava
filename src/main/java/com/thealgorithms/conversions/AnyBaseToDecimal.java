@@ -9,11 +9,11 @@ public final class AnyBaseToDecimal {
     }
 
     public static void main(String[] args) {
-        assert convertToDecimal("1010", 2) == Integer.valueOf("1010", 2);
-        assert convertToDecimal("777", 8) == Integer.valueOf("777", 8);
-        assert convertToDecimal("999", 10) == Integer.valueOf("999", 10);
-        assert convertToDecimal("ABCDEF", 16) == Integer.valueOf("ABCDEF", 16);
-        assert convertToDecimal("XYZ", 36) == Integer.valueOf("XYZ", 36);
+        assert convertToDecimal("1010", 2) == Integer.parseInt("1010");
+        assert convertToDecimal("777", 8) == Integer.parseInt("777");
+        assert convertToDecimal("999", 10) == Integer.parseInt("999");
+        assert convertToDecimal("ABCDEF", 16) == Integer.parseInt("ABCDEF");
+        assert convertToDecimal("XYZ", 36) == Integer.parseInt("XYZ");
     }
 
     /**

@@ -29,13 +29,13 @@ import java.util.List;
 public final class PostOrderTraversal {
     private PostOrderTraversal() {
     }
-    public static List<Integer> recursivePostOrder(BinaryTree.Node root) {
+    protected  static List<Integer> recursivePostOrder(BinaryTree.Node root) {
         List<Integer> result = new ArrayList<>();
         recursivePostOrder(root, result);
         return result;
     }
 
-    public static List<Integer> iterativePostOrder(BinaryTree.Node root) {
+    static List<Integer> iterativePostOrder(BinaryTree.Node root) {
         LinkedList<Integer> result = new LinkedList<>();
         if (root == null) {
             return result;

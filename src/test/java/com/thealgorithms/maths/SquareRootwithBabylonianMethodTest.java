@@ -3,7 +3,7 @@ package com.thealgorithms.maths;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class SquareRootwithBabylonianMethodTest {
+public class SquareRootWithBabylonianMethodTest {
 
     @Test
     void testfor4() {

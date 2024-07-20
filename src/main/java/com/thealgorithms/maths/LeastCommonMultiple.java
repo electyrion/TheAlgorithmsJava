@@ -17,13 +17,13 @@ public final class LeastCommonMultiple {
      * Driver Code
      */
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        System.out.println("Please enter first number >> ");
-        int num1 = input.nextInt();
-        System.out.println("Please enter second number >> ");
-        int num2 = input.nextInt();
-        System.out.println("The least common multiple of two numbers is >> " + lcm(num1, num2));
-        input.close();
+        try (Scanner input = new Scanner(System.in)) {
+            System.out.println("Please enter first number >> ");
+            int num1 = input.nextInt();
+            System.out.println("Please enter second number >> ");
+            int num2 = input.nextInt();
+            System.out.println("The least common multiple of two numbers is >> " + lcm(num1, num2));
+        }
     }
 
     /*

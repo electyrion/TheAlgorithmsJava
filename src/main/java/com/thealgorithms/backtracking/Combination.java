@@ -30,7 +30,7 @@ public final class Combination {
         T[] array = arr.clone();
         Arrays.sort(array);
         List<TreeSet<T>> result = new LinkedList<>();
-        backtracking(array, 0, new TreeSet<T>(), result);
+        backtracking(array, 0, new TreeSet<>(), result);
         return result;
     }
 

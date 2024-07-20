@@ -9,6 +9,14 @@ public class A5KeyStreamGenerator extends CompositeLFSR {
     private static final int INITIAL_CLOCKING_CYCLES = 100;
     private static final int KEY_STREAM_LENGTH = 228; // 28.5 bytes so we need to pad bytes or something
 
+    public static int getSESSION_KEY_LENGTH() {
+        return SESSION_KEY_LENGTH;
+    }
+
+    public static int getFRAME_COUNTER_LENGTH() {
+        return FRAME_COUNTER_LENGTH;
+    }
+
     private BitSet initialFrameCounter;
     private BitSet frameCounter;
     private BitSet sessionKey;

@@ -9,7 +9,7 @@ public final class FastInverseSqrt {
     private FastInverseSqrt() {
     }
     /**
-     * Returns the inverse square root of the given number upto 6 - 8 decimal places.
+     * Returns the inverse square root of the given number up to 6 - 8 decimal places.
      * calculates the inverse square root of the given number and returns true if calculated answer
      * matches with given answer else returns false
      *
@@ -23,27 +23,27 @@ public final class FastInverseSqrt {
      */
     public static boolean inverseSqrt(float number) {
         float x = number;
-        float xhalf = 0.5f * x;
+        float xHalf = 0.5f * x;
         int i = Float.floatToIntBits(x);
         i = 0x5f3759df - (i >> 1);
         x = Float.intBitsToFloat(i);
-        x = x * (1.5f - xhalf * x * x);
+        x = x * (1.5f - xHalf * x * x);
         return x == ((float) 1 / (float) Math.sqrt(number));
     }
 
     /**
-     * Returns the inverse square root of the given number upto 14 - 16 decimal places.
+     * Returns the inverse square root of the given number up to 14 - 16 decimal places.
      * calculates the inverse square root of the given number and returns true if calculated answer
      * matches with given answer else returns false
      */
     public static boolean inverseSqrt(double number) {
         double x = number;
-        double xhalf = 0.5d * x;
+        double xHalf = 0.5d * x;
         long i = Double.doubleToLongBits(x);
         i = 0x5fe6ec85e7de30daL - (i >> 1);
         x = Double.longBitsToDouble(i);
         for (int it = 0; it < 4; it++) {
-            x = x * (1.5d - xhalf * x * x);
+            x = x * (1.5d - xHalf * x * x);
         }
         x *= number;
         return x == 1 / Math.sqrt(number);

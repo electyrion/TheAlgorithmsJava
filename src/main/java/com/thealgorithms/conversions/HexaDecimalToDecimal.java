@@ -22,18 +22,17 @@ public final class HexaDecimalToDecimal {
     public static void main(String[] args) {
         String hexaInput;
         int decOutput;
-        Scanner scan = new Scanner(System.in);
-
-        System.out.print("Enter Hexadecimal Number : ");
-        hexaInput = scan.nextLine();
-
-        // convert hexadecimal to decimal
-        decOutput = getHexaToDec(hexaInput);
-        /*
-    Pass the string to the getHexaToDec function
-    and it returns the decimal form in the variable decOutput.
-         */
-        System.out.println("Number in Decimal: " + decOutput);
-        scan.close();
+        try (Scanner scan = new Scanner(System.in)) {
+            System.out.print("Enter Hexadecimal Number : ");
+            hexaInput = scan.nextLine();
+            
+            // convert hexadecimal to decimal
+            decOutput = getHexaToDec(hexaInput);
+            /*
+            Pass the string to the getHexaToDec function
+            and it returns the decimal form in the variable decOutput.
+            */
+            System.out.println("Number in Decimal: " + decOutput);
+        }
     }
 }

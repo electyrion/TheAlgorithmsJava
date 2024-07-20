@@ -58,18 +58,17 @@ public final class HexToOct {
         String hexadecnum;
         int decnum;
         int octalnum;
-        Scanner scan = new Scanner(System.in);
-
-        System.out.print("Enter Hexadecimal Number : ");
-        hexadecnum = scan.nextLine();
-
-        // first convert hexadecimal to decimal
-        decnum = hex2decimal(hexadecnum); // Pass the string to the hex2decimal function and get the decimal form in
-        // variable decnum
-
-        // convert decimal to octal
-        octalnum = decimal2octal(decnum);
-        System.out.println("Number in octal: " + octalnum);
-        scan.close();
+        try (Scanner scan = new Scanner(System.in)) {
+            System.out.print("Enter Hexadecimal Number : ");
+            hexadecnum = scan.nextLine();
+            
+            // first convert hexadecimal to decimal
+            decnum = hex2decimal(hexadecnum); // Pass the string to the hex2decimal function and get the decimal form in
+            // variable decnum
+            
+            // convert decimal to octal
+            octalnum = decimal2octal(decnum);
+            System.out.println("Number in octal: " + octalnum);
+        }
     }
 }

@@ -7,7 +7,7 @@ package com.thealgorithms.dynamicprogramming;
  * to number of times n appears in the sequence.
 
  * <a href="https://en.wikipedia.org/wiki/Golomb_sequence">Wikipedia</a>
- * Program description - To find the Golomb sequence upto n
+ * Program description - To find the Golomb sequence up to n
  */
 public final class CountFriendsPairing {
     private CountFriendsPairing() {

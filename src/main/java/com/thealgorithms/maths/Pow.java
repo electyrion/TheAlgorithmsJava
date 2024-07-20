@@ -1,6 +1,6 @@
 package com.thealgorithms.maths;
 
-// POWER (exponentials) Examples (a^b)
+// POWER (exponential) Examples (a^b)
 public final class Pow {
     private Pow() {
     }

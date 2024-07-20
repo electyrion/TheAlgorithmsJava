@@ -3,18 +3,18 @@ package com.thealgorithms.strings;
 // Longest Palindromic Substring
 import java.util.Scanner;
 
-final class LongestPalindromicSubstring {
+public class LongestPalindromicSubstring {
     private LongestPalindromicSubstring() {
     }
 
     public static void main(String[] args) {
         Solution s = new Solution();
-        String str = "";
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter the string: ");
-        str = sc.nextLine();
-        System.out.println("Longest substring is : " + s.longestPalindrome(str));
-        sc.close();
+        String str;
+        try (Scanner sc = new Scanner(System.in)) {
+            System.out.print("Enter the string: ");
+            str = sc.nextLine();
+            System.out.println("Longest substring is : " + s.longestPalindrome(str));
+        }
     }
 }
 

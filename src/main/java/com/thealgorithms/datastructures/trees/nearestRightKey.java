@@ -3,18 +3,18 @@ package com.thealgorithms.datastructures.trees;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
-final class NearestRightKey {
+public class NearestRightKey {
     private NearestRightKey() {
     }
 
     public static void main(String[] args) {
         NRKTree root = buildTree();
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter first number: ");
-        int inputX0 = sc.nextInt();
-        int toPrint = nearestRightKey(root, inputX0);
-        System.out.println("Key: " + toPrint);
-        sc.close();
+        try (Scanner sc = new Scanner(System.in)) {
+            System.out.print("Enter first number: ");
+            int inputX0 = sc.nextInt();
+            int toPrint = nearestRightKey(root, inputX0);
+            System.out.println("Key: " + toPrint);
+        }
     }
 
     public static NRKTree buildTree() {

@@ -50,7 +50,7 @@ public class Anagrams {
             Arrays.sort(c);
             Arrays.sort(d); /* In this approach the strings are stored in the character arrays and
                                both the arrays are sorted. After that both the arrays are compared
-                               for checking anangram */
+                               for checking anagram */
 
             return Arrays.equals(c, d);
         }
@@ -129,7 +129,7 @@ public class Anagrams {
         if (s.length() != t.length()) {
             return false;
         }
-        // Approach is different from above 4 aproaches.
+        // Approach is different from above 4 approaches.
         // Here we initialize an array of size 26 where each element corresponds to the frequency of
         // a character.
         int[] freq = new int[26];

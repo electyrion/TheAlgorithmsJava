@@ -16,12 +16,12 @@ final class Sudoku {
         }
 
         // Column has the unique numbers (column-clash)
-        for (int r = 0; r < board.length; r++) {
+        for (int[] board1 : board) {
             // Check if the number
             // we are trying to
             // place is already present in
             // that column, return false;
-            if (board[r][col] == num) {
+            if (board1[col] == num) {
                 return false;
             }
         }

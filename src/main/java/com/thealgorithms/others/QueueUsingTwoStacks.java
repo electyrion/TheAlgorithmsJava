@@ -18,9 +18,9 @@ import java.util.Stack;
 class QueueWithStack {
 
     // Stack to keep track of elements inserted into the queue
-    private Stack<Object> inStack;
+    private final Stack<Object> inStack;
     // Stack to keep track of elements to be removed next in queue
-    private Stack<Object> outStack;
+    private final Stack<Object> outStack;
 
     /**
      * Constructor
@@ -94,7 +94,7 @@ class QueueWithStack {
      * @return true if the inStack is empty.
      */
     public boolean isInStackEmpty() {
-        return (inStack.size() == 0);
+        return (inStack.isEmpty());
     }
 
     /**
@@ -103,7 +103,7 @@ class QueueWithStack {
      * @return true if the outStack is empty.
      */
     public boolean isOutStackEmpty() {
-        return (outStack.size() == 0);
+        return (outStack.isEmpty());
     }
 }
 

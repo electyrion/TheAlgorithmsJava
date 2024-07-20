@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+
 import javax.imageio.ImageIO;
 
 /**
@@ -50,7 +51,7 @@ public final class Mandelbrot {
         try {
             ImageIO.write(coloredImage, "png", new File("Mandelbrot.png"));
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("An error occurred.");
         }
     }
 
@@ -140,20 +141,14 @@ public final class Mandelbrot {
             int q = (int) (val * (1 - f * saturation));
             int t = (int) (val * (1 - (1 - f) * saturation));
 
-            switch (hi) {
-            case 0:
-                return new Color(v, t, p);
-            case 1:
-                return new Color(q, v, p);
-            case 2:
-                return new Color(p, v, t);
-            case 3:
-                return new Color(p, q, v);
-            case 4:
-                return new Color(t, p, v);
-            default:
-                return new Color(v, p, q);
-            }
+            return switch (hi) {
+                case 0 -> new Color(v, t, p);
+                case 1 -> new Color(q, v, p);
+                case 2 -> new Color(p, v, t);
+                case 3 -> new Color(p, q, v);
+                case 4 -> new Color(t, p, v);
+                default -> new Color(v, p, q);
+            };
         }
     }
 

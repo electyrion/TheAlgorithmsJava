@@ -7,17 +7,16 @@ public final class RootPrecision {
     }
 
     public static void main(String[] args) {
-        // take input
-        Scanner scn = new Scanner(System.in);
-
         // n is the input number
-        int n = scn.nextInt();
-
-        // p is precision value for eg - p is 3 in 2.564 and 5 in 3.80870.
-        int p = scn.nextInt();
-        System.out.println(squareRoot(n, p));
-
-        scn.close();
+        try ( // take input
+                Scanner scn = new Scanner(System.in)) {
+            // n is the input number
+            int n = scn.nextInt();
+            
+            // p is precision value for eg - p is 3 in 2.564 and 5 in 3.80870.
+            int p = scn.nextInt();
+            System.out.println(squareRoot(n, p));
+        }
     }
 
     public static double squareRoot(int n, int p) {
@@ -30,7 +29,7 @@ public final class RootPrecision {
         int precision = (int) Math.pow(10, p);
         root = root * precision;
         /*typecast it into integer then divide by precision and again typecast into double
-    so as to have decimal points upto p precision */
+    so as to have decimal points up to p precision */
 
         rv = (int) root;
         return rv / precision;

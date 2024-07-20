@@ -15,17 +15,20 @@ import java.util.Scanner;
  * Problem Statement: print all Fibonacci numbers that are smaller than your
  * given input N
  */
-public final class FibbonaciSeries {
-    private FibbonaciSeries() {
+public final class FibonacciSeries {
+    private FibonacciSeries() {
     }
 
     public static void main(String[] args) {
-        // Get input from the user
-        Scanner scan = new Scanner(System.in);
-        int n = scan.nextInt();
-        int first = 0;
-        int second = 1;
-        scan.close();
+        int n;
+        int first;
+        int second;
+        try ( // Get input from the user
+                Scanner scan = new Scanner(System.in)) {
+            n = scan.nextInt();
+            first = 0;
+            second = 1;
+        }
         while (first <= n) {
             // print first fibo 0 then add second fibo into it while updating second as well
             System.out.println(first);

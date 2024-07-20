@@ -82,7 +82,7 @@ public final class PerlinNoise {
             // calculates the horizontal sampling indices
             int x0 = (x / period) * period;
             int x1 = (x0 + period) % width;
-            float horizintalBlend = (x - x0) * frequency;
+            float horizontalBlend = (x - x0) * frequency;
 
             for (int y = 0; y < height; y++) {
                 // calculates the vertical sampling indices
@@ -91,10 +91,10 @@ public final class PerlinNoise {
                 float verticalBlend = (y - y0) * frequency;
 
                 // blend top corners
-                float top = interpolate(base[x0][y0], base[x1][y0], horizintalBlend);
+                float top = interpolate(base[x0][y0], base[x1][y0], horizontalBlend);
 
                 // blend bottom corners
-                float bottom = interpolate(base[x0][y1], base[x1][y1], horizintalBlend);
+                float bottom = interpolate(base[x0][y1], base[x1][y1], horizontalBlend);
 
                 // blend top and bottom interpolation to get the final blend value for this cell
                 perlinNoiseLayer[x][y] = interpolate(top, bottom, verticalBlend);
@@ -116,56 +116,55 @@ public final class PerlinNoise {
     }
 
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-
-        final int width;
-        final int height;
-        final int octaveCount;
-        final float persistence;
-        final long seed;
-        final String charset;
-        final float[][] perlinNoise;
-
-        System.out.println("Width (int): ");
-        width = in.nextInt();
-
-        System.out.println("Height (int): ");
-        height = in.nextInt();
-
-        System.out.println("Octave count (int): ");
-        octaveCount = in.nextInt();
-
-        System.out.println("Persistence (float): ");
-        persistence = in.nextFloat();
-
-        System.out.println("Seed (long): ");
-        seed = in.nextLong();
-
-        System.out.println("Charset (String): ");
-        charset = in.next();
-
-        perlinNoise = generatePerlinNoise(width, height, octaveCount, persistence, seed);
-        final char[] chars = charset.toCharArray();
-        final int length = chars.length;
-        final float step = 1f / length;
-        // output based on charset
-        for (int x = 0; x < width; x++) {
-            for (int y = 0; y < height; y++) {
-                float value = step;
-                float noiseValue = perlinNoise[x][y];
-
-                for (char c : chars) {
-                    if (noiseValue <= value) {
-                        System.out.print(c);
-                        break;
+        try (Scanner in = new Scanner(System.in)) {
+            final int width;
+            final int height;
+            final int octaveCount;
+            final float persistence;
+            final long seed;
+            final String charset;
+            final float[][] perlinNoise;
+            
+            System.out.println("Width (int): ");
+            width = in.nextInt();
+            
+            System.out.println("Height (int): ");
+            height = in.nextInt();
+            
+            System.out.println("Octave count (int): ");
+            octaveCount = in.nextInt();
+            
+            System.out.println("Persistence (float): ");
+            persistence = in.nextFloat();
+            
+            System.out.println("Seed (long): ");
+            seed = in.nextLong();
+            
+            System.out.println("Charset (String): ");
+            charset = in.next();
+            
+            perlinNoise = generatePerlinNoise(width, height, octaveCount, persistence, seed);
+            final char[] chars = charset.toCharArray();
+            final int length = chars.length;
+            final float step = 1f / length;
+            // output based on charset
+            for (int x = 0; x < width; x++) {
+                for (int y = 0; y < height; y++) {
+                    float value = step;
+                    float noiseValue = perlinNoise[x][y];
+                    
+                    for (char c : chars) {
+                        if (noiseValue <= value) {
+                            System.out.print(c);
+                            break;
+                        }
+                        
+                        value += step;
                     }
-
-                    value += step;
                 }
+                
+                System.out.println();
             }
-
-            System.out.println();
         }
-        in.close();
     }
 }

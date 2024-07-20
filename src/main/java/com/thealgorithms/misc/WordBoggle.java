@@ -15,7 +15,7 @@ public final class WordBoggle {
     /**
      * O(nm * 8^s + ws) time where n = width of boggle board, m = height of
      * boggle board, s = length of longest word in string array, w = length of
-     * string array, 8 is due to 8 explorable neighbours O(nm + ws) space.
+     * string array, 8 is due to 8 explorable neighbors O(nm + ws) space.
      */
     public static List<String> boggleBoard(char[][] board, String[] words) {
         Trie trie = new Trie();
@@ -62,7 +62,7 @@ public final class WordBoggle {
                     .equals(ans));
     }
 
-    public static void explore(int i, int j, char[][] board, TrieNode trieNode, boolean[][] visited, Set<String> finalWords) {
+    protected static void explore(int i, int j, char[][] board, TrieNode trieNode, boolean[][] visited, Set<String> finalWords) {
         if (visited[i][j]) {
             return;
         }

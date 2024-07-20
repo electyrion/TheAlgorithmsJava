@@ -12,6 +12,7 @@ public class SelectionSortRecursive implements SortAlgorithm {
      * @param <T>   the type of elements in the array (must be Comparable)
      * @return the sorted array
      */
+    @Override
     public <T extends Comparable<T>> T[] sort(T[] array) {
         if (array.length == 0) {
             return array;

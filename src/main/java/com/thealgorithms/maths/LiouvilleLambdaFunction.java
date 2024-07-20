@@ -31,6 +31,6 @@ public final class LiouvilleLambdaFunction {
         }
 
         // return 1 if size of prime factor list is even, -1 otherwise
-        return PrimeFactorization.pfactors(number).size() % 2 == 0 ? 1 : -1;
+        return PrimeFactorization.pFactors(number).size() % 2 == 0 ? 1 : -1;
     }
 }

@@ -55,7 +55,7 @@ public final class NonRepeatingElement {
      * Explanation of the code:
      * let us assume we have an array [1,2,1,2,3,4]
      * Property of XOR: num ^ num = 0.
-     * If we XOR all the elemnets of the array we will be left with 3 ^ 4 as 1 ^ 1
+     * If we XOR all the elements of the array we will be left with 3 ^ 4 as 1 ^ 1
      * and 2 ^ 2 would give
      * 0. Our task is to find num1 and num2 from the result of 3 ^ 4 = 7. We need to
      * find two's

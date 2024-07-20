@@ -8,15 +8,15 @@ public final class ReturnSubsequence {
 
     public static void main(String[] args) {
         System.out.println("Enter String: ");
-        Scanner s = new Scanner(System.in);
-        String givenString = s.next(); // given string
-        String[] subsequence = returnSubsequence(givenString); // calling returnSubsequence() function
-        System.out.println("Subsequences : ");
-        // print the given array of subsequences
-        for (int i = 0; i < subsequence.length; i++) {
-            System.out.println(subsequence[i]);
-        }
-        s.close();
+        try (Scanner s = new Scanner(System.in)) {
+            String givenString = s.next(); // given string
+            String[] subsequence = returnSubsequence(givenString); // calling returnSubsequence() function
+            System.out.println("Subsequences : ");
+            // print the given array of subsequences
+            for (String subsequence1 : subsequence) {
+                System.out.println(subsequence1);
+            }
+        } // given string
     }
 
     /**

@@ -75,10 +75,10 @@ public class GenericTree {
         return size2(root);
     }
 
-    public int size2(Node roott) {
+    int size2(Node root) {
         int sz = 0;
-        for (int i = 0; i < roott.child.size(); i++) {
-            sz += size2(roott.child.get(i));
+        for (int i = 0; i < root.child.size(); i++) {
+            sz += size2(root.child.get(i));
         }
         return sz + 1;
     }
@@ -88,17 +88,17 @@ public class GenericTree {
      *
      * @return maximum value
      */
-    public int maxcall() {
+    public int maxCall() {
         int maxi = root.data;
         return max(root, maxi);
     }
 
-    private int max(Node roott, int maxi) {
-        if (maxi < roott.data) {
-            maxi = roott.data;
+    private int max(Node root, int maxi) {
+        if (maxi < root.data) {
+            maxi = root.data;
         }
-        for (int i = 0; i < roott.child.size(); i++) {
-            maxi = max(roott.child.get(i), maxi);
+        for (int i = 0; i < root.child.size(); i++) {
+            maxi = max(root.child.get(i), maxi);
         }
 
         return maxi;
@@ -109,7 +109,7 @@ public class GenericTree {
      *
      * @return height
      */
-    public int heightcall() {
+    public int heightCall() {
         return height(root) - 1;
     }
 
@@ -130,7 +130,7 @@ public class GenericTree {
      * @param info number
      * @return present or not
      */
-    public boolean findcall(int info) {
+    public boolean findCall(int info) {
         return find(root, info);
     }
 
@@ -151,11 +151,11 @@ public class GenericTree {
      *
      * @param dep depth
      */
-    public void depthcaller(int dep) {
+    public void depthCaller(int dep) {
         depth(root, dep);
     }
 
-    public void depth(Node node, int dep) {
+    void depth(Node node, int dep) {
         if (dep == 0) {
             System.out.println(node.data);
             return;
@@ -168,7 +168,7 @@ public class GenericTree {
     /**
      * Function to print generic tree in pre-order
      */
-    public void preordercall() {
+    public void preorderCall() {
         preorder(root);
         System.out.println(".");
     }
@@ -183,7 +183,7 @@ public class GenericTree {
     /**
      * Function to print generic tree in post-order
      */
-    public void postordercall() {
+    public void postorderCall() {
         postorder(root);
         System.out.println(".");
     }
@@ -198,7 +198,7 @@ public class GenericTree {
     /**
      * Function to print generic tree in level-order
      */
-    public void levelorder() {
+    public void levelOrder() {
         LinkedList<Node> q = new LinkedList<>();
         q.addLast(root);
         while (!q.isEmpty()) {
@@ -216,19 +216,19 @@ public class GenericTree {
     /**
      * Function to remove all leaves of generic tree
      */
-    public void removeleavescall() {
-        removeleaves(root);
+    public void removeLeavesCall() {
+        removeLeaves(root);
     }
 
-    private void removeleaves(Node node) {
+    private void removeLeaves(Node node) {
         ArrayList<Integer> arr = new ArrayList<>();
         for (int i = 0; i < node.child.size(); i++) {
-            if (node.child.get(i).child.size() == 0) {
+            if (node.child.get(i).child.isEmpty()) {
                 arr.add(i);
                 // node.child.remove(i);
                 // i--;
             } else {
-                removeleaves(node.child.get(i));
+                removeLeaves(node.child.get(i));
             }
         }
         for (int i = arr.size() - 1; i >= 0; i--) {

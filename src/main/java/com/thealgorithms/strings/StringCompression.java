@@ -14,7 +14,7 @@ public final class StringCompression {
      * @return the compressed character array as string
      */
     public static String compress(String input) {
-        // Keeping the count as 1 since every element present will have atleast a count
+        // Keeping the count as 1 since every element present will have at least a count
         // of 1
         int count = 1;
         String compressedString = "";
@@ -54,7 +54,7 @@ public final class StringCompression {
     public static String appendCount(String res, int count, char ch) {
         if (count > 1) {
             res += ch + "" + count;
-            count = 1;
+            // count = 1;
         } else {
             res += ch + "";
         }

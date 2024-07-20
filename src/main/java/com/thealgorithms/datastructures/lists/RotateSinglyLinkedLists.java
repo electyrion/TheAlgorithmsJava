@@ -6,7 +6,7 @@ package com.thealgorithms.datastructures.lists;
  */
 
 public class RotateSinglyLinkedLists {
-    public Node rotateRight(Node head, int k) {
+    Node rotateRight(Node head, int k) {
         if (head == null || head.next == null || k == 0) {
             return head;
         }

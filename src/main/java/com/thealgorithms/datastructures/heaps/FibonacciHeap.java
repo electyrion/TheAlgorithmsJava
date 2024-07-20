@@ -42,7 +42,7 @@ public class FibonacciHeap {
      * Creates a node (of type HeapNode) which contains the given key, and inserts it into the heap.
      *
      * @pre key>=0
-     * @post (numOfnodes = = $prev numOfnodes + 1)
+     * @post (numOfNodes = = $prev numOfNodes + 1)
      * @post empty == false
      * $ret = the HeapNode we inserted
      */
@@ -63,7 +63,7 @@ public class FibonacciHeap {
      * Delete the node containing the minimum key in the heap
      * updates new min
      *
-     * @post (numOfnodes = = $prev numOfnodes - 1)
+     * @post (numOfNodes = = $prev numOfNodes - 1)
      */
     public void deleteMin() {
         if (this.empty()) {
@@ -111,7 +111,7 @@ public class FibonacciHeap {
      * Meld the heap with heap2
      *
      * @pre heap2 != null
-     * @post (numOfnodes = = $prev numOfnodes + heap2.numOfnodes)
+     * @post (numOfNodes = = $prev numOfNodes + heap2.numOfNodes)
      */
     public void meld(FibonacciHeap heap2) {
         if (heap2.empty()) {
@@ -157,7 +157,7 @@ public class FibonacciHeap {
      * Deletes the node x from the heap (using decreaseKey(x) to -1)
      *
      * @pre heap contains x
-     * @post (numOfnodes = = $prev numOfnodes - 1)
+     * @post (numOfNodes = = $prev numOfNodes - 1)
      */
     public void delete(HeapNode x) {
         this.decreaseKey(x, x.getKey() + 1); // change key to be the minimal (-1)
@@ -226,7 +226,7 @@ public class FibonacciHeap {
      * stop the recursion if we had arrived to a marked node or to a root.
      * if we arrived to a marked node, we cut it and continue recursively.
      * called after a node was cut.
-     * @post (numOfnodes == $prev numOfnodes)
+     * @post (numOfNodes == $prev numOfNodes)
      */
     private void cascadingCuts(HeapNode curr) {
         if (!curr.isMarked()) { // stop the recursion
@@ -247,7 +247,7 @@ public class FibonacciHeap {
     /*
      * cut a node (and his "subtree") from his origin tree and connect it to the heap as a new tree.
      * called after a node was cut.
-     * @post (numOfnodes == $prev numOfnodes)
+     * @post (numOfNodes == $prev numOfNodes)
      */
     private void cut(HeapNode curr) {
         curr.parent.rank--;
@@ -308,17 +308,17 @@ public class FibonacciHeap {
     private HeapNode fromBuckets(HeapNode[] buckets) {
         HeapNode tmpMin = null;
         this.numOfTrees = 0;
-        for (int i = 0; i < buckets.length; i++) {
-            if (buckets[i] != null) {
+        for (HeapNode bucket : buckets) {
+            if (bucket != null) {
                 this.numOfTrees++;
                 if (tmpMin == null) {
-                    tmpMin = buckets[i];
+                    tmpMin = bucket;
                     tmpMin.next = tmpMin;
                     tmpMin.prev = tmpMin;
                 } else {
-                    tmpMin.setNext(buckets[i]);
-                    if (buckets[i].getKey() < tmpMin.getKey()) {
-                        tmpMin = buckets[i];
+                    tmpMin.setNext(bucket);
+                    if (bucket.getKey() < tmpMin.getKey()) {
+                        tmpMin = bucket;
                     }
                 }
             }

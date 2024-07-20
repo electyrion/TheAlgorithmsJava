@@ -77,30 +77,28 @@ public final class CreateAndDetectLoop {
 
     public static void main(String[] args) {
         SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
-        Scanner sc = new Scanner(System.in);
-
-        System.out.println("Enter the number of elements to be inserted: ");
-        int n = sc.nextInt();
-        System.out.printf("Enter the %d elements: %n", n);
-        while (n-- > 0) {
-            singlyLinkedList.insert(sc.nextInt());
+        try (Scanner sc = new Scanner(System.in)) {
+            System.out.println("Enter the number of elements to be inserted: ");
+            int n = sc.nextInt();
+            System.out.printf("Enter the %d elements: %n", n);
+            while (n-- > 0) {
+                singlyLinkedList.insert(sc.nextInt());
+            }
+            
+            System.out.print("Given list: ");
+            printList(singlyLinkedList.getHead());
+            System.out.println();
+            
+            System.out.println("Enter the location to generate loop: ");
+            int k = sc.nextInt();
+            
+            createLoop(singlyLinkedList.getHead(), k);
+            
+            if (detectLoop(singlyLinkedList.getHead())) {
+                System.out.println("Loop found");
+            } else {
+                System.out.println("No loop found");
+            }
         }
-
-        System.out.print("Given list: ");
-        printList(singlyLinkedList.getHead());
-        System.out.println();
-
-        System.out.println("Enter the location to generate loop: ");
-        int k = sc.nextInt();
-
-        createLoop(singlyLinkedList.getHead(), k);
-
-        if (detectLoop(singlyLinkedList.getHead())) {
-            System.out.println("Loop found");
-        } else {
-            System.out.println("No loop found");
-        }
-
-        sc.close();
     }
 }

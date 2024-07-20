@@ -17,14 +17,14 @@ public final class OctalToDecimal {
      * @param args Command line arguments
      */
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Octal Input: ");
-        String inputOctal = sc.nextLine();
-        int result = convertOctalToDecimal(inputOctal);
-        if (result != -1) {
-            System.out.println("Result convertOctalToDecimal : " + result);
+        try (Scanner sc = new Scanner(System.in)) {
+            System.out.print("Octal Input: ");
+            String inputOctal = sc.nextLine();
+            int result = convertOctalToDecimal(inputOctal);
+            if (result != -1) {
+                System.out.println("Result convertOctalToDecimal : " + result);
+            }
         }
-        sc.close();
     }
 
     /**

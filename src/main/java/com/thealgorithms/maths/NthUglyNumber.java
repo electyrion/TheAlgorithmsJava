@@ -15,9 +15,9 @@ import java.util.HashMap;
  *     - the base [2, 3, 5] ugly numbers are the same as base [5, 6, 2, 3, 5] ugly numbers
  */
 public class NthUglyNumber {
-    private ArrayList<Long> uglyNumbers = new ArrayList<>(Arrays.asList(1L));
+    private final ArrayList<Long> uglyNumbers = new ArrayList<>(Arrays.asList(1L));
     private final int[] baseNumbers;
-    private HashMap<Integer, Integer> positions = new HashMap<>();
+    private final HashMap<Integer, Integer> positions = new HashMap<>();
 
     /**
      * @brief initialized the object allowing to compute ugly numbers with given base

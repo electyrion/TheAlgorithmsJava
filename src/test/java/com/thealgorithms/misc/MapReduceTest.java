@@ -8,7 +8,7 @@ public class MapReduceTest {
     @Test
     public void testMapReduceWithSingleWordSentence() {
         String oneWordSentence = "Hactober";
-        String result = MapReduce.mapreduce(oneWordSentence);
+        String result = MapReduce.mapReduce(oneWordSentence);
 
         assertEquals("Hactober: 1", result);
     }
@@ -16,7 +16,7 @@ public class MapReduceTest {
     @Test
     public void testMapReduceWithMultipleWordSentence() {
         String multipleWordSentence = "I Love Love HactoberFest";
-        String result = MapReduce.mapreduce(multipleWordSentence);
+        String result = MapReduce.mapReduce(multipleWordSentence);
 
         assertEquals("I: 1,Love: 2,HactoberFest: 1", result);
     }

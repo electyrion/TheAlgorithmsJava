@@ -13,7 +13,7 @@ public final class PrimeFactorization {
     private PrimeFactorization() {
     }
 
-    public static List<Integer> pfactors(int n) {
+    public static List<Integer> pFactors(int n) {
         List<Integer> primeFactors = new ArrayList<>();
 
         if (n == 0) {

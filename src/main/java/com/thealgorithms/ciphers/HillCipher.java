@@ -119,8 +119,8 @@ public final class HillCipher {
     public static int determinant(int[][] a, int n) {
         int det = 0;
         int sign = 1;
-        int p = 0;
-        int q = 0;
+        int p;
+        int q;
 
         if (n == 1) {
             det = a[0][0];
@@ -153,12 +153,10 @@ public final class HillCipher {
         System.out.println("Press 1: To Encrypt");
         System.out.println("Press 2: To Decrypt");
         short sc = userInput.nextShort();
-        if (sc == 1) {
-            encrypt(message);
-        } else if (sc == 2) {
-            decrypt(message);
-        } else {
-            System.out.println("Invalid input, program terminated.");
+        switch (sc) {
+            case 1 -> encrypt(message);
+            case 2 -> decrypt(message);
+            default -> System.out.println("Invalid input, program terminated.");
         }
     }
 

@@ -30,7 +30,7 @@ public final class KochSnowflake {
 
     public static void main(String[] args) {
         // Test Iterate-method
-        ArrayList<Vector2> vectors = new ArrayList<Vector2>();
+        ArrayList<Vector2> vectors = new ArrayList<>();
         vectors.add(new Vector2(0, 0));
         vectors.add(new Vector2(1, 0));
         ArrayList<Vector2> result = iterate(vectors, 1);
@@ -66,7 +66,7 @@ public final class KochSnowflake {
         try {
             ImageIO.write(image, "png", new File("KochSnowflake.png"));
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("An error occurred.");
         }
     }
 
@@ -80,7 +80,7 @@ public final class KochSnowflake {
      * @param steps The number of iterations.
      * @return The transformed vectors after the iteration-steps.
      */
-    public static ArrayList<Vector2> iterate(ArrayList<Vector2> initialVectors, int steps) {
+    protected static ArrayList<Vector2> iterate(ArrayList<Vector2> initialVectors, int steps) {
         ArrayList<Vector2> vectors = initialVectors;
         for (int i = 0; i < steps; i++) {
             vectors = iterationStep(vectors);
@@ -106,7 +106,7 @@ public final class KochSnowflake {
         Vector2 vector1 = new Vector2(offsetX, offsetY);
         Vector2 vector2 = new Vector2(imageWidth / 2, Math.sin(Math.PI / 3) * imageWidth * 0.8 + offsetY);
         Vector2 vector3 = new Vector2(imageWidth - offsetX, offsetY);
-        ArrayList<Vector2> initialVectors = new ArrayList<Vector2>();
+        ArrayList<Vector2> initialVectors = new ArrayList<>();
         initialVectors.add(vector1);
         initialVectors.add(vector2);
         initialVectors.add(vector3);
@@ -126,7 +126,7 @@ public final class KochSnowflake {
      * @return The transformed vectors after the iteration-step.
      */
     private static ArrayList<Vector2> iterationStep(ArrayList<Vector2> vectors) {
-        ArrayList<Vector2> newVectors = new ArrayList<Vector2>();
+        ArrayList<Vector2> newVectors = new ArrayList<>();
         for (int i = 0; i < vectors.size() - 1; i++) {
             Vector2 startVector = vectors.get(i);
             Vector2 endVector = vectors.get(i + 1);

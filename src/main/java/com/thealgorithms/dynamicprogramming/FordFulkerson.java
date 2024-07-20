@@ -2,7 +2,7 @@ package com.thealgorithms.dynamicprogramming;
 
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Vector;
+import java.util.ArrayList;
 
 public final class FordFulkerson {
     private FordFulkerson() {
@@ -36,7 +36,7 @@ public final class FordFulkerson {
         flow = new int[vertexCount][vertexCount];
         int totalFlow = 0;
         while (true) {
-            Vector<Integer> parent = new Vector<>(vertexCount);
+            ArrayList<Integer> parent = new ArrayList<>(vertexCount);
             for (int i = 0; i < vertexCount; i++) {
                 parent.add(-1);
             }
@@ -62,7 +62,7 @@ public final class FordFulkerson {
             StringBuilder sb = new StringBuilder();
             for (int p = sink; p != source; p = parent.get(p)) {
                 amount = Math.min(capacity[parent.get(p)][p] - flow[parent.get(p)][p], amount);
-                sb.append(p + "-");
+                sb.append(p).append("-");
             }
             sb.append(source);
             for (int p = sink; p != source; p = parent.get(p)) {

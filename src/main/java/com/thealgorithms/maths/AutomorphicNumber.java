@@ -25,12 +25,12 @@ public final class AutomorphicNumber {
         }
         long square = n * n; // Calculating square of the number
         long t = n;
-        long numberOfdigits = 0;
+        long numberOfDigits = 0;
         while (t > 0) {
-            numberOfdigits++; // Calculating number of digits in n
+            numberOfDigits++; // Calculating number of digits in n
             t /= 10;
         }
-        long lastDigits = square % (long) Math.pow(10, numberOfdigits); // Extracting last Digits of square
+        long lastDigits = square % (long) Math.pow(10, numberOfDigits); // Extracting last Digits of square
         return n == lastDigits;
     }
 

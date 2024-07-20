@@ -25,7 +25,7 @@ final class PasswordGen {
 
         String allChars = upper + lower + numbers + specialChars;
 
-        List<Character> letters = new ArrayList<Character>();
+        List<Character> letters = new ArrayList<>();
         for (char c : allChars.toCharArray()) {
             letters.add(c);
         }

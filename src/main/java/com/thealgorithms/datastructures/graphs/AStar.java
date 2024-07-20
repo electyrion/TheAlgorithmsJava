@@ -17,9 +17,9 @@ public final class AStar {
 
         // Graph's structure can be changed only applying changes to this class.
 
-        private ArrayList<ArrayList<Edge>> graph;
+        private final ArrayList<ArrayList<Edge>> graph;
 
-        // Initialise ArrayLists in Constructor
+        // Initialize ArrayLists in Constructor
         Graph(int size) {
             this.graph = new ArrayList<>();
             for (int i = 0; i < size; i++) {
@@ -27,7 +27,7 @@ public final class AStar {
             }
         }
 
-        private ArrayList<Edge> getNeighbours(int from) {
+        private ArrayList<Edge> getNeighbors(int from) {
             return this.graph.get(from);
         }
 
@@ -40,9 +40,9 @@ public final class AStar {
 
     private static class Edge {
 
-        private int from;
-        private int to;
-        private int weight;
+        private final int from;
+        private final int to;
+        private final int weight;
 
         Edge(int from, int to, int weight) {
             this.from = from;
@@ -66,9 +66,9 @@ public final class AStar {
     // class to iterate during the algorithm execution, and also used to return the solution.
     private static class PathAndDistance {
 
-        private int distance; // distance advanced so far.
-        private ArrayList<Integer> path; // list of visited nodes in this path.
-        private int estimated; // heuristic value associated to the last node od the path (current node).
+        private final int distance; // distance advanced so far.
+        private final ArrayList<Integer> path; // list of visited nodes in this path.
+        private final int estimated; // heuristic value associated to the last node od the path (current node).
 
         PathAndDistance(int distance, ArrayList<Integer> path, int estimated) {
             this.distance = distance;
@@ -164,8 +164,8 @@ public final class AStar {
         solution.printSolution();
     }
 
-    public static PathAndDistance aStar(int from, int to, Graph graph, int[] heuristic) {
-        // nodes are prioritised by the less value of the current distance of their paths, and the
+    private static PathAndDistance aStar(int from, int to, Graph graph, int[] heuristic) {
+        // nodes are prioritized by the less value of the current distance of their paths, and the
         // estimated value
         // given by the heuristic function to reach the destination point from the current point.
         PriorityQueue<PathAndDistance> queue = new PriorityQueue<>(Comparator.comparingInt(a -> (a.getDistance() + a.getEstimated())));
@@ -181,7 +181,7 @@ public final class AStar {
             if (currentPosition == to) {
                 solutionFound = true;
             } else {
-                for (Edge edge : graph.getNeighbours(currentPosition)) {
+                for (Edge edge : graph.getNeighbors(currentPosition)) {
                     if (!currentData.getPath().contains(edge.getTo())) { // Avoid Cycles
                         ArrayList<Integer> updatedPath = new ArrayList<>(currentData.getPath());
                         updatedPath.add(edge.getTo()); // Add the new node to the path, update the distance,

@@ -7,34 +7,34 @@ class Cycle {
 
     private final int nodes;
     private final int edges;
-    private int[][] adjacencyMatrix;
-    private boolean[] visited;
-    ArrayList<ArrayList<Integer>> cycles = new ArrayList<ArrayList<Integer>>();
+    private final int[][] adjacencyMatrix;
+    private final boolean[] visited;
+    ArrayList<ArrayList<Integer>> cycles = new ArrayList<>();
 
     Cycle() {
-        Scanner in = new Scanner(System.in);
-        System.out.print("Enter the no. of nodes: ");
-        nodes = in.nextInt();
-        System.out.print("Enter the no. of Edges: ");
-        edges = in.nextInt();
-
-        adjacencyMatrix = new int[nodes][nodes];
-        visited = new boolean[nodes];
-
-        for (int i = 0; i < nodes; i++) {
-            visited[i] = false;
+        try (Scanner in = new Scanner(System.in)) {
+            System.out.print("Enter the no. of nodes: ");
+            nodes = in.nextInt();
+            System.out.print("Enter the no. of Edges: ");
+            edges = in.nextInt();
+            
+            adjacencyMatrix = new int[nodes][nodes];
+            visited = new boolean[nodes];
+            
+            for (int i = 0; i < nodes; i++) {
+                visited[i] = false;
+            }
+            
+            System.out.println("Enter the details of each edges <Start Node> <End Node>");
+            
+            for (int i = 0; i < edges; i++) {
+                int start;
+                int end;
+                start = in.nextInt();
+                end = in.nextInt();
+                adjacencyMatrix[start][end] = 1;
+            }
         }
-
-        System.out.println("Enter the details of each edges <Start Node> <End Node>");
-
-        for (int i = 0; i < edges; i++) {
-            int start;
-            int end;
-            start = in.nextInt();
-            end = in.nextInt();
-            adjacencyMatrix[start][end] = 1;
-        }
-        in.close();
     }
 
     public void start() {
@@ -54,7 +54,7 @@ class Cycle {
         for (int i = 0; i < nodes; i++) {
             if (adjacencyMatrix[curr][i] == 1) {
                 if (i == start) {
-                    cycles.add(new ArrayList<Integer>(temp));
+                    cycles.add(new ArrayList<>(temp));
                 } else {
                     if (!visited[i]) {
                         dfs(start, i, temp);
@@ -63,7 +63,7 @@ class Cycle {
             }
         }
 
-        if (temp.size() > 0) {
+        if (!temp.isEmpty()) {
             temp.remove(temp.size() - 1);
         }
         visited[curr] = false;

@@ -1,9 +1,9 @@
 package com.thealgorithms.sorts;
 
-import static com.thealgorithms.sorts.SortUtils.print;
+import java.util.List;
 
 import com.thealgorithms.datastructures.trees.BSTRecursiveGeneric;
-import java.util.List;
+import static com.thealgorithms.sorts.SortUtils.print;
 
 /**
  * <h1> Implementation of the Tree Sort algorithm</h1>
@@ -31,7 +31,7 @@ public class TreeSort implements SortAlgorithm {
 
     private <T extends Comparable<T>> T[] doTreeSortArray(T[] unsortedArray) {
         // create a generic BST tree
-        BSTRecursiveGeneric<T> tree = new BSTRecursiveGeneric<T>();
+        BSTRecursiveGeneric<T> tree = new BSTRecursiveGeneric<>();
 
         // add all elements to the tree
         for (T element : unsortedArray) {
@@ -53,7 +53,7 @@ public class TreeSort implements SortAlgorithm {
 
     private <T extends Comparable<T>> List<T> doTreeSortList(List<T> unsortedList) {
         // create a generic BST tree
-        BSTRecursiveGeneric<T> tree = new BSTRecursiveGeneric<T>();
+        BSTRecursiveGeneric<T> tree = new BSTRecursiveGeneric<>();
 
         // add all elements to the tree
         for (T element : unsortedList) {

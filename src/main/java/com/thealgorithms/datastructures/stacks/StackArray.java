@@ -31,7 +31,8 @@ public class StackArray {
         assert !myStackArray.isEmpty();
         assert myStackArray.isFull();
         assert myStackArray.peek() == 9;
-        assert myStackArray.pop() == 9;
+        int poppedValue = myStackArray.pop();
+        assert poppedValue == 9;
         assert myStackArray.peek() == 2;
         assert myStackArray.size() == 3;
     }
@@ -125,9 +126,7 @@ public class StackArray {
     private void resize(int newSize) {
         int[] transferArray = new int[newSize];
 
-        for (int i = 0; i < stackArray.length; i++) {
-            transferArray[i] = stackArray[i];
-        }
+        System.arraycopy(stackArray, 0, transferArray, 0, stackArray.length);
         // This reference change might be nice in here
         stackArray = transferArray;
         maxSize = newSize;

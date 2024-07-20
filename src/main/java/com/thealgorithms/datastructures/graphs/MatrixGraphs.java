@@ -121,7 +121,7 @@ class AdjacencyMatrixGraph {
     /**
      * Sets a new matrix as the adjacency matrix
      *
-     * @param newAdjacency the new adjaceny matrix
+     * @param newAdjacency the new adjacency matrix
      */
     private void setAdjacency(int[][] newAdjacency) {
         this.adjMatrix = newAdjacency;
@@ -141,7 +141,7 @@ class AdjacencyMatrixGraph {
      *
      * @param from the parent vertex to check for adjacency
      * @param to the child vertex to check for adjacency
-     * @return whether or not the vertices are adjancent
+     * @return whether or not the vertices are adjacent
      */
     private boolean adjacencyOfEdgeDoesExist(int from, int to) {
         return (this.adjacency()[from][to] != AdjacencyMatrixGraph.EDGE_NONE);
@@ -162,7 +162,7 @@ class AdjacencyMatrixGraph {
      *
      * @param from the parent vertex to check for adjacency
      * @param to the child vertex to check for adjacency
-     * @return whether or not the vertices are adjancent
+     * @return whether or not the vertices are adjacent
      */
     public boolean edgeDoesExist(int from, int to) {
         if (this.vertexDoesExist(from) && this.vertexDoesExist(to)) {
@@ -223,14 +223,14 @@ class AdjacencyMatrixGraph {
     public List<Integer> depthFirstOrder(int startVertex) {
         // If the startVertex is invalid, return an empty list
         if (startVertex >= vertexCount || startVertex < 0) {
-            return new ArrayList<Integer>();
+            return new ArrayList<>();
         }
 
         // Create an array to track the visited vertices
         boolean[] visited = new boolean[vertexCount];
 
         // Create a list to keep track of the order of our traversal
-        ArrayList<Integer> orderList = new ArrayList<Integer>();
+        ArrayList<Integer> orderList = new ArrayList<>();
 
         // Perform our DFS algorithm
         depthFirstOrder(startVertex, visited, orderList);
@@ -272,24 +272,24 @@ class AdjacencyMatrixGraph {
      * This method returns a list of the vertices in a breadth first order
      * beginning with the specified vertex
      *
-     * @param startVertex the vertext to begin the traversal
+     * @param startVertex the vertex to begin the traversal
      * @return the list of the ordered vertices
      */
     public List<Integer> breadthFirstOrder(int startVertex) {
         // If the specified startVertex is invalid, return an empty list
         if (startVertex >= vertexCount || startVertex < 0) {
-            return new ArrayList<Integer>();
+            return new ArrayList<>();
         }
 
         // Create an array to keep track of the visited vertices
         boolean[] visited = new boolean[vertexCount];
 
         // Create a list to keep track of the ordered vertices
-        ArrayList<Integer> orderList = new ArrayList<Integer>();
+        ArrayList<Integer> orderList = new ArrayList<>();
 
         // Create a queue for our BFS algorithm and add the startVertex
         // to the queue
-        Queue<Integer> queue = new LinkedList<Integer>();
+        Queue<Integer> queue = new LinkedList<>();
         queue.add(startVertex);
 
         // Continue until the queue is empty
@@ -326,6 +326,7 @@ class AdjacencyMatrixGraph {
      *
      * @return returns a string describing this graph
      */
+    @Override
     public String toString() {
         String s = "    ";
         for (int i = 0; i < this.numberOfVertices(); i++) {

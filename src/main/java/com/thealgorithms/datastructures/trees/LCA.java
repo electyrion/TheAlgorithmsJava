@@ -18,7 +18,7 @@ public final class LCA {
         int e = v - 1;
 
         for (int i = 0; i < v; i++) {
-            adj.add(new ArrayList<Integer>());
+            adj.add(new ArrayList<>());
         }
 
         // Storing the given tree as an adjacency list

@@ -82,7 +82,7 @@ public final class CheckAnagrams {
      * @param s2 the second string
      * @return true if two string are anagrams, otherwise false
      */
-    public static boolean isAnagramsOptimised(String s1, String s2) {
+    public static boolean isAnagramsOptimized(String s1, String s2) {
         // 26 - English alphabet length
         int[] dict = new int[26];
         for (char ch : s1.toCharArray()) {

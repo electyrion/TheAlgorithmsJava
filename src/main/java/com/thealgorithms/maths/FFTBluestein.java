@@ -25,7 +25,7 @@ public final class FFTBluestein {
      * IFFT of signal x.
      * @param inverse True if you want to find the inverse FFT.
      */
-    public static void fftBluestein(ArrayList<FFT.Complex> x, boolean inverse) {
+    protected static void fftBluestein(ArrayList<FFT.Complex> x, boolean inverse) {
         int n = x.size();
         int bnSize = 2 * n - 1;
         int direction = inverse ? -1 : 1;

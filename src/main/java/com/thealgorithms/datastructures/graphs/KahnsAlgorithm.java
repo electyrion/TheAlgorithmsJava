@@ -9,18 +9,18 @@ import java.util.Queue;
 import java.util.Set;
 
 /**
- * A class that represents the adjaceny list of a graph
+ * A class that represents the adjacency list of a graph
  */
 class AdjacencyList<E extends Comparable<E>> {
 
     Map<E, ArrayList<E>> adj;
 
     AdjacencyList() {
-        adj = new LinkedHashMap<E, ArrayList<E>>();
+        adj = new LinkedHashMap<>();
     }
 
     /**
-     * This function adds an Edge to the adjaceny list
+     * This function adds an Edge to the adjacency list
      *
      * @param from , the vertex the edge is from
      * @param to, the vertex the edge is going to
@@ -29,11 +29,11 @@ class AdjacencyList<E extends Comparable<E>> {
         try {
             adj.get(from).add(to);
         } catch (Exception E) {
-            adj.put(from, new ArrayList<E>());
+            adj.put(from, new ArrayList<>());
             adj.get(from).add(to);
         }
         if (!adj.containsKey(to)) {
-            adj.put(to, new ArrayList<E>());
+            adj.put(to, new ArrayList<>());
         }
     }
 
@@ -86,7 +86,7 @@ class TopologicalSort<E extends Comparable<E>> {
      */
     ArrayList<E> topSortOrder() {
         calculateInDegree();
-        Queue<E> q = new LinkedList<E>();
+        Queue<E> q = new LinkedList<>();
 
         for (final var entry : inDegree.entrySet()) {
             if (entry.getValue() == 0) {

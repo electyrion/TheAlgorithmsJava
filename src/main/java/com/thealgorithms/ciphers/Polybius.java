@@ -53,9 +53,9 @@ public final class Polybius {
         final char[] chars = ciphertext.toCharArray();
         final StringBuilder plaintext = new StringBuilder();
         for (int i = 0; i < chars.length; i += 2) {
-            int pozitionX = Character.getNumericValue(chars[i]);
-            int pozitionY = Character.getNumericValue(chars[i + 1]);
-            plaintext.append(KEY[pozitionX][pozitionY]);
+            int positionX = Character.getNumericValue(chars[i]);
+            int positionY = Character.getNumericValue(chars[i + 1]);
+            plaintext.append(KEY[positionX][positionY]);
         }
         return plaintext.toString();
     }

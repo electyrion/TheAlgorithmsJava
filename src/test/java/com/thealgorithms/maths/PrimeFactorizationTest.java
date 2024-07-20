@@ -14,7 +14,7 @@ class PrimeFactorizationTest {
         int n = 0;
 
         // then
-        assertTrue(PrimeFactorization.pfactors(n).isEmpty());
+        assertTrue(PrimeFactorization.pFactors(n).isEmpty());
     }
 
     @Test
@@ -24,7 +24,7 @@ class PrimeFactorizationTest {
         int expectedListSize = 4;
 
         // when
-        List<Integer> actualResultList = PrimeFactorization.pfactors(n);
+        List<Integer> actualResultList = PrimeFactorization.pFactors(n);
 
         // then
         assertEquals(expectedListSize, actualResultList.size());

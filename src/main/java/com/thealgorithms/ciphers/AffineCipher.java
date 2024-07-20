@@ -28,7 +28,7 @@ final class AffineCipher {
     static String decryptCipher(String cipher) {
         String msg = "";
         int aInv = 0;
-        int flag = 0;
+        int flag;
 
         // Find a^-1 (the multiplicative inverse of a
         // in the group of integers modulo m.)

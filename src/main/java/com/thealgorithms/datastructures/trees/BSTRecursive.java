@@ -33,7 +33,7 @@ public class BSTRecursive {
         root = null;
     }
 
-    public Node getRoot() {
+    Node getRoot() {
         return root;
     }
 
@@ -95,7 +95,7 @@ public class BSTRecursive {
     }
 
     /**
-     * Serach recursively if the given value is present in BST or not.
+     * Search recursively if the given value is present in BST or not.
      *
      * @param node the current node to check
      * @param data the value to be checked

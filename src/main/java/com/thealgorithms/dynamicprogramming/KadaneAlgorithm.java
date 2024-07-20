@@ -20,7 +20,7 @@ public final class KadaneAlgorithm {
         int runningSum = 0;
         for (int k : a) {
             runningSum = runningSum + k;
-            // running sum of all the indexs are stored
+            // running sum of all the index are stored
             sum = Math.max(sum, runningSum);
             // the max is stored inorder to the get the maximum sum
             if (runningSum < 0) {

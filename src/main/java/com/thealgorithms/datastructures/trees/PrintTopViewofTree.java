@@ -60,7 +60,7 @@ class Tree {
         HashSet<Integer> set = new HashSet<>();
 
         // Create a queue and add root to it
-        Queue<QItem> queue = new LinkedList<QItem>();
+        Queue<QItem> queue = new LinkedList<>();
         queue.add(new QItem(root, 0)); // Horizontal distance of root is 0
 
         // Standard BFS or level order traversal loop
@@ -89,8 +89,8 @@ class Tree {
 }
 
 // Driver class to test above methods
-public final class PrintTopViewofTree {
-    private PrintTopViewofTree() {
+class PrintTopViewOfTree {
+    private PrintTopViewOfTree() {
     }
 
     public static void main(String[] args) {

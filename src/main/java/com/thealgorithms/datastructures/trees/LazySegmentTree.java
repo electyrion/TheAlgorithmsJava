@@ -168,7 +168,7 @@ public class LazySegmentTree {
         updateRange(left, right, diff, root);
     }
 
-    public Node getRoot() {
+    Node getRoot() {
         return root;
     }
 }

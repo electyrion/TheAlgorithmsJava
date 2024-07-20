@@ -24,9 +24,9 @@ final class Sparsity {
     static double sparsity(double[][] mat) {
         int zero = 0;
         // Traversing the matrix to count number of zeroes
-        for (int i = 0; i < mat.length; i++) {
-            for (int j = 0; j < mat[i].length; j++) {
-                if (mat[i][j] == 0) {
+        for (double[] mat1 : mat) {
+            for (int j = 0; j < mat1.length; j++) {
+                if (mat1[j] == 0) {
                     zero++;
                 }
             }
@@ -37,20 +37,20 @@ final class Sparsity {
 
     // Driver method
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        System.out.println("Enter number of rows in matrix: ");
-        int n = in.nextInt();
-        System.out.println("Enter number of Columns in matrix: ");
-        int m = in.nextInt();
-
-        System.out.println("Enter Matrix elements: ");
-        double[][] mat = new double[n][m];
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                mat[i][j] = in.nextDouble();
+        try (Scanner in = new Scanner(System.in)) {
+            System.out.println("Enter number of rows in matrix: ");
+            int n = in.nextInt();
+            System.out.println("Enter number of Columns in matrix: ");
+            int m = in.nextInt();
+            
+            System.out.println("Enter Matrix elements: ");
+            double[][] mat = new double[n][m];
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < m; j++) {
+                    mat[i][j] = in.nextDouble();
+                }
             }
+            System.out.println("Sparsity of matrix is: " + sparsity(mat));
         }
-        System.out.println("Sparsity of matrix is: " + sparsity(mat));
-        in.close();
     }
 }

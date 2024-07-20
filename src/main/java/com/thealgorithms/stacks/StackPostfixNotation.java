@@ -15,16 +15,19 @@ public final class StackPostfixNotation {
     private static BiFunction<Integer, Integer, Integer> getOperator(final String operationSymbol) {
         // note the order of operands
         switch (operationSymbol) {
-        case "+":
+        case "+" -> {
             return (a, b) -> b + a;
-        case "-":
+            }
+        case "-" -> {
             return (a, b) -> b - a;
-        case "*":
+            }
+        case "*" -> {
             return (a, b) -> b * a;
-        case "/":
+            }
+        case "/" -> {
             return (a, b) -> b / a;
-        default:
-            throw new IllegalArgumentException("exp contains an unknown operation.");
+            }
+        default -> throw new IllegalArgumentException("exp contains an unknown operation.");
         }
     }
 
@@ -36,16 +39,15 @@ public final class StackPostfixNotation {
     }
 
     private static void consumeExpression(Stack<Integer> s, final String exp) {
-        Scanner tokens = new Scanner(exp);
-
-        while (tokens.hasNext()) {
-            if (tokens.hasNextInt()) {
-                s.push(tokens.nextInt());
-            } else {
-                performOperation(s, tokens.next());
+        try (Scanner tokens = new Scanner(exp)) {
+            while (tokens.hasNext()) {
+                if (tokens.hasNextInt()) {
+                    s.push(tokens.nextInt());
+                } else {
+                    performOperation(s, tokens.next());
+                }
             }
         }
-        tokens.close();
     }
 
     /**
@@ -55,7 +57,7 @@ public final class StackPostfixNotation {
      * @exception IllegalArgumentException exp is not a valid postix expression.
      */
     public static int postfixEvaluate(final String exp) {
-        Stack<Integer> s = new Stack<Integer>();
+        Stack<Integer> s = new Stack<>();
         consumeExpression(s, exp);
         if (s.size() != 1) {
             throw new IllegalArgumentException("exp is not a proper postfix expression.");

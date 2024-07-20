@@ -43,7 +43,7 @@ public class RandomNode {
         }
     }
 
-    public RandomNode(ListNode head) {
+    RandomNode(ListNode head) {
         list = new ArrayList<>();
         ListNode temp = head;
 

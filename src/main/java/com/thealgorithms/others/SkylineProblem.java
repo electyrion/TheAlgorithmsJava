@@ -10,19 +10,17 @@ public class SkylineProblem {
     int count;
 
     public void run() {
-        Scanner sc = new Scanner(System.in);
-
-        int num = sc.nextInt();
-        this.building = new Building[num];
-
-        for (int i = 0; i < num; i++) {
-            String input = sc.next();
-            String[] data = input.split(",");
-            this.add(Integer.parseInt(data[0]), Integer.parseInt(data[1]), Integer.parseInt(data[2]));
+        try (Scanner sc = new Scanner(System.in)) {
+            int num = sc.nextInt();
+            this.building = new Building[num];
+            
+            for (int i = 0; i < num; i++) {
+                String input = sc.next();
+                String[] data = input.split(",");
+                this.add(Integer.parseInt(data[0]), Integer.parseInt(data[1]), Integer.parseInt(data[2]));
+            }
+            this.print(this.findSkyline(0, num - 1));
         }
-        this.print(this.findSkyline(0, num - 1));
-
-        sc.close();
     }
 
     public void add(int left, int height, int right) {

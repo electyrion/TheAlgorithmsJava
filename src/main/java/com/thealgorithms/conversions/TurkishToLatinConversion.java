@@ -17,17 +17,17 @@ public final class TurkishToLatinConversion {
      * @param args Command line arguments
      */
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Input the string: ");
-        String b = sc.next();
-        System.out.println("Converted: " + convertTurkishToLatin(b));
-        sc.close();
+        try (Scanner sc = new Scanner(System.in)) {
+            System.out.println("Input the string: ");
+            String b = sc.next();
+            System.out.println("Converted: " + convertTurkishToLatin(b));
+        }
     }
 
     /**
      * This method converts a turkish character to latin character.
      *
-     * @param param String paramter
+     * @param param String parameter
      * @return String
      */
     public static String convertTurkishToLatin(String param) {

@@ -9,7 +9,7 @@ public final class LevelOrderTraversal {
     private LevelOrderTraversal() {
     }
 
-    public static List<List<Integer>> traverse(BinaryTree.Node root) {
+    static List<List<Integer>> traverse(BinaryTree.Node root) {
         if (root == null) {
             return List.of();
         }
@@ -39,7 +39,7 @@ public final class LevelOrderTraversal {
     }
 
     /* Print nodes at the given level */
-    public static void printGivenLevel(BinaryTree.Node root, int level) {
+    protected static void printGivenLevel(BinaryTree.Node root, int level) {
         if (root == null) {
             System.out.println("Root node must not be null! Exiting.");
             return;

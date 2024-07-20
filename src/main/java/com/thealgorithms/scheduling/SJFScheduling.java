@@ -1,7 +1,8 @@
 package com.thealgorithms.scheduling;
 
-import com.thealgorithms.devutils.entities.ProcessDetails;
 import java.util.ArrayList;
+
+import com.thealgorithms.devutils.entities.ProcessDetails;
 
 /**
  * Implementation of Shortest Job First Algorithm: The algorithm allows the waiting process with the
@@ -9,7 +10,7 @@ import java.util.ArrayList;
  * https://www.guru99.com/shortest-job-first-sjf-scheduling.html
  */
 
-public class SJFScheduling {
+public final class SJFScheduling {
     protected ArrayList<ProcessDetails> processes;
     protected ArrayList<String> schedule;
 

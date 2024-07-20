@@ -19,7 +19,7 @@ public class MergeSortedSinglyLinkedList extends SinglyLinkedList {
      * Merge two sorted SingleLinkedList
      *
      * @param listA the first sorted list
-     * @param listB the second sored list
+     * @param listB the second sorted list
      * @return merged sorted list
      */
     public static SinglyLinkedList merge(SinglyLinkedList listA, SinglyLinkedList listB) {

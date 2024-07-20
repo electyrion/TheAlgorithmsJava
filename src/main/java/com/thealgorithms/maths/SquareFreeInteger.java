@@ -34,7 +34,7 @@ public final class SquareFreeInteger {
 
         // Store prime factors of number which is passed as argument
         // in a list
-        List<Integer> primeFactorsList = PrimeFactorization.pfactors(number);
+        List<Integer> primeFactorsList = PrimeFactorization.pFactors(number);
 
         // Create set from list of prime factors of integer number
         // if size of list and set is equal then the argument passed to this method is square free

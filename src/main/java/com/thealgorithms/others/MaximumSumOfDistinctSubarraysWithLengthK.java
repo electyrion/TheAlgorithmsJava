@@ -42,7 +42,7 @@ public final class MaximumSumOfDistinctSubarraysWithLengthK {
             max = s;
         }
         // Looping through the rest of the array to find different subarrays and also
-        // utilising the sliding window algorithm to find the sum
+        // utilizing the sliding window algorithm to find the sum
         // in O(n) time complexity
         for (int i = 1; i < nums.length - k + 1; i++) {
             s = s - nums[i - 1];

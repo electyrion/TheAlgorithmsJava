@@ -21,7 +21,7 @@ public final class MapReduce {
     /*
      *Counting all the words frequency within a sentence.
      */
-    public static String mapreduce(String sentence) {
+    public static String mapReduce(String sentence) {
         List<String> wordList = Arrays.stream(sentence.split(" ")).toList();
 
         // Map step

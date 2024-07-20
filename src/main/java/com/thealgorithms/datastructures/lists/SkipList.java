@@ -277,7 +277,7 @@ public class SkipList<E extends Comparable<E>> {
     }
 
     /**
-     * In most common skip list realisation element in layer {@code i} appears
+     * In most common skip list realization element in layer {@code i} appears
      * in layer {@code i+1} with some fixed probability {@code p}.
      * Two commonly used values for {@code p} are 1/2 and 1/4.
      * Probability of appearing element in layer {@code i} could be calculated

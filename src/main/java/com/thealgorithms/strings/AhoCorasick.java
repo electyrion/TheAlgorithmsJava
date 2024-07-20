@@ -24,7 +24,7 @@ public final class AhoCorasick {
     // Trie Node Class
     private static class Node {
         // Represents a character in the trie
-        private HashMap<Character, Node> child = new HashMap<>(); // Child nodes of the current node
+        private final HashMap<Character, Node> child = new HashMap<>(); // Child nodes of the current node
         private Node suffixLink; // Suffix link to another node in the trie
         private Node outputLink; // Output link to another node in the trie
         private int patternInd; // Index of the pattern that ends at this node
@@ -150,8 +150,8 @@ public final class AhoCorasick {
 
         private ArrayList<ArrayList<Integer>> initializePositionByStringIndexValue() {
             ArrayList<ArrayList<Integer>> positionByStringIndexValue = new ArrayList<>(patterns.length); // Stores positions where patterns are found in the text
-            for (int i = 0; i < patterns.length; i++) {
-                positionByStringIndexValue.add(new ArrayList<Integer>());
+            for (String pattern : patterns) {
+                positionByStringIndexValue.add(new ArrayList<>());
             }
             return positionByStringIndexValue;
         }
@@ -199,7 +199,7 @@ public final class AhoCorasick {
 
     // Class to handle pattern position recording
     private static class PatternPositionRecorder {
-        private ArrayList<ArrayList<Integer>> positionByStringIndexValue;
+        private final ArrayList<ArrayList<Integer>> positionByStringIndexValue;
 
         // Constructor to initialize the recorder with the position list
         PatternPositionRecorder(final ArrayList<ArrayList<Integer>> positionByStringIndexValue) {

@@ -1,7 +1,7 @@
 package com.thealgorithms.datastructures.lists;
 /*
  *
- * @aurthor - Prabhat-Kumar-42
+ * @author - Prabhat-Kumar-42
  * @github - https://github.com/Prabhat-Kumar-42
  *
  * Problem :
@@ -20,7 +20,7 @@ package com.thealgorithms.datastructures.lists;
  *      List lessThanPivot : 3 -> 1 -> 2 -> 4
  *      List greaterThanPivot : 5 -> 8 -> 10 -> 7 -> 9 -> 6
  *
- *      -> reccur for lessThanPivot and greaterThanPivot
+ *      -> recur for lessThanPivot and greaterThanPivot
  *
  *            lessThanPivot :
  *                current pivot : 3
@@ -32,7 +32,7 @@ package com.thealgorithms.datastructures.lists;
  *                 lessThanPivot : null
  *                 greaterThanPivot : 8 -> 10 -> 7 -> 9 -> 6
  *
- *        By following the above pattern, reccuring tree will form like below :
+ *        By following the above pattern, recurring tree will form like below :
  *
  *        List-> 5 -> 3 -> 8 -> 1 -> 10 -> 2 -> 7 -> 4 -> 9 -> 6
  *
@@ -66,7 +66,7 @@ package com.thealgorithms.datastructures.lists;
  *                                       (N)   (N)   (N)   (N)
  *
  *
- *      -> After this the tree will reccur back (or backtrack)
+ *      -> After this the tree will recur back (or backtrack)
  *         and the returning list from left and right subtree will attach
  *         themselves around pivot.
  *         i.e. ,
@@ -75,7 +75,7 @@ package com.thealgorithms.datastructures.lists;
  *         This will continue until whole list is merged back
  *
  *          eg :
- *             Megring the above Tree back we get :
+ *             Merging the above Tree back we get :
  *
  *          List: (1 -> 2)        (4)           (6 -> 7)         (9 -> 10)
  *                  \             /                  \             /
@@ -106,7 +106,7 @@ public class QuickSortLinkedList {
 
     private SinglyLinkedList list = null; // Linked list
     private Node head = null; // head of the list
-    // Counstructor
+    // Constructor
     public QuickSortLinkedList(SinglyLinkedList list) {
         this.list = list;
         this.head = list.getHead();
@@ -118,7 +118,7 @@ public class QuickSortLinkedList {
         list.setHead(head);
     }
     // helper function to apply QuickSort to the stored list
-    public Node sortList(Node head) {
+    Node sortList(Node head) {
         if (head == null || head.next == null) {
             return head;
         }
@@ -128,9 +128,9 @@ public class QuickSortLinkedList {
         head = head.next;
         pivot.next = null;
 
-        Node lessHead = new Node(); // stores the nodes cantaining data less than pivot node
+        Node lessHead = new Node(); // stores the nodes containing data less than pivot node
         Node lessTail = lessHead; // tail of lessHead
-        Node greaterHead = new Node(); // stores the nodes cantaining data greater than pivot node
+        Node greaterHead = new Node(); // stores the nodes containing data greater than pivot node
         Node greaterTail = greaterHead; // tail of greaterHead
 
         // Partition the list around the pivot
@@ -145,15 +145,15 @@ public class QuickSortLinkedList {
             head = head.next;
         }
 
-        // Seperating lessHead and greaterHead to form two seperate linkedList
+        // Separating lessHead and greaterHead to form two separate linkedList
         lessTail.next = null;
         greaterTail.next = null;
 
-        // Recursively sort the sublists
+        // Recursively sort the subsists
         Node sortedLess = sortList(lessHead.next);
         Node sortedGreater = sortList(greaterHead.next);
 
-        // Combine the sorted sublists and pivot
+        // Combine the sorted subsists and pivot
         if (sortedLess == null) {
             pivot.next = sortedGreater;
             return pivot;

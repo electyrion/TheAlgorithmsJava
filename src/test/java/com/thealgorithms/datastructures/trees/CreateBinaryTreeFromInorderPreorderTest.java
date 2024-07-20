@@ -1,6 +1,7 @@
 package com.thealgorithms.datastructures.trees;
 
 import java.util.Arrays;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -97,6 +98,6 @@ public class CreateBinaryTreeFromInorderPreorderTest {
     private static void checkTree(Integer[] preorder, Integer[] inorder, BinaryTree.Node root) {
         Assertions.assertNotNull(root);
         Assertions.assertEquals(PreOrderTraversal.iterativePreOrder(root), Arrays.asList(preorder));
-        Assertions.assertEquals(InorderTraversal.iterativeInorder(root), Arrays.asList(inorder));
+        Assertions.assertEquals(InorderTraversal.iterativeInOrder(root), Arrays.asList(inorder));
     }
 }

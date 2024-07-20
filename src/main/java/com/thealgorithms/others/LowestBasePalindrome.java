@@ -1,6 +1,7 @@
 package com.thealgorithms.others;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 /**
  * @brief Class for finding the lowest base in which a given integer is a palindrome.
@@ -48,7 +49,7 @@ public final class LowestBasePalindrome {
      */
     public static boolean isPalindromic(ArrayList<Integer> list) {
         for (int pos = 0; pos < list.size() / 2; ++pos) {
-            if (list.get(pos) != list.get(list.size() - 1 - pos)) {
+            if (!Objects.equals(list.get(pos), list.get(list.size() - 1 - pos))) {
                 return false;
             }
         }

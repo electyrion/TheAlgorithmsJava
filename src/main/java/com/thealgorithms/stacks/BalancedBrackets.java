@@ -57,21 +57,16 @@ final class BalancedBrackets {
         Stack<Character> bracketsStack = new Stack<>();
         for (char bracket : brackets.toCharArray()) {
             switch (bracket) {
-            case '(':
-            case '[':
-            case '{':
-                bracketsStack.push(bracket);
-                break;
-            case ')':
-            case ']':
-            case '}':
-                if (bracketsStack.isEmpty() || !isPaired(bracketsStack.pop(), bracket)) {
-                    return false;
+            case '(', '[', '{' -> bracketsStack.push(bracket);
+            case ')', ']', '}' -> {
+                    if (bracketsStack.isEmpty() || !isPaired(bracketsStack.pop(), bracket)) {
+                        return false;
+                    }
                 }
-                break;
-            default:
+            default -> {
                 /* other character is invalid */
                 return false;
+                }
             }
         }
         return bracketsStack.isEmpty();

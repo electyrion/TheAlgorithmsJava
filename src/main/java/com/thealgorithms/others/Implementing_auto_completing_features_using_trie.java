@@ -2,7 +2,7 @@ package com.thealgorithms.others;
 
 // Java Program to implement Auto-Complete
 // Feature using Trie
-class Trieac {
+class Function {
 
     // Alphabet size (# of symbols)
     public static final int ALPHABET_SIZE = 26;
@@ -47,7 +47,7 @@ class Trieac {
     }
 
     // Returns true if key presents in trie, else false
-    boolean search(TrieNode root, final String key) {
+    protected boolean search(TrieNode root, final String key) {
         int length = key.length();
         TrieNode pCrawl = root;
 
@@ -97,7 +97,7 @@ class Trieac {
         }
     }
 
-    // Fucntion  to print suggestions for
+    // Function  to print suggestions for
     // given query prefix.
     static int printAutoSuggestions(TrieNode root, final String query) {
         TrieNode pCrawl = root;
@@ -160,11 +160,13 @@ class Trieac {
         int comp = printAutoSuggestions(root, "hel");
 
         if (comp == -1) {
-            System.out.println("No other strings found "
-                + "with this prefix\n");
+            System.out.println("""
+                               No other strings found with this prefix
+                               """);
         } else if (comp == 0) {
-            System.out.println("No string found with"
-                + " this prefix\n");
+            System.out.println("""
+                               No string found with this prefix
+                               """);
         }
     }
 }

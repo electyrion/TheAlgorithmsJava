@@ -38,7 +38,7 @@ class CaesarTest {
         String encryptedText = "Jshwduy ymnx yjcy";
 
         // when
-        String[] allPossibleAnswers = caesar.bruteforce(encryptedText);
+        String[] allPossibleAnswers = caesar.bruteForce(encryptedText);
 
         assertEquals(27, allPossibleAnswers.length);
         assertEquals("Encrypt this text", allPossibleAnswers[5]);

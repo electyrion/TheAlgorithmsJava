@@ -4,7 +4,7 @@ for better understanding
  */
 package com.thealgorithms.datastructures.graphs;
 
-class Dijkstras {
+class Dijkstra {
 
     int k = 9;
 
@@ -67,10 +67,10 @@ class Dijkstras {
             {8, 11, 0, 0, 0, 0, 1, 0, 7},
             {0, 0, 2, 0, 0, 0, 6, 7, 0},
         };
-        Dijkstras t = new Dijkstras();
+        Dijkstra t = new Dijkstra();
         t.dijkstra(graph, 0);
     } // main
-} // djikstras
+} // dijkstra
 /*
 OUTPUT :
 Vertex   Distance

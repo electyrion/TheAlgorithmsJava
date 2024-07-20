@@ -55,7 +55,7 @@ public class LeftistHeap {
     }
 
     // Function merge with two Nodes a and b
-    public Node merge(Node a, Node b) {
+    Node merge(Node a, Node b) {
         if (a == null) {
             return b;
         }

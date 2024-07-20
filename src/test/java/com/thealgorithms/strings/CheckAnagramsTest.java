@@ -1,8 +1,7 @@
 package com.thealgorithms.strings;
 
-import static org.junit.jupiter.api.Assertions.assertThrows;
-
 import org.junit.jupiter.api.Assertions;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.Test;
 
 public class CheckAnagramsTest {
@@ -50,20 +49,20 @@ public class CheckAnagramsTest {
         Assertions.assertFalse(CheckAnagrams.isAnagramsUnicode("This is a string", "Is this a string"));
     }
 
-    // CHECK METHOD isAnagramsOptimised()
+    // CHECK METHOD isAnagramsOptimized()
     // Below tests work with strings which consist of only lowercase English letters
     @Test
-    public void testOptimisedAlgorithmStringsAreValidAnagrams() {
-        Assertions.assertTrue(CheckAnagrams.isAnagramsOptimised("silent", "listen"));
-        Assertions.assertTrue(CheckAnagrams.isAnagramsOptimised("mam", "amm"));
+    public void testOptimizedAlgorithmStringsAreValidAnagrams() {
+        Assertions.assertTrue(CheckAnagrams.isAnagramsOptimized("silent", "listen"));
+        Assertions.assertTrue(CheckAnagrams.isAnagramsOptimized("mam", "amm"));
     }
 
     @Test
-    public void testOptimisedAlgorithmShouldThrowExceptionWhenStringsContainUppercaseLetters() {
-        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> CheckAnagrams.isAnagramsOptimised("Silent", "Listen"));
-        Assertions.assertEquals(exception.getMessage(), MESSAGE);
+    public void testOptimizedAlgorithmShouldThrowExceptionWhenStringsContainUppercaseLetters() {
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> CheckAnagrams.isAnagramsOptimized("Silent", "Listen"));
+        Assertions.assertEquals(MESSAGE, exception.getMessage());
 
-        exception = assertThrows(IllegalArgumentException.class, () -> Assertions.assertFalse(CheckAnagrams.isAnagramsOptimised("This is a string", "Is this a string")));
-        Assertions.assertEquals(exception.getMessage(), MESSAGE);
+        exception = assertThrows(IllegalArgumentException.class, () -> Assertions.assertFalse(CheckAnagrams.isAnagramsOptimized("This is a string", "Is this a string")));
+        Assertions.assertEquals(MESSAGE, exception.getMessage());
     }
 }

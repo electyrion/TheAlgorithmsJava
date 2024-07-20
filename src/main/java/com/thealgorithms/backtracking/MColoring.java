@@ -11,7 +11,7 @@ import java.util.Set;
  */
 class Node {
     int color = 1;
-    Set<Integer> edges = new HashSet<Integer>();
+    Set<Integer> edges = new HashSet<>();
 }
 
 public final class MColoring {
@@ -20,7 +20,7 @@ public final class MColoring {
     static int possiblePaint(ArrayList<Node> nodes, int n, int m) {
 
         // Create a visited array of n nodes
-        ArrayList<Integer> visited = new ArrayList<Integer>();
+        ArrayList<Integer> visited = new ArrayList<>();
         for (int i = 0; i < n + 1; i++) {
             visited.add(0);
         }
@@ -41,7 +41,7 @@ public final class MColoring {
             q.add(sv);
 
             // BFS
-            while (q.size() != 0) {
+            while (!q.isEmpty()) {
                 int top = q.peek();
                 q.remove();
 
