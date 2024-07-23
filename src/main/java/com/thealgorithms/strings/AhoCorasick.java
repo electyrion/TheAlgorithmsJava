@@ -150,7 +150,7 @@ public final class AhoCorasick {
 
         private ArrayList<ArrayList<Integer>> initializePositionByStringIndexValue() {
             ArrayList<ArrayList<Integer>> positionByStringIndexValue = new ArrayList<>(patterns.length); // Stores positions where patterns are found in the text
-            for (String pattern : patterns) {
+            for (@SuppressWarnings("unused") String pattern : patterns) {
                 positionByStringIndexValue.add(new ArrayList<>());
             }
             return positionByStringIndexValue;
