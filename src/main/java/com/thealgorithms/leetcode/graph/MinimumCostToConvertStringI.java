@@ -6,6 +6,9 @@ import java.util.List;
 import java.util.PriorityQueue;
 
 
+/*
+ * https://leetcode.com/problems/minimum-cost-to-convert-string-i/editorial
+ */
 public class MinimumCostToConvertStringI {
     public long minimumCost(String source, String target, char[] original, char[] changed, int[] cost) {
         // create a graph representation of character conversions
