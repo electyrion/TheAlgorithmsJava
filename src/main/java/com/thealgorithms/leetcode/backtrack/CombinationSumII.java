@@ -20,8 +20,8 @@ public class CombinationSumII {
         int totalLeft,
         int index
     ) {
-        if (totalLeft < 0) return;
-        else if (totalLeft == 0) {
+        if (totalLeft < 0) {
+        } else if (totalLeft == 0) {
             // add to the answer array, if the sum is equal to arget.
             answer.add(new ArrayList<>(tempList));
         } else {
