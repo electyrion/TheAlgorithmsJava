@@ -1,6 +1,7 @@
 package com.thealgorithms.leetcode.dp;
 
 public class StrangePrinter {
+    // https://leetcode.com/problems/strange-printer/editorial
     public int strangePrinter(String s) {
         // Preprocess the string to remove consecutive duplicate characters
         s = removeDuplicates(s);
