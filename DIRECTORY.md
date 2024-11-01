@@ -5,6 +5,7 @@
       * com
         * thealgorithms
           * audiofilters
+            * [EMAFilter](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/audiofilters/EMAFilter.java)
             * [IIRFilter](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/audiofilters/IIRFilter.java)
           * backtracking
             * [AllPathsFromSourceToTarget](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/backtracking/AllPathsFromSourceToTarget.java)
@@ -718,6 +719,7 @@
       * com
         * thealgorithms
           * audiofilters
+            * [EMAFilterTest](https://github.com/TheAlgorithms/Java/blob/master/src/test/java/com/thealgorithms/audiofilters/EMAFilterTest.java)
             * [IIRFilterTest](https://github.com/TheAlgorithms/Java/blob/master/src/test/java/com/thealgorithms/audiofilters/IIRFilterTest.java)
           * backtracking
             * [AllPathsFromSourceToTargetTest](https://github.com/TheAlgorithms/Java/blob/master/src/test/java/com/thealgorithms/backtracking/AllPathsFromSourceToTargetTest.java)
