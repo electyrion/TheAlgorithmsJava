@@ -99,11 +99,11 @@
             * graphs
               * [AStar](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/datastructures/graphs/AStar.java)
               * [BellmanFord](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/datastructures/graphs/BellmanFord.java)
-              * [BipartiteGrapfDFS](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/datastructures/graphs/BipartiteGrapfDFS.java)
+              * [BipartiteGraphDFS](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/datastructures/graphs/BipartiteGraphDFS.java)
               * [BoruvkaAlgorithm](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/datastructures/graphs/BoruvkaAlgorithm.java)
               * [ConnectedComponent](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/datastructures/graphs/ConnectedComponent.java)
               * [Cycles](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/datastructures/graphs/Cycles.java)
-              * [DIJSKSTRAS ALGORITHM](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/datastructures/graphs/DIJSKSTRAS_ALGORITHM.java)
+              * [Dijkstra](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/datastructures/graphs/Dijkstra.java)
               * [FloydWarshall](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/datastructures/graphs/FloydWarshall.java)
               * [Graphs](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/datastructures/graphs/Graphs.java)
               * [HamiltonianCycle](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/datastructures/graphs/HamiltonianCycle.java)
@@ -255,6 +255,31 @@
             * [UniquePaths](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/dynamicprogramming/UniquePaths.java)
             * [WildcardMatching](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/dynamicprogramming/WildcardMatching.java)
             * [WineProblem](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/dynamicprogramming/WineProblem.java)
+          * gemastik
+            * dump
+              * [Solution](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/gemastik/dump/Solution.java)
+            * penyisihan
+              * A
+                * [Solution](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/gemastik/penyisihan/A/Solution.java)
+              * B
+                * [Solution](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/gemastik/penyisihan/B/Solution.java)
+              * C
+                * [Solution](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/gemastik/penyisihan/C/Solution.java)
+              * G
+                * [Solution](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/gemastik/penyisihan/G/Solution.java)
+              * I
+                * [Solution](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/gemastik/penyisihan/I/Solution.java)
+              * J
+                * [Solution](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/gemastik/penyisihan/J/Solution.java)
+              * [Solution](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/gemastik/penyisihan/Solution.java)
+            * prep
+              * A
+                * [Solution](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/gemastik/prep/A/Solution.java)
+              * B
+                * [Solution](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/gemastik/prep/B/Solution.java)
+              * C
+                * [Solution](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/gemastik/prep/C/Solution.java)
+            * [Solution](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/gemastik/Solution.java)
           * geometry
             * [GrahamScan](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/geometry/GrahamScan.java)
           * greedyalgorithms
@@ -265,6 +290,63 @@
             * [MinimizingLateness](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/greedyalgorithms/MinimizingLateness.java)
           * io
             * [BufferedReader](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/io/BufferedReader.java)
+          * leetcode
+            * array
+              * [MaximizeDistanceToClosestPerson](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/leetcode/array/MaximizeDistanceToClosestPerson.java)
+            * backtrack
+              * [CombinationSumII](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/leetcode/backtrack/CombinationSumII.java)
+            * dp
+              * [CountNumberOfTeams](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/leetcode/dp/CountNumberOfTeams.java)
+              * [FillingBookcaseShelves](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/leetcode/dp/FillingBookcaseShelves.java)
+              * one
+                * [MinCostClimbingStairs](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/leetcode/dp/one/MinCostClimbingStairs.java)
+              * [StrangePrinter](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/leetcode/dp/StrangePrinter.java)
+            * dsu
+              * [MostStonesRemovedWithSameRowOrColumn](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/leetcode/dsu/MostStonesRemovedWithSameRowOrColumn.java)
+            * graph
+              * [FindTheCityWithTheSmallestNumberOfNeighborsAtAThresholdDistance](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/leetcode/graph/FindTheCityWithTheSmallestNumberOfNeighborsAtAThresholdDistance.java)
+              * [MinimumCostToConvertStringI](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/leetcode/graph/MinimumCostToConvertStringI.java)
+              * [ModifyGraphEdgeWeights](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/leetcode/graph/ModifyGraphEdgeWeights.java)
+              * [Pair](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/leetcode/graph/Pair.java)
+              * [SecondMinimumTimeToReachDestination](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/leetcode/graph/SecondMinimumTimeToReachDestination.java)
+            * hashmap
+              * [SortArrayByIncreasingFrequency](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/leetcode/hashmap/SortArrayByIncreasingFrequency.java)
+            * linkedlist
+              * [ListNode](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/leetcode/linkedlist/ListNode.java)
+              * [MaximumTwinSumOfALinkedList](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/leetcode/linkedlist/MaximumTwinSumOfALinkedList.java)
+            * math
+              * [UglyNumberII](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/leetcode/math/UglyNumberII.java)
+            * matrix
+              * [FindValidMatrixGivenRowAndColumnSums](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/leetcode/matrix/FindValidMatrixGivenRowAndColumnSums.java)
+              * [LuckyNumbersInAMatrix](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/leetcode/matrix/LuckyNumbersInAMatrix.java)
+              * [MagicSquaresInGrid](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/leetcode/matrix/MagicSquaresInGrid.java)
+              * [RegionsCutBySlashes](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/leetcode/matrix/RegionsCutBySlashes.java)
+              * [SpiralMatrixIII](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/leetcode/matrix/SpiralMatrixIII.java)
+            * queue
+              * [Dota2Senate](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/leetcode/queue/Dota2Senate.java)
+            * recursion
+              * [IntegerToEnglishWords](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/leetcode/recursion/IntegerToEnglishWords.java)
+            * slidingwindow
+              * [MinimumSwapsToGroupAll1sTogetherII](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/leetcode/slidingwindow/MinimumSwapsToGroupAll1sTogetherII.java)
+            * sorting
+              * [FindKthSmallestPairDistance](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/leetcode/sorting/FindKthSmallestPairDistance.java)
+              * [SortTheJumbledNumbers](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/leetcode/sorting/SortTheJumbledNumbers.java)
+            * stack
+              * [DecodeString](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/leetcode/stack/DecodeString.java)
+              * [NumberOfAtoms](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/leetcode/stack/NumberOfAtoms.java)
+            * string
+              * [MinimumDeletionsToMakeStringBalanced](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/leetcode/string/MinimumDeletionsToMakeStringBalanced.java)
+            * template
+              * [Solution](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/leetcode/template/Solution.java)
+            * tree
+              * [BinaryTreeLevelOrderTraversal](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/leetcode/tree/BinaryTreeLevelOrderTraversal.java)
+              * [DeleteNodesAndReturnForest](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/leetcode/tree/DeleteNodesAndReturnForest.java)
+              * [MainClass](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/leetcode/tree/MainClass.java)
+              * [NumberOfGoodLeafNodesPairs](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/leetcode/tree/NumberOfGoodLeafNodesPairs.java)
+              * [PathSumII](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/leetcode/tree/PathSumII.java)
+              * [TreeNode](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/leetcode/tree/TreeNode.java)
+            * twopointer
+              * [TrappingRainWater](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/leetcode/twopointer/TrappingRainWater.java)
           * maths
             * [AbsoluteMax](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/maths/AbsoluteMax.java)
             * [AbsoluteMin](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/maths/AbsoluteMin.java)
@@ -373,6 +455,8 @@
             * [Volume](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/maths/Volume.java)
           * matrixexponentiation
             * [Fibonacci](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/matrixexponentiation/Fibonacci.java)
+          * mbkm
+            * [Solution](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/mbkm/Solution.java)
           * misc
             * [ColorContrastRatio](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/misc/ColorContrastRatio.java)
             * [InverseOfMatrix](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/misc/InverseOfMatrix.java)
@@ -412,7 +496,7 @@
             * [Damm](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/others/Damm.java)
             * [Dijkstra](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/others/Dijkstra.java)
             * [EulersFunction](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/others/EulersFunction.java)
-            * [FibbonaciSeries](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/others/FibbonaciSeries.java)
+            * [FibonacciSeries](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/others/FibonacciSeries.java)
             * [FloydTriangle](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/others/FloydTriangle.java)
             * [GuassLegendre](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/others/GuassLegendre.java)
             * [HappyNumbersSeq](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/others/HappyNumbersSeq.java)
@@ -454,6 +538,8 @@
             * [RRScheduling](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/scheduling/RRScheduling.java)
             * [SJFScheduling](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/scheduling/SJFScheduling.java)
             * [SRTFScheduling](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/scheduling/SRTFScheduling.java)
+          * sda
+            * [TP3](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/sda/TP3.java)
           * searches
             * [BinarySearch](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/searches/BinarySearch.java)
             * [BinarySearch2dArray](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/searches/BinarySearch2dArray.java)
@@ -910,7 +996,7 @@
             * [HorspoolSearchTest](https://github.com/TheAlgorithms/Java/blob/master/src/test/java/com/thealgorithms/strings/HorspoolSearchTest.java)
             * [IsomorphicTest](https://github.com/TheAlgorithms/Java/blob/master/src/test/java/com/thealgorithms/strings/IsomorphicTest.java)
             * [LetterCombinationsOfPhoneNumberTest](https://github.com/TheAlgorithms/Java/blob/master/src/test/java/com/thealgorithms/strings/LetterCombinationsOfPhoneNumberTest.java)
-            * [LongestNonRepeativeSubstringTest](https://github.com/TheAlgorithms/Java/blob/master/src/test/java/com/thealgorithms/strings/LongestNonRepeativeSubstringTest.java)
+            * [LongestNonRepetitiveSubstringTest](https://github.com/TheAlgorithms/Java/blob/master/src/test/java/com/thealgorithms/strings/LongestNonRepetitiveSubstringTest.java)
             * [LowerTest](https://github.com/TheAlgorithms/Java/blob/master/src/test/java/com/thealgorithms/strings/LowerTest.java)
             * [MyAtoiTest](https://github.com/TheAlgorithms/Java/blob/master/src/test/java/com/thealgorithms/strings/MyAtoiTest.java)
             * [PalindromeTest](https://github.com/TheAlgorithms/Java/blob/master/src/test/java/com/thealgorithms/strings/PalindromeTest.java)
