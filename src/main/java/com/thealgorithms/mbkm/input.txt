@@ -1,0 +1,35 @@
+There is a list of balls of different colors, 2 balls of same colors
+destroy each other if they are continuous and the list shrinks:
+
+Example 1: If balls in starting are
+Red Blue Blue Red -> Blues will destroy each other so it becomes:
+Red Red -> Again Reds will destroy each other
+                Finally 0 balls are left
+
+Example 2: If balls is starting are
+        G Y Y G B B R
+        G G R
+        R
+        Finally 1 Red ball remains
+
+Problem is: Design a Solution that takes this list of ball
+
+
+iter 0
+stack = []
+balls = G Y Y G B B R
+iter 1
+stack = G
+balls = Y Y G B B R
+iter 2
+stack = G Y
+balls = Y G B B R
+iter 3
+stack = G
+balls = G B B R
+iter 4
+stack = []
+balls = B B R
+iter 5
+stack = B
+balls = B R
