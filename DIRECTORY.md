@@ -354,6 +354,8 @@
             * [StockProfitCalculator](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/greedyalgorithms/StockProfitCalculator.java)
           * io
             * [BufferedReader](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/io/BufferedReader.java)
+          * leetcode
+            * [ClosestPrimeNumbersInRange](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/leetcode/ClosestPrimeNumbersInRange.java)
           * lineclipping
             * [CohenSutherland](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/lineclipping/CohenSutherland.java)
             * [LiangBarsky](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/lineclipping/LiangBarsky.java)
