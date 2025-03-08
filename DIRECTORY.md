@@ -356,6 +356,9 @@
             * [BufferedReader](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/io/BufferedReader.java)
           * leetcode
             * [ClosestPrimeNumbersInRange](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/leetcode/ClosestPrimeNumbersInRange.java)
+            * slidingwindow
+              * minimumrecolorstogetkconsecutiveblackblocks
+                * [Solution](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/leetcode/slidingwindow/minimumrecolorstogetkconsecutiveblackblocks/Solution.java)
           * lineclipping
             * [CohenSutherland](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/lineclipping/CohenSutherland.java)
             * [LiangBarsky](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/lineclipping/LiangBarsky.java)
