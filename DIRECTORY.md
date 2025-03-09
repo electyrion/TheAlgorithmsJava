@@ -357,6 +357,8 @@
           * leetcode
             * [ClosestPrimeNumbersInRange](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/leetcode/ClosestPrimeNumbersInRange.java)
             * slidingwindow
+              * alternatinggroupsII
+                * [Solution](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/leetcode/slidingwindow/alternatinggroupsII/Solution.java)
               * minimumrecolorstogetkconsecutiveblackblocks
                 * [Solution](https://github.com/TheAlgorithms/Java/blob/master/src/main/java/com/thealgorithms/leetcode/slidingwindow/minimumrecolorstogetkconsecutiveblackblocks/Solution.java)
           * lineclipping
